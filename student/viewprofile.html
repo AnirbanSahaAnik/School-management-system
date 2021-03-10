@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashbord</title>
+  </head>
+  <body>
+    <table border="1" cellspacing="0" width="100%" >
+      <tr>
+        <td colspan="2">
+          <table width="100%">
+            <tr>
+              <td><img height="50px" weight="50px" src="logo.png" alt=""></td>
+              <td align = "right">
+                Logged in as
+                <a href="viewProfile.php"><?php $user = $_SESSION['current_user']; $name= $user['name']; echo "$name"; ?></a>|
+                <a href="logout.php">Logout</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="250px">
+          <h3>My Account</h3>
+          <hr>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="routine.html">Class Routine</a></li>
+            <li><a href="viewprofile.html">View Profile</a></li>
+            <li><a href="">Teachers Notice</a></li>
+            <li><a href="">Teachers Contact Details</a></li>
+            <li><a href="">School Notices</a></li>
+            <li><a href="">Own Result</a></li>
+            <li><a href="">Attendance List</a></li>
+            <li><a href="">Request for leave</a></li>
+            <li><a href="">Course Details</a></li>
+            <li><a href="">Request for Edit Information</a></li>
+            <li><a href="">Request of Books</a></li>
+            <li><a href="">Issue Book History</a></li>
+            <li><a href="">Information of Books</a></li>
+
+          </ul>
+        </td>
+        <td>
+            <fieldset>
+                <legend>MY PROFILE</legend>
+            <form class="" action="" method="post">
+               <table>
+               <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td>Bishowjit Datta</td>
+               </tr>
+              
+               <tr>
+                <td>Student Id</td> 
+                <td>:</td>
+                <td>02</td>
+               </tr>
+
+               <tr>
+                <td>Class</td> 
+                <td>:</td>
+                <td>05</td>
+               </tr>
+               
+               <tr>
+                <td>Academic Year</td> 
+                <td>:</td>
+                <td>2021</td>
+               </tr>
+
+               <tr>
+                <td>Gender</td> 
+                <td>:</td>
+                <td>Male</td>
+               </tr>
+             
+               <tr>
+                <td>Date of Birth</td> 
+                <td>:</td>
+                <td>02-12-2010</td>
+               </tr>
+
+               <tr>
+                <td>Blood Group</td> 
+                <td>:</td>
+                <td>o+</td>
+               </tr>
+
+               <tr>
+                <td>Religion</td> 
+                <td>:</td>
+                <td>Hindu</td>
+               </tr>
+               
+               </table>
+            </form>
+            </fieldset>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" colspan="2" >Copyright Ⓒ 2021</td>
+      </tr>
+
+    </table>
+
+  </body>
+</html>
