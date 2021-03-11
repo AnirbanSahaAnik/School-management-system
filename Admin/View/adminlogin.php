@@ -13,6 +13,7 @@
               <td><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></td>
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
+                <a href="../../Home/index.html">Back</a> |
                 <a href="">About Us</a> |
                 <a href=""> Contact Us</a>
               </td>
@@ -20,7 +21,36 @@
           </table>
         </td>
       </tr>
+      <tr>
+        <td>
+          <table align="center" >
+            <tr>
+              <td>
+                <form class="" action="logCheck.php" method="post">
+                  <fieldset>
+                    <legend>LOGIN</legend>
+                    <table>
+                      <tr>
+                        <td>ID</td>
+                        <td>: <input type="text" name="username" value=""></td>
+                      </tr>
+                      <tr>
+                        <td>Password</td>
+                        <td>: <input type="password" name="password" value=""></td>
+                      </tr>
+                    </table>
+                    <input type="checkbox" name="" value=""> Remember Me <br>
+                    <br>
+                    <input type="submit" name="submit" value="LOGIN">
+                    <a href="ForgotPassword.html">Forgot Password?</a>
+                  </fieldset>
+                </form>
+            </td>
 
+          </tr>
+          </table>
+        </td>
+      </tr>
 
 
 
