@@ -14,7 +14,7 @@
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
                 <a href="../Controller/logout.php">Logout</a>
-                
+
               </td>
             </tr>
           </table>
@@ -104,9 +104,9 @@
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/course.jpg" alt="">
+                      <a href="addCourse.php"><img height="100px" weight="100px" src="../Resources/course.jpg" alt=""></a>
                       <br>
-                      <a href="#">Courses</a>
+                      <a href="addCourse.php">Courses</a>
                     </td>
 
                     <td align = "center">
