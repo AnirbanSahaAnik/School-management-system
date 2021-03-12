@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Teacher</title>
+    <title>librarian</title>
   </head>
   <body>
     <table border="1" cellspacing="0" width="100%" >
@@ -55,7 +55,7 @@
                     <td>6001</td>
                     <td>Kader</td>
                     <td>
-            					<a href="editLibrarian.php?id=a">EDIT</a> |
+            					<a href="editLibrarian.php?id=1">EDIT</a> |
             					<a href="deleteLibrarian.php?id=1">DELETE</a> |
                       <a href="blockLibrarian.php?id=1">BLOCK</a>
             				</td>
@@ -75,9 +75,9 @@
                     <td>6003</td>
                     <td>Bishowjit</td>
                     <td>
-            					<a href="editLibrarian.php?id=2">EDIT</a> |
-            					<a href="deleteLibrarian.php?id=2">DELETE</a> |
-                      <a href="blockLibrarian.php?id=2">BLOCK</a>
+            					<a href="editLibrarian.php?id=3">EDIT</a> |
+            					<a href="deleteLibrarian.php?id=3">DELETE</a> |
+                      <a href="blockLibrarian.php?id=3">BLOCK</a>
             				</td>
                   </tr>
 
