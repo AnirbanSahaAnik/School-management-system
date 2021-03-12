@@ -13,9 +13,8 @@
               <td><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></td>
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
-                <a href="">Logout</a> |
-                <a href="">About Us</a> |
-                <a href=""> Contact Us</a>
+                <a href="../Controller/logout.php">Logout</a>
+                
               </td>
             </tr>
           </table>
@@ -38,7 +37,7 @@
                   <li><a href="viewProfile.php">View Profile</a></li>
                   <li><a href="EditProfile.php">Edit Profile</a></li>
                   <li><a href="ChangePassword.php">Change Password</a></li>
-                  <li><a href="publicHome.php">Logout</a></li>
+                  <li><a href="../Controller/logout.php">Logout</a></li>
                 </ul>
               </td>
 

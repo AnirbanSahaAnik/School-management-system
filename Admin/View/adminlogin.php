@@ -13,9 +13,8 @@
               <td><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></td>
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
-                <a href="../../Home/index.html">Back</a> |
-                <a href="">About Us</a> |
-                <a href=""> Contact Us</a>
+                <a href="../../Home/index.html">Back</a>
+
               </td>
             </tr>
           </table>
@@ -26,13 +25,13 @@
           <table align="center" >
             <tr>
               <td>
-                <form class="" action="logCheck.php" method="post">
+                <form class="" action="../Controller/logCheck.php" method="post">
                   <fieldset>
                     <legend>LOGIN</legend>
                     <table>
                       <tr>
                         <td>ID</td>
-                        <td>: <input type="text" name="username" value=""></td>
+                        <td>: <input type="text" name="id" value=""></td>
                       </tr>
                       <tr>
                         <td>Password</td>

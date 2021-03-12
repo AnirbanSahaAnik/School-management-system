@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Teacher</title>
+    <title>Student</title>
   </head>
   <body>
     <table border="1" cellspacing="0" width="100%" >
@@ -14,7 +14,7 @@
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
                 <a href="dashboard.php">Back</a> |
-                <a href="logout.php">Logout</a>
+                <a href="../Controller/logout.php">Logout</a>
               </td>
             </tr>
           </table>
@@ -36,7 +36,7 @@
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
                   <li><a href="dashboard.php">Dashbord</a></li>
-                  <li><a href="logout.php">Logout</a></li>
+                  <li><a href="../Controller/logout.php">Logout</a></li>
 
                 </ul>
               </td>
