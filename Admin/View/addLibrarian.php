@@ -42,7 +42,7 @@
               </td>
 
               <td>
-                <form  class="" action="regCheck.php" method="post">
+                <form  class="" action="regCheckLibrarian.php" method="post">
                   <fieldset >
                     <legend>REGESTRATION</legend>
                       <table align="center">
