@@ -24,7 +24,7 @@
 
       <tr>
         <td>
-          <table width="100%" cellspacing="0" border="1">
+          <table width="100%" cellspacing="0" border="0">
             <tr>
               <td width="250px">
                 <center>
@@ -46,21 +46,21 @@
                 <table border="1" width ="100%" cellspacing="0">
                   <tr>
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/Teacher.jpg" alt="">
+                      <a href="addTeacher.php"><img height="100px" weight="100px" src="../Resources/Teacher.jpg" alt=""></a>
                       <br>
-                      <a href="#">Teacher</a>
+                      <a href="addTeacher.php">Teacher</a>
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/student.jpg" alt="">
+                      <a href="addStudent.php"><img height="100px" weight="100px" src="../Resources/student.jpg" alt=""></a>
                       <br>
-                      <a href="#">Student</a>
+                      <a href="addStudent.php">Student</a>
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/librarian.jpg" alt="">
+                      <a href="addLibrarian.php"><img height="100px" weight="100px" src="../Resources/librarian.jpg" alt=""></a>
                       <br>
-                      <a href="#">Librarian</a>
+                      <a href="addLibrarian.php">Librarian</a>
                     </td>
 
                     <td align = "center">
