@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loginpage</title>
+  </head>
+  <body>
+    <table id="header" width="100%" cellspacing="0" border="1">
+              <tr>
+                <td align="center"><a href="homepage.html"><img height="50px" weight="50px" src="../Assests/logo.png" alt=""></a></td>
+                <td align = "center"><h1>School Management System</h1><h3>Library</h3></td>
+                <td>
+                  <div id="topnav" align="center">
+                    <a href="createlibraryacc.html">Registration</a>
+                    <a href="login.html">Login</a>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+         <div id="maincontent">
+            <form action="regCheck.php" method="POST">
+                <fieldset>
+                  <legend>Login</legend>
+                    <table>
+                      <tr>
+                        <td>Enter Email Address</td>
+                        <td>: <input type="email" name="mail" value="" ></td>
+                      </tr>
+                      <tr>
+                            <td>Enter Password</td>
+                            <td>: <input type="password" name="password" value=""></td>
+                     </tr>
+                     <tr>
+                       <td>Verification <!-- 2 -1 = ? -->:</td>
+                       <td><input type="text" name="name"  value=""></td>
+                     </tr>
+                       
+                     <tr>
+                         <td colspan="2"><input type="checkbox" name="policy" value=""><b>Remember me</b></td>
+                      </tr>
+                    <tr>
+                        <td><input type="submit" name="login" value="Login"></td>
+                        <td><input type="reset" name="reset" value="Reset"></td>
+                    </tr>
+                  </table>
+                </fieldset>
+              </form>
+         </div>
+
+    <table id="footer" width="100%" cellspacing="0" border="1">
+      <tr>
+        <td align="center"><h4>Copyright &copy; 2021</h4></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
