@@ -98,9 +98,9 @@
 
                   <tr>
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/leaverequest.png" alt="">
+                      <a href="leaveRequest.php"><img height="100px" weight="100px" src="../Resources/leaverequest.png" alt=""></a>
                       <br>
-                      <a href="#">Leave Request</a>
+                      <a href="leaveRequest.php">Leave Request</a>
                     </td>
 
                     <td align = "center">

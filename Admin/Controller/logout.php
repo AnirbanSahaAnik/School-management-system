@@ -2,6 +2,6 @@
 
 	session_start();
 	unset($_SESSION['flag']);
-	header('location: ../view/login.html');
+	header('location: ../view/adminlogin.php');
 
 ?>
