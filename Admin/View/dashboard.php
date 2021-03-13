@@ -84,9 +84,9 @@
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/libraryBook.jpg" alt="">
+                      <a href="libraryBook.php"><img height="100px" weight="100px" src="../Resources/libraryBook.jpg" alt=""></a>
                       <br>
-                      <a href="#">Library Book Details</a>
+                      <a href="libraryBook.php">Library Book Details</a>
                     </td>
 
                     <td align = "center">
