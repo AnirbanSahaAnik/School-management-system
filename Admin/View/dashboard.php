@@ -63,9 +63,9 @@
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/notice.jpg" alt="">
+                      <a href="notice.php"><img height="100px" weight="100px" src="../Resources/notice.jpg" alt=""></a>
                       <br>
-                      <a href="#">Notice Board</a>
+                      <a href="notice.php">Notice Board</a>
                     </td>
 
                   </tr>
