@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Public Home</title>
+  </head>
+  <body>
+    <table border="1" cellspacing="0" width="80%" >
+      <tr>
+         <td colspan="2">
+          <table width="100%">
+              <tr>
+                <td><img height="40px" weight="40px" src="../Resources/school_logo.png" alt=""></td>
+                <td align = "right">
+                    <a href="HomePage.html">Logout</a>
+                </td>
+              </tr>
+          </table>
+          </td>
+      </tr>
+      <tr>
+         <tr>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/course.jpg" alt=""></td>
+            <td align="Center">
+            <b>
+            Notes Upload
+            </b>
+            </td>
+          </tr>
+        <td height="150px" weight="150px">
+                <ul>
+                    <li><a href="TeacherDashboard.php">Dashboard</a></li>
+                    <li><a href="ViewProfile.php">View Profile</a></li>
+                    <li><a href="StudentProfile.php">View Student's Profile</a></li>
+                    <li><a href="ViewProfile.php">Student Attendance</a></li>
+                    <li><a href="Schedule.php">Class Schedule</a></li>
+                    <li><a href="ChangePass.php">Notice Board</a></li>
+                    <li><a href="UploadNotes.php">Upload Notes</a></li>
+                    <li><a href="ViewProfile.php">Student Marks</a></li>
+                    <li><a href="ViewProfile.php">Book History</a></li>
+                    <li><a href="HomePage.html">Logout</a></li>
+                </ul>
+
+        </td>
+        <td>
+            <fieldset>
+                <form class="" action="" method="post">
+                    <fieldset>
+                      <legend>Upload Notes</legend>
+                      <input type="file" id="photo" name="photo"><br>
+                      <hr>
+                      <input type="submit" name="submit" value="submit">
+                    </fieldset>
+              
+                  </form>
+            </fieldset>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">Copyright Ⓒ 2021</td>
+      </tr>
+    </table>
+
+  </body>
+</html>
