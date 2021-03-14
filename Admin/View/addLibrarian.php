@@ -52,10 +52,7 @@
                           <td>Date of Birth</td>
                           <td>:<input type="date" name="dob" value=""></td>
                         </tr>
-                        <tr>
-                          <td>Present Address</td>
-                          <td>:<input type="text" name="paddress" value=""></td>
-                        </tr>
+                        
                       </table>
                       <hr>
                       <center>
