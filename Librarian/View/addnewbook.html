@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add New Book</title>
+  </head>
+  <body>
+    <table border="1" cellspacing="0" width="100%" >
+      <tr>
+        <td colspan="2">
+          <table width="100%">
+            <tr>
+              <td><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></td>
+              <td align = "center"><h1>School Management System</h1></td>
+              <td align = "right">
+                <a href="../Controller/logout.php">Logout</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+ 
+      <tr id="navigation">
+        <td width="350px">
+          <h2 align="center">Login As </h2></br>
+          <hr>
+          <ul>
+            <li><a href="addnewbook.html">Add New Book</a></li>  
+            <li><a href="routine.html">Delete Book</a></li>
+            <li><a href="viewprofile.html">Update Book</a></li>
+            <li><a href="teachernotice.html">View Students List</a></li>
+            <li><a href="schoolnotice.html">View Teachers List</a></li>
+            <li><a href="">Create Library Account(Student)</a></li>
+            <li><a href="">Create Library Account(Teachers)</a></li>
+            <li><a href="leaverequest.html">Block Library Account</a></li>
+            <li><a href="">Delete Library Account</a></li>
+            <li><a href="">New Book Arrival Notice</a></li>
+            <li><a href="requestforbook.html">Book Borrow History</a></li>
+            <li><a href="">Issue Book History</a></li>
+            <li><a href="">Search Book Information</a></li>
+            <li><a href="">Issue Book History</a></li>
+          </ul>
+        </td>
+        <td id="main content">
+          <form action="bookInfoCheck.php" method="POST">
+            <fieldset>
+              <legend>Add New Book</legend>
+                <table>
+                    <tr>
+                        <td>Enter ISBN :</td>
+                        <td><input type="text" name="isbn" value="" ></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Title :</td>
+                        <td><input type="text" name="booktitle" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Author :</td>
+                        <td><input type="text" name="author" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Edition :</td>
+                        <td><input type="text" name="edition" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Publication :</td>
+                        <td><input type="text" name="publication" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Upload Book :</td>
+                      <td>
+                        <form action="../Controller/bookUploadFile.php" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="book" value="">
+                        </form>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Add New Book">
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+             </table>
+            </fieldset>
+          </form>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" colspan="2" >Copyright &copy; 2021</td>
+      </tr>
+
+    </table>
+
+  </body>
+</html>
