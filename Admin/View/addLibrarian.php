@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                           <td>Id</td>
-                          <td>:<input type="text" name="username" value=""></td>
+                          <td>:<input type="text" name="id" value=""></td>
                         </tr>
                         <tr>
                           <td>Password</td>
@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                           <td>Confirm Password</td>
-                          <td>:<input type="password" name="confirm_password" value=""></td>
+                          <td>:<input type="password" name="repass" value=""></td>
                         </tr>
                         <tr>
                           <td>Gender</td>
@@ -52,7 +52,7 @@
                           <td>Date of Birth</td>
                           <td>:<input type="date" name="dob" value=""></td>
                         </tr>
-                        
+
                       </table>
                       <hr>
                       <center>
