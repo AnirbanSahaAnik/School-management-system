@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>LOGIN</title>
+    <title>Regester</title>
   </head>
   <body>
     <table border="1" cellspacing="0" width="100%" >
@@ -25,25 +25,39 @@
           <table align="center" >
             <tr>
               <td>
-                <form class="" action="../Controller/logCheck.php" method="post">
+                <form class="" action="../Controller/regCheck.php" method="post">
                   <fieldset>
-                    <legend>LOGIN</legend>
+                    <legend>REGESTER</legend>
                     <table>
                       <tr>
                         <td>ID</td>
                         <td>: <input type="text" name="id" value=""></td>
                       </tr>
                       <tr>
+                        <td>Name</td>
+                        <td>: <input type="text" name="name" placeholder="Enter Full Name"></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>: <input type="email" name="email" value=""></td>
+                      </tr>
+                      <tr>
                         <td>Password</td>
                         <td>: <input type="password" name="password" value=""></td>
                       </tr>
+                      <tr>
+                        <td>Confirm Password</td>
+                        <td>: <input type="password" name="repass" value=""></td>
+                      </tr>
                     </table>
-                    <input type="checkbox" name="" value=""> Remember Me <br>
-                    <br>
-                    <input type="submit" name="submit" value="LOGIN">
-                    <a href="ForgotPassword.php">Forgot Password?</a>
-                    <br>
-                    <a href="regester.php">Sgin Up</a>
+                    <hr>
+                    <center>
+                      <input type="submit" name="signup" value="SIGNUP">
+                      <input type="reset" name="reset" value="Reset">
+                      <a href="adminlogin.php">Sign In</a>
+                  </center>
+
+
                   </fieldset>
                 </form>
             </td>

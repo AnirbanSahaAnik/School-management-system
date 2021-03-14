@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_COOKIE['flag']))
+	{
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -138,3 +145,11 @@
 
   </body>
 </html>
+
+<?php
+
+	}else{
+		header('location: adminlogin.php');
+	}
+
+?>

@@ -12,6 +12,8 @@
 		}else{
 			$users = json_decode($data, true);
 			if($id == $users['id'] && $password == $users['password']){
+
+				setcookie('flag', true, time()+3600, '/');
 				header('location: ../view/dashboard.php');
 			}else{
 				echo "invalid user";
