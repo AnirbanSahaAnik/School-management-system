@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Add New Book</title>
-  </head>
-  <body>
+<?php $title= "Add New Book";
+	include('header.php');
+   ?> 
+    
     <table border="1" cellspacing="0" width="100%" >
       <tr>
         <td colspan="2">
@@ -86,11 +83,4 @@
         </td>
       </tr>
 
-      <tr>
-        <td align="center" colspan="2" >Copyright &copy; 2021</td>
-      </tr>
-
-    </table>
-
-  </body>
-</html>
+      <?php include('footer.php'); ?>   

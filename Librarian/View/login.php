@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-  </head>
-  <body>
+<?php $title= "Librarian Login Page";
+	include('header.php');
+   ?>  
     <table border="1" cellspacing="0" width="100%" >
       <tr>
         <td>
@@ -13,7 +9,7 @@
               <td><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></td>
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
-                <a href="../../Home/index.html">Back</a>
+                <a href="homepage.html">Homepage</a>
               </td>
             </tr>
           </table>
@@ -21,10 +17,10 @@
       </tr>
       <tr>
         <td>
-          <table align="center" >
+          <table align="center">
             <tr>
               <td>
-                <form class="" action="../Controller/logCheck.php" method="post">
+                <form class="" action="../Controller/librarianLogCheck.php" method="post">
                   <fieldset>
                     <legend>LOGIN</legend>
                     <table>
@@ -40,7 +36,8 @@
                     <input type="checkbox" name="" value=""> Remember Me <br>
                     <br>
                     <input type="submit" name="submit" value="LOGIN">
-                    <a href="ForgotPassword.html">Forgot Password?</a>
+                    <a href="ForgotPassword.html">Forgot Password?</a><br>
+                    <a href="librarianReg.html">Registration</a>
                   </fieldset>
                 </form>
             </td>
@@ -48,9 +45,4 @@
           </table>
         </td>
       </tr>
-      <tr>
-        <td align="center" >Copyright Ⓒ 2021</td>
-      </tr>
-    </table>
-  </body>
-</html>
+<?php include('footer.php'); ?>   

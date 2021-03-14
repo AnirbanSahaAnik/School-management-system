@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Dashbord</title>
-  </head>
-  <body>
+<?php $title= "Dashboard";
+	include('header.php');
+   ?> 
+
     <table border="1" cellspacing="0" width="100%" >
       <tr>
         <td colspan="2">
@@ -25,9 +22,9 @@
           <h2 align="center">Login As </h2></br>
           <hr>
           <ul>
-            <li><a href="studentLibraryAcc.html">Create Library Account(Student)</a></li>
-            <li><a href="teacherLibraryAcc.html">Create Library Account(Teachers)</a></li>
-            <li><a href="addnewbook.html">Add New Book</a></li>  
+            <li><a href="studentLibraryAcc.php">Create Library Account(Student)</a></li>
+            <li><a href="teacherLibraryAcc.php">Create Library Account(Teachers)</a></li>
+            <li><a href="addnewbook.php">Add New Book</a></li>  
             <li><a href="routine.html">Delete Book</a></li>
             <li><a href="viewprofile.html">Update Book</a></li>
             <li><a href="teachernotice.html">View Students List</a></li>
@@ -39,7 +36,6 @@
             <li><a href="">Issue Book History</a></li>
             <li><a href="">Search Book Information</a></li>
             <li><a href="">Issue Book History</a></li>
-
           </ul>
         </td>
         <td id="main content">
@@ -48,11 +44,4 @@
         </td>
       </tr>
 
-      <tr>
-        <td align="center" colspan="2" >Copyright &copy; 2021</td>
-      </tr>
-
-    </table>
-
-  </body>
-</html>
+<?php include('footer.php'); ?>   

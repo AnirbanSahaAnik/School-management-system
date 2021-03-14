@@ -25,9 +25,9 @@
           <h2 align="center">Login As </h2></br>
           <hr>
           <ul>
-            <li><a href="studentLibraryAcc.html">Create Library Account(Student)</a></li>
-            <li><a href="teacherLibraryAcc.html">Create Library Account(Teachers)</a></li>
-            <li><a href="addnewbook.html">Add New Book</a></li>  
+            <li><a href="studentLibraryAcc.php">Create Library Account(Student)</a></li>
+            <li><a href="teacherLibraryAcc.php">Create Library Account(Teachers)</a></li>
+            <li><a href="addnewbook.php">Add New Book</a></li>  
             <li><a href="routine.html">Delete Book</a></li>
             <li><a href="viewprofile.html">Update Book</a></li>
             <li><a href="teachernotice.html">View Students List</a></li>
@@ -45,7 +45,7 @@
         <td id="main content">
             <form action="../Controller/teacherAccCheck.php" method="POST">
                 <fieldset>
-                  <legend>Create Library Account(Teachers)</legend>
+                  <legend>Create Library Account(Students)</legend>
                     <table>
                       <tr>
                         <td>Enter Email Address</td>
@@ -59,16 +59,7 @@
                         <td>Enter Teacher Id</td>
                         <td>: <input type="text" name="username" value=""></td>
                       </tr>
-                        <tr><td>Select Department</td>
-                          <td>:
-                               <select name="dept">
-                                     <option value="cse">BSc.CSE</option>
-                                     <option value="eee">BSc.EEE</option>
-                                     <option value="bba">BBA</option>
-                             </select>
-                          </td>
-                        </tr>
-                        <tr>
+                      <tr>
                             <td>Enter a Password</td>
                             <td>: <input type="password" name="password" value=""></td>
                           </tr>
@@ -90,11 +81,4 @@
         </td>
       </tr>
 
-      <tr>
-        <td align="center" colspan="2" >Copyright &copy; 2021</td>
-      </tr>
-
-    </table>
-
-  </body>
-</html>
+      <?php include('footer.php'); ?>  
