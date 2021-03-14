@@ -9,7 +9,7 @@
               </td>
 
               <td>
-                <form  class="" action="regCheckCourse.php" method="post">
+                <form  class="" action="" method="post">
                   <fieldset >
                     <legend>Notice</legend>
                       <table align="center">

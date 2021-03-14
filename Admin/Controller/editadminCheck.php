@@ -1,5 +1,5 @@
 <?php
-  session_start();
+
 
 	if(isset($_POST['submit'])){
     $Username = json_decode(file_get_contents('../Model/admin.json'));
@@ -12,7 +12,7 @@
 
 
 		if($id == "" || $name == "" || $email == "" ){
-			echo "null submission...";
+			echo "Please fillup all";
 		}else{
 
 				$users = [
@@ -27,7 +27,7 @@
 				fwrite($userData, $data);
 				fclose($userData);
 
-				header('location: ../view/adminlogin.php');
+				header('location: ../view/EditProfile.php');
 
 		}
 

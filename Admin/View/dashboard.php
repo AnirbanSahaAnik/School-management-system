@@ -2,8 +2,6 @@
 	$title= "Dashbord";
 	include('header.php');
 ?>
-
-
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
                   <li><a href="viewProfile.php">View Profile</a></li>
@@ -44,15 +42,15 @@
 
                   <tr>
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/loginhistory.jpg" alt="">
+                      <a href="loginHistory.php"><img height="100px" weight="100px" src="../Resources/loginhistory.jpg" alt=""></a>
                       <br>
-                      <a href="#">Login History</a>
+                      <a href="loginHistory.php">Login History</a>
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/attendance.jpg" alt="">
+                      <a href="sixAtt.php"><img height="100px" weight="100px" src="../Resources/attendance.jpg" alt=""></a>
                       <br>
-                      <a href="#">Attendance List</a>
+                      <a href="sixAtt.php">Attendance List</a>
                     </td>
 
                     <td align = "center">
@@ -62,9 +60,9 @@
                     </td>
 
                     <td align = "center">
-                      <img height="100px" weight="100px" src="../Resources/routine.jpg" alt="">
+                      <a href="classRoutine.php"><img height="100px" weight="100px" src="../Resources/routine.jpg" alt=""></a>
                       <br>
-                      <a href="#">Class Routine</a>
+                      <a href="classRoutine.php">Class Routine</a>
                     </td>
                   </tr>
 
