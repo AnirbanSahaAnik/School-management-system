@@ -58,7 +58,7 @@
 </html>
         </td>
       </tr>
-      <?php include("../Controller/TeacherFooter.php") ?>
+      <?php include("TeacherFooter.php") ?>
     </table>
 
   </body>

@@ -5,7 +5,7 @@
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
-    <?php include("../Controller/TeacherHeader.php") ?>
+    <?php include("TeacherHeader.php") ?>
       <tr>
          <tr>
             <td align="Left"><img height="80px" weight="80px" src="../Resources/Teacher.jpg" alt=""></td>
@@ -28,13 +28,13 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
-                    <li><a href="HomePage.html">Logout</a></li>
+                    <li><a href="HomePage.php">Logout</a></li>
                 </ul>
 
         </td>
         <td><h1>Welcome</h1></td>
       </tr>
-      <?php include("../Controller/TeacherFooter.php") ?>
+      <?php include("TeacherFooter.php") ?>
     </table>
 
   </body>

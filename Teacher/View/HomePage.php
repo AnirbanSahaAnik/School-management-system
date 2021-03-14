@@ -22,7 +22,7 @@
       <tr>
         <td align="center" height="150px" weight="150px" colspan="2"><h1>Welcome to Vai Vai School</h1></td>
       </tr>
-      <?php include("../Controller/TeacherFooter.php") ?>
+      <?php include("TeacherFooter.php") ?>
     </table>
 
   </body>
