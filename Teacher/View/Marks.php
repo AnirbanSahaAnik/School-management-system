@@ -5,18 +5,7 @@
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
-      <tr>
-         <td colspan="2">
-          <table width="100%">
-              <tr>
-                <td><img height="40px" weight="40px" src="../Resources/school_logo.png" alt=""></td>
-                <td align = "right">
-                    <a href="HomePage.html">Logout</a>
-                </td>
-              </tr>
-          </table>
-          </td>
-      </tr>
+    <?php include("../Controller/TeacherHeader.php") ?>
       <tr>
         <tr>
             <td align="Left"><img height="80px" weight="80px" src="../Resources/grades.svg" alt=""></td>
@@ -59,10 +48,7 @@
             </form>
             </fieldset>
         </td>
-      </tr>
-      <tr>
-        <td align="center" colspan="2">Copyright Ⓒ 2021</td>
-      </tr>
+        <?php include("../Controller/TeacherFooter.php") ?>
     </table>
 
   </body>

@@ -9,11 +9,11 @@
          <td>
           <table width="100%">
               <tr>
-                <td><img height="40px" weight="40px" src="logo.png" alt=""></td>
+                <td><img height="40px" weight="40px" src="../Resources/school_logo.png" alt=""></td>
                 <td align = "right">
-                    <a href="HomePage.html">Home</a>|
-                    <a href="LoginPage.html">Login</a>|
-                    <a href="Registration.html">Regestration</a>
+                    <a href="HomePage.php">Home</a>|
+                    <a href="LoginPage.php">Login</a>|
+                    <a href="Registration.php">Registration</a>
                 </td>
               </tr>
           </table>
@@ -22,9 +22,7 @@
       <tr>
         <td align="center" height="150px" weight="150px" colspan="2"><h1>Welcome to Vai Vai School</h1></td>
       </tr>
-      <tr>
-        <td align="center" colspan="2">Copyright Ⓒ 2017</td>
-      </tr>
+      <?php include("../Controller/TeacherFooter.php") ?>
     </table>
 
   </body>
