@@ -31,7 +31,7 @@
              <tr>
                 <td></td>
                 <td>
-                    <form method="post" action="LoginCheck.php"> 
+                    <form method="post" action="../Controller/LogCheck.php"> 
                         <fieldset width="5px">
                             <legend>LOGIN</legend>
         <form class="" action="" method="post">

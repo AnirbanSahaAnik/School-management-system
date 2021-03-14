@@ -31,7 +31,7 @@
              <tr>
                 <td></td>
                 <td>
-                    <form method="post" action="RegCheck.php"> 
+                    <form method="post" action="../Controller/RegCheck.php"> 
                         <fieldset width="5px">
                             <legend>REGISTRATION</legend>
                           <table width="100.7%" height="100px" align="center">
@@ -54,6 +54,16 @@
                                   <td width="30%" height="30px">ID</td>
                                   <td width="60%" height="30px">:<input type="text" name="ID" value=""></td>
                               </tr>
+
+                              <tr>
+                                <td width="30%" height="30px">Password</td>
+                                <td width="60%" height="30px">:<input type="password" name="password"></td>
+                             </tr>
+                    
+                            <tr>
+                                <td width="30%" height="30px">Confirm Password</td>
+                                <td width="60%" height="30px">:<input type="password" name="confirm"></td>
+                            </tr>
                            
                               <tr>
                                 <td width="30%" height="30px">

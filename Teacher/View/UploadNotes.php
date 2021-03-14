@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['flag']))
+	{
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +33,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="ViewProfile.php">Book History</a></li>
-                    <li><a href="HomePage.php">Logout</a></li>
+                    <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
         </td>
@@ -49,3 +56,12 @@
 
   </body>
 </html>
+
+
+<?php
+
+	}else{
+		header('location: LoginPage.php');
+	}
+
+?>

@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['flag']))
+	{
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +19,7 @@
             <td align="Left">
             <b>
               Logged in as<br><br>
-              <a href="ViewProfile.php">Username</a><br>
+              <a href="ViewProfile.php"><?php $userr = $_SESSION['current_user']; $name= $userr['name']; echo "$name"; ?></a><br>
               (Teacher)
             </b>
             </td>
@@ -28,7 +35,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="ViewProfile.php">Student Marks</a></li>
                     <li><a href="ViewProfile.php">Book History</a></li>
-                    <li><a href="HomePage.php">Logout</a></li>
+                    <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
         </td>
@@ -39,32 +46,32 @@
                <table>
                <tr>
                 <td>Name</td>
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $name= $userr['name']; echo "$name"; ?></td>
                 <td rowspan="4"><img height="60px" weight="60px" src="user.png" alt=""><br><a href="ProfilePic.php">Change</a></td>
                </tr>
                <tr>
                 <td>Email</td> 
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $email= $userr['email']; echo "$email"; ?></td>
                </tr>
                <tr>
                 <td>Mobile No.</td> 
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $mobile= $userr['mobile']; echo "$mobile"; ?></td>
                </tr>
                <tr>
                 <td>ID</td> 
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $ID= $userr['ID']; echo "$ID"; ?></td>
                </tr>
                <tr>
                 <td>Gender</td> 
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $gender= $userr['gender']; echo "$gender"; ?></td>
                </tr>
                <tr>
                 <td>Date of Birth</td> 
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $dob= $userr['dob']; echo "$dob"; ?>/<?php $userr = $_SESSION['current_user']; $dob1= $userr['dob1']; echo "$dob1"; ?>/<?php $userr = $_SESSION['current_user']; $dob2= $userr['dob2']; echo "$dob2"; ?></td>
                </tr>
                <tr>
                 <td>Present Address</td> 
-                <td>:</td>
+                <td>:<?php $userr = $_SESSION['current_user']; $address= $userr['address']; echo "$address"; ?></td>
                </tr>
                </table>
                 <hr>
@@ -78,3 +85,12 @@
 
   </body>
 </html>
+
+
+<?php
+
+	}else{
+		header('location: LoginPage.php');
+	}
+
+?>
