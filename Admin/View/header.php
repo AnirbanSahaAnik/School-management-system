@@ -38,7 +38,7 @@
               <td width="250px">
                 <center>
                   <h3>Login As</h3>
-                  <h2><?php  ?></h2>
+                  <h2><?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->name;  ?></h2>
                   <p>(Admin)</p>
                 </center>
                 <hr>
