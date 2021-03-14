@@ -19,10 +19,10 @@
       </tr>
       <tr>
         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Student.jpg" alt=""></td>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/Book.jpg" alt=""></td>
             <td align="Center">
             <b>
-              Student's Profile Information
+              Book Arrival List
             </b>
             </td>
           </tr>
@@ -43,48 +43,28 @@
         </td>
         <td>
             <fieldset>
-                <legend>STUDENT PROFILE</legend>
+                <legend>LIST OF BOOKS</legend>
             <form class="" action="" method="post">
-               <table>
+               <table border="1">
                <tr>
                 <td>Name</td>
-                <td>:</td>
+                <td>  Author</td>
+                <td>  Arrival Time</td>
                </tr>
                <tr>
-                <td>Email</td> 
-                <td>:</td>
+                <td>Let Us C</td> 
+                <td>Herbert Schildt</td>
+                <td>14/03/21</td>
                </tr>
                <tr>
-                <td>Mobile No.</td> 
-                <td>:</td>
+                <td>Let Us C++</td> 
+                <td>Herbert Schildt</td>
+                <td>14/03/21</td>
                </tr>
                <tr>
-                <td>ID</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Gender</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Date of Birth</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Present Address</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Class</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Section</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Roll No.</td> 
-                <td>:</td>
+                <td>Learn PHP</td> 
+                <td>Kowshik Chakraborty</td>
+                <td>14/03/21</td>
                </tr>
                </table>
             </form>

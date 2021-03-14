@@ -19,10 +19,10 @@
       </tr>
       <tr>
         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Student.jpg" alt=""></td>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/notice.jpg" alt=""></td>
             <td align="Center">
             <b>
-              Student's Profile Information
+              Notice Upload
             </b>
             </td>
           </tr>
@@ -43,50 +43,20 @@
         </td>
         <td>
             <fieldset>
-                <legend>STUDENT PROFILE</legend>
+                <legend>NOTICE</legend>
             <form class="" action="" method="post">
-               <table>
-               <tr>
-                <td>Name</td>
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Email</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Mobile No.</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>ID</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Gender</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Date of Birth</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Present Address</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Class</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Section</td> 
-                <td>:</td>
-               </tr>
-               <tr>
-                <td>Roll No.</td> 
-                <td>:</td>
-               </tr>
-               </table>
+            <table align="center">
+                        <tr>
+                          <td>
+                            <textarea name="name" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
+                          </td>
+                        </tr>
+                      </table>
+                      <hr>
+                      <center>
+                        <input type="submit" name="submit" value="Submit">
+                        <a href="ViewNotice.php">See Notice</a>
+                    </center>
             </form>
             </fieldset>
         </td>
