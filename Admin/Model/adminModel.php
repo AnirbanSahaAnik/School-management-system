@@ -2,7 +2,7 @@
 include_once('db.php');
 function insert($userinfo){
     $conn = getConnection();
-    $sql = "insert into exam values('', '{$userinfo['name']}', '{$userinfo['pass']}', '{$userinfo['mail']}')";
+    $sql = "insert into admin values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['password']}')";
     $row = mysqli_query($conn,$sql);
     if($row){
         return true;

@@ -1,6 +1,7 @@
 <?php
   session_start();
-  
+  include_once('../model/adminModel.php');
+
 	if(isset($_POST['signup'])){
 
 		$id = $_POST['id'];
@@ -16,19 +17,27 @@
 
 			if($password == $repass){
 
-				$users = [
+				$userinfo = [
               'id'=>$id,
 							'name'=>$name,
-							'password'=>$password,
-							'email'=> $email
+              'email'=> $email,
+							'password'=>$password
+
 						];
 
-				$data = json_encode($users);
-				$userData = fopen("../model/admin.json", "w");
-				fwrite($userData, $data);
-				fclose($userData);
+            $result = insert($userinfo);
+            if($result){
+                header('location: ../view/adminlogin.php');
+            }else{
+                echo "not insert";
+            }
 
-				header('location: ../view/adminlogin.php');
+				// $data = json_encode($users);
+				// $userData = fopen("../model/admin.json", "w");
+				// fwrite($userData, $data);
+				// fclose($userData);
+
+
 			}else{
 				echo "password & confirm password mismatch..";
 			}
