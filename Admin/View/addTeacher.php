@@ -52,7 +52,6 @@
                           <td>Date of Birth</td>
                           <td>:<input type="date" name="dob" value=""></td>
                         </tr>
-
                       </table>
                       <hr>
                       <center>
@@ -66,8 +65,4 @@
           </table>
         </td>
       </tr>
-
-
-
-
-      <?php include('footer.php'); ?>
+<?php include('footer.php'); ?>

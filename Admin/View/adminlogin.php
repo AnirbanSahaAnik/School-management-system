@@ -41,9 +41,9 @@
                     <input type="checkbox" name="" value=""> Remember Me <br>
                     <br>
                     <input type="submit" name="submit" value="LOGIN">
-                    <a href="ForgotPassword.php">Forgot Password?</a>
+                    <a href="ForgotPassword.php">FORGOT PASSWORD?</a>
                     <br>
-                    <a href="regester.php">Sgin Up</a>
+                    <a href="regester.php">SIGN UP</a>
                   </fieldset>
                 </form>
             </td>

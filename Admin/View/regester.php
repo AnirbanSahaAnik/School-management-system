@@ -52,11 +52,10 @@
                     </table>
                     <hr>
                     <center>
-                      <input type="submit" name="signup" value="SIGNUP">
+                      <input type="submit" name="signup" value="SIGN UP">
                       <input type="reset" name="reset" value="Reset">
-                      <a href="adminlogin.php">Sign In</a>
+                      <a href="adminlogin.php">SIGN IN</a>
                   </center>
-
 
                   </fieldset>
                 </form>
