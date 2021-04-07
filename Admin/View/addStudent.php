@@ -5,10 +5,9 @@
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
-                    <li><a href="editrequestStudent.php">Edit Request</a></li>
+                  <li><a href="editrequestStudent.php">Edit Request</a></li>
                   <li><a href="dashboard.php">Dashbord</a></li>
                   <li><a href="../Controller/logout.php">Logout</a></li>
-
                 </ul>
               </td>
 
@@ -31,7 +30,7 @@
                         </tr>
                         <tr>
                           <td>Id</td>
-                          <td>:<input type="text" name="username" value=""></td>
+                          <td>:<input type="text" name="id" value=""></td>
                         </tr>
                         <tr>
                           <td>Password</td>
@@ -39,7 +38,7 @@
                         </tr>
                         <tr>
                           <td>Confirm Password</td>
-                          <td>:<input type="password" name="confirm_password" value=""></td>
+                          <td>:<input type="password" name="repass" value=""></td>
                         </tr>
                         <tr>
                           <td>Gender</td>
@@ -55,7 +54,7 @@
                         </tr>
                         <tr>
                           <td>Present Address</td>
-                          <td>:<input type="text" name="paddress" value=""></td>
+                          <td>:<input type="text" name="p_address" value=""></td>
                         </tr>
                         <tr>
                           <td>Class</td>
