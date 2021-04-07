@@ -10,11 +10,53 @@
 		$password = $_POST['password'];
 		$repass = $_POST['repass'];
 
+    // function NameValidate($nameVal)
+    //                     {
+    //                           if(isset($_POST['name']))
+    //                           {
+    //                               $name = $_POST['name'];
+    //                               $nameVal = false;
+    //                               // $smallLetters = false;
+    //                               // $numbers = false;
+    //                               // $underScore = false;
+    //                               // $period = false;
+    //                               // $dash = false;
+    //                               // $len = false;
+    //
+    //                               for($i=0;$i<strlen($name);$i++)
+    //                               {
+    //
+    //                                   if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57) || ($name[$i] == '.') || ($name[$i] == '-') || ($name[$i] == '_') || ($name[$i] > 2))
+    //                                   {
+    //                                       $nameVal = true;
+    //                                       // $capitalLetters = true;
+    //                                       // $smallLetters = true;
+    //                                       // $numbers = true;
+    //                                       // $period = true;
+    //                                       // $dash = true;
+    //                                       // $underScore = true;
+    //                                       // $len = true;
+    //
+    //
+    //                                   }
+    //                                   else{
+    //                                       echo "Username may contain alphanumeric characters, period, dash or underscore only ";
+    //                                       return;
+    //                                   }
+    //                               }
+    //
+    //                               if(strlen($name)<2)
+    //                             {
+    //                               echo "User name is not valid. ";
+    //                             }
+    //
+    //                           }
+    //                       }
 
 		if($id == "" || $name == "" || $email == "" || $password == "" || $repass == ""){
 			echo "null submission...";
-		}else{
-
+		}
+    else{
 			if($password == $repass){
 
 				$userinfo = [

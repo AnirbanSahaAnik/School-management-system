@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  include_once('../model/librarianModel.php');
 	if(isset($_POST['submit'])){
 
 
@@ -20,7 +20,7 @@
 
 			if($password == $repass){
 
-				$users = [
+				$userinfo = [
 
 							'name'=>$name,
               'mobile'=>$mobile,
@@ -31,13 +31,19 @@
               'dob'=>$dob
 
 						];
+            $result = insert($userinfo);
+            if($result){
+                header('location: ../view/addLibrarian.php');
+            }else{
+                echo "not insert";
+            }
 
-				$data = json_encode($users);
-				$userData = fopen("../model/librarian.json", "w");
-				fwrite($userData, $data);
-				fclose($userData);
-
-				header('location: ../view/addLibrarian.php');
+				// $data = json_encode($users);
+				// $userData = fopen("../model/librarian.json", "w");
+				// fwrite($userData, $data);
+				// fclose($userData);
+        //
+				// header('location: ../view/addLibrarian.php');
 			}else{
 				echo "password & confirm password mismatch..";
 			}

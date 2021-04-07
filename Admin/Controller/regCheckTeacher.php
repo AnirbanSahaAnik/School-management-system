@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  include_once('../model/teacherModel.php');
 	if(isset($_POST['submit'])){
 
 
@@ -20,7 +20,7 @@
 
 			if($password == $repass){
 
-				$users = [
+				$userinfo = [
 
 							'name'=>$name,
               'mobile'=>$mobile,
@@ -32,12 +32,18 @@
 
 						];
 
-				$data = json_encode($users);
-				$userData = fopen("../model/teacher.json", "w");
-				fwrite($userData, $data);
-				fclose($userData);
-
-				header('location: ../view/addTeacher.php');
+            $result = insert($userinfo);
+            if($result){
+                header('location: ../view/addTeacher.php');
+            }else{
+                echo "not insert";
+            }
+				// $data = json_encode($users);
+				// $userData = fopen("../model/teacher.json", "w");
+				// fwrite($userData, $data);
+				// fclose($userData);
+        //
+				// header('location: ../view/addTeacher.php');
 			}else{
 				echo "password & confirm password mismatch..";
 			}

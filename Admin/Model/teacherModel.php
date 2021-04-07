@@ -2,7 +2,7 @@
 include_once('db.php');
 function insert($userinfo){
     $conn = getConnection();
-    $sql = "insert into admin values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['password']}')";
+    $sql = "insert into teacher values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}', '{$userinfo['password']}')";
     $row = mysqli_query($conn,$sql);
     if($row){
         return true;
@@ -14,7 +14,7 @@ function insert($userinfo){
 }
 function validateUser($id, $password){
     $conn = getConnection();
-    $sql = "select * from admin where id = '$id' and password = '$password'";
+    $sql = "select * from teacher where id = '$id' and password = '$password'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     if(count($row) > 0){
@@ -27,7 +27,7 @@ function validateUser($id, $password){
 }
 function allUserList(){
     $conn = getConnection();
-    $sql = "select * from admin";
+    $sql = "select * from teacher";
     $result = mysqli_query($conn, $sql);
     $users =[];
 
@@ -41,7 +41,7 @@ function allUserList(){
 }
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
-    $sql = "update admin set id='{$userinfo['id']}', name='{$userinfo['name']}' ,email='{$userinfo['email']}', password='{$userinfo['password']}'   where id='{$id}'";
+    $sql = "update teacher set id='{$userinfo['id']}', name='{$userinfo['name']}' ,email='{$userinfo['email']}', password='{$userinfo['password']}'   where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{
@@ -55,7 +55,7 @@ function updateMyInfo($id, $userinfo){
 }
 function deleteUserbyid($id){
     $conn = getConnection();
-    $sql = "delete from admin where id='$id'";
+    $sql = "delete from teacher where id='$id'";
     $result = mysqli_query($conn,$sql);
     if($result){
         header('location: ../view/userlist.php?your info is deleted');
@@ -68,7 +68,7 @@ function deleteUserbyid($id){
 }
 function getUserbyid($id){
     $conn = getConnection();
-    $sql = "select * from admin where id='$id'";
+    $sql = "select * from teacher where id='$id'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     return $row;

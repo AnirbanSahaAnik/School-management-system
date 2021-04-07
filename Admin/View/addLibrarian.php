@@ -12,7 +12,7 @@
               </td>
 
               <td>
-                <form  class="" action="regCheckLibrarian.php" method="post">
+                <form  class="" action="../Controller/regCheckLibrarian.php" method="post">
                   <fieldset >
                     <legend>REGESTRATION</legend>
                       <table align="center">
