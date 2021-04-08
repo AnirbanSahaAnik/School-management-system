@@ -41,7 +41,7 @@ function allUserList(){
 }
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
-    $sql = "update teacher set id='{$userinfo['id']}', name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}',  where id='{$id}'";
+    $sql = "update teacher set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}'  where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{

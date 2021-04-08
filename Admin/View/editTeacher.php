@@ -34,7 +34,7 @@
                       </tr>
                       <tr>
                         <td>Id</td>
-                        <td>:<input type="text" name="id" value="<?php echo $updatemyinfo['id']; ?>"></td>
+                        <td>:<input type="text" name="id" disabled value="<?php echo $updatemyinfo['id']; ?>"></td>
                       </tr>
 
                       <tr>
@@ -58,13 +58,7 @@
                 </fieldset>
 
 
-                    <!-- <legend>Update Information</legend>
-                    Name <input type="text" name="name" value="<?php echo $updatemyinfo['name']; ?>">
-                    pass <input type="password" name="pass" value="<?php echo $updatemyinfo['pass']; ?>">
-                    mail <input type="email" name="mail" value="<?php echo $updatemyinfo['mail']; ?>">
-                    <input type="submit" name="update" value="Update">
-                </fieldset>
-                <a href="dashboard.php">Back to dashboard</a> -->
+
 
 
 
