@@ -2,7 +2,7 @@
 	$title= "view profile";
 	include('header.php');
 	include_once('../model/adminModel.php');
-	$viemyinfo = getUserbyid($_SESSION['id']);
+	$viemyinfo = getUserbyid($_COOKIE['id']);
 
 ?>
                 <ul>

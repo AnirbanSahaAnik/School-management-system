@@ -2,7 +2,7 @@
 	$title= "Edit Profile";
 	include('header.php');
 	include_once('../model/adminModel.php');
-	$viemyinfo = getUserbyid($_SESSION['id']);
+	$viemyinfo = getUserbyid($_COOKIE['id']);
 ?>
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>

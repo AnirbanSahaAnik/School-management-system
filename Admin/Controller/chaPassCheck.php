@@ -16,7 +16,7 @@
 		else
 		{
 			session_start();
-			$User = getUserById($_SESSION['id']);
+			$User = getUserById($_COOKIE['id']);
 			$id = $User['id'];
 			$password = $User['password'];
 			$newPass = $_POST['npass'];

@@ -20,6 +20,7 @@
 			if($status){
 
 					$_SESSION['id'] = $id;
+					setcookie('id', $id, time()+3600, '/');
 					//$_SESSION['password'] = $password;
 					$_SESSION['flag'] = true;
 
