@@ -1,6 +1,8 @@
 <?php
 	$title= "View Sturdnt";
 	include('header.php');
+	include_once('../model/studentModel.php');
+	$UsersList = allUserList();
 ?>
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
