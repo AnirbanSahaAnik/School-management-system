@@ -1,35 +1,23 @@
 <?php
-
-
-	if(isset($_POST['submit'])){
-    // $Username = json_decode(file_get_contents('../Model/admin.json'));
-
-    $id = $_POST['id'];
+	session_start();
+	require_once('../model/adminModel.php');
+	if(isset($_POST['submit']))
+	{
+    $id = $_SESSION['id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $Username->password;
 
 
-
-		if($id == "" || $name == "" || $email == "" ){
-			echo "Please fillup all";
-		}else{
-
-				$users = [
-              'id'=>$id,
-							'name'=>$name,
-							'password'=>$password,
-							'email'=> $email
-						];
-
-				// $data = json_encode($users);
-				// $userData = fopen("../model/admin.json", "w");
-				// fwrite($userData, $data);
-				// fclose($userData);
-
-				header('location: ../view/EditProfile.php');
-
+		$userinfo = array('id' => $id,'name' => $name, 'email' => $email);
+		$check = updateMyInfo($id, $userinfo);
+		if($check)
+		{
+			echo "info updated!";
+			header('location: ../view/EditProfile.php');
 		}
-
+		else
+		{
+			echo "Can't update the Information!";
+		}
 	}
 ?>

@@ -1,6 +1,8 @@
 <?php
 	$title= "Edit Profile";
 	include('header.php');
+	include_once('../model/adminModel.php');
+	$viemyinfo = getUserbyid($_SESSION['id']);
 ?>
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
@@ -16,15 +18,15 @@
 								<table>
 									<tr>
 										<td>ID</td>
-										<td>: <input type="text" name="id" value="<?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->id;  ?>"></td>
+										<td>: <input type="text" name="id" disabled value="<?php echo $viemyinfo['id']; ?>"></td>
 									</tr>
 									<tr>
 										<td>Name</td>
-										<td>: <input type="text" name="name" value="<?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->name;  ?>"></td>
+										<td>: <input type="text" name="name" value="<?php echo $viemyinfo['name']; ?>"></td>
 									</tr>
 									<tr>
 										<td>Email</td>
-										<td>: <input type="email" name="email" value="<?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->email;  ?>"></td>
+										<td>: <input type="email" name="email" value="<?php echo $viemyinfo['email']; ?>"></td>
 									</tr>
 
 								</table>

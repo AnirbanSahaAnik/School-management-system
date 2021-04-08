@@ -41,7 +41,7 @@ function allUserList(){
 }
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
-    $sql = "update admin set id='{$userinfo['id']}', name='{$userinfo['name']}' ,email='{$userinfo['email']}', password='{$userinfo['password']}'   where id='{$id}'";
+    $sql = "update admin set id='{$userinfo['id']}', name='{$userinfo['name']}' ,email='{$userinfo['email']}'   where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{
@@ -73,6 +73,15 @@ function getUserbyid($id){
     $row = mysqli_fetch_assoc($result);
     return $row;
 
+}
+function changePassword($id, $newPass){
+  $conn = getConnection();
+  $sql = "update admin set password='{$newPass}' where id='{$id}'";
+  if(mysqli_query($conn, $sql)){
+    return true;
+  }else{
+    return false;
+  }
 }
 function forgetpass(){
 
