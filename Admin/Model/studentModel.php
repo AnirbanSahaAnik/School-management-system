@@ -2,7 +2,8 @@
 include_once('db.php');
 function insert($userinfo){
     $conn = getConnection();
-    $sql = "insert into student values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}', '{$userinfo['class']}', '{$userinfo['section']}', '{$userinfo['roll']}', '{$userinfo['p_address']}', '{$userinfo['password']}')";
+    $sql = "insert into student values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}', '{$userinfo['class']}', '{$userinfo['section']}',
+    '{$userinfo['roll']}', '{$userinfo['p_address']}', '{$userinfo['password']}')";
     $row = mysqli_query($conn,$sql);
     if($row){
         return true;
@@ -40,7 +41,7 @@ function allUserList(){
 }
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
-    $sql = "update student set id='{$userinfo['id']}', name='{$userinfo['name']}' ,email='{$userinfo['email']}', password='{$userinfo['password']}'   where id='{$id}'";
+    $sql = " update student set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}',p_address='{$userinfo['p_address']}',class='{$userinfo['class']}',section='{$userinfo['section']}',roll='{$userinfo['roll']}'   where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{

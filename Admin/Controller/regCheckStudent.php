@@ -37,7 +37,6 @@
               'p_address'=> $p_address,
               'class'=> $class,
               'section'=> $section,
-              'dob'=> $dob,
               'roll'=> $roll
 
 						];

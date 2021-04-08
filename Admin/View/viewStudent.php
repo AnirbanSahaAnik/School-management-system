@@ -16,99 +16,39 @@
 
               <td>
                 <center><h2>Student list</h2></center>
+								<?php
+								echo "<table border = 1 width='100%' cellspacing = 0  >
+								<tr align = 'center'>
+										<td>Id</td>
+										<td>Name</td>
+										<td>Email</td>
+										<td>Mobile</td>
+										<td>Gender</td>
+										<td>DOB</td>
+										<td>Present Address</td>
+										<td>Class</td>
+										<td>Section</td>
+										<td>Roll</td>
+										<td>Action</td>
+								</tr>";
+								for($i = 0; $i<count($UsersList); $i++){
+										echo "<tr align = 'center'>
+										<td>{$UsersList[$i]['id']}</td>
+										<td>{$UsersList[$i]['name']}</td>
+										<td>{$UsersList[$i]['email']}</td>
+										<td>{$UsersList[$i]['mobile']}</td>
+										<td>{$UsersList[$i]['gender']}</td>
+										<td>{$UsersList[$i]['dob']}</td>
+										<td>{$UsersList[$i]['p_address']}</td>
+										<td>{$UsersList[$i]['class']}</td>
+										<td>{$UsersList[$i]['section']}</td>
+										<td>{$UsersList[$i]['roll']}</td>
+										<td> <a href='editStudent.php?id={$UsersList[$i]['id']}'> Edit </a> | <a href='deleteStudent.php?id={$UsersList[$i]['id']}'> Delete </a>  </td>
+								</tr>";
+								}
+								echo "</table>";
+								?>
 
-                <table width="100%" border="1">
-                  <tr align="center" >
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>Class</td>
-                    <td>section</td>
-                    <td>Roll</td>
-                    <td>Action</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td>4001</td>
-                    <td>a</td>
-                    <td>Six</td>
-                    <td>A</td>
-                    <td>1</td>
-                    <td>
-            					<a href="editStudent.php?id=1">EDIT</a> |
-            					<a href="Controller/deleteStudent.php?id=1">DELETE</a> |
-                      <a href="Controller/blockStudent.php?id=1">BLOCK</a>
-            				</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td>4002</td>
-                    <td>b</td>
-                    <td>Six</td>
-                    <td>B</td>
-                    <td>2</td>
-                    <td>
-            					<a href="editStudent.php?id=2">EDIT</a> |
-            					<a href="Controller/deleteStudent.php?id=2">DELETE</a> |
-                      <a href="Controller/blockStudent.php?id=2">BLOCK</a>
-            				</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td>4101</td>
-                    <td>ab</td>
-                    <td>Seven</td>
-                    <td>A</td>
-                    <td>1</td>
-                    <td>
-            					<a href="editStudent.php?id=3">EDIT</a> |
-            					<a href="Controller/deleteStudent.php?id=3">DELETE</a> |
-                      <a href="Controller/blockStudent.php?id=3">BLOCK</a>
-            				</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td>4102</td>
-                    <td>bc</td>
-                    <td>Seven</td>
-                    <td>B</td>
-                    <td>2</td>
-                    <td>
-            					<a href="editStudent.php?id=4">EDIT</a> |
-            					<a href="Controller/deleteStudent.php?id=4">DELETE</a> |
-                      <a href="Controller/blockStudent.php?id=4">BLOCK</a>
-            				</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td>4201</td>
-                    <td>abc</td>
-                    <td>Eight</td>
-                    <td>A</td>
-                    <td>1</td>
-                    <td>
-            					<a href="editStudent.php?id=5">EDIT</a> |
-            					<a href="Controller/deleteStudent.php?id=5">DELETE</a> |
-                      <a href="Controller/blockStudent.php?id=5">BLOCK</a>
-            				</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td>4202</td>
-                    <td>def</td>
-                    <td>Eight</td>
-                    <td>B</td>
-                    <td>2</td>
-                    <td>
-            					<a href="editStudent.php?id=6">EDIT</a> |
-            					<a href="Controller/deleteStudent.php?id=6">DELETE</a> |
-                      <a href="Controller/blockStudent.php?id=6">BLOCK</a>
-            				</td>
-                  </tr>
-
-                  <tr align="center">
-                    <td colspan="6"><a href="#">See More</a></td>
-                  </tr>
-                </table>
               </td>
             </tr>
           </table>
