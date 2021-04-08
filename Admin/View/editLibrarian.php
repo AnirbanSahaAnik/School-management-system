@@ -21,6 +21,10 @@
                   <legend>Update Information</legend>
                     <table align="center">
                       <tr>
+                        <td>Id</td>
+                        <td>:<input type="text" name="id" disabled value="<?php echo $updatemyinfo['id']; ?>"></td>
+                      </tr>
+                      <tr>
                         <td>Name</td>
                         <td>:<input type="text" name="name" value="<?php echo $updatemyinfo['name']; ?>" placeholder="Enter Full Name"></td>
                       </tr>
@@ -32,10 +36,7 @@
                         <td>Mobile No</td>
                         <td>:<input type="number" name="mobile" value="<?php echo $updatemyinfo['mobile']; ?>"></td>
                       </tr>
-                      <tr>
-                        <td>Id</td>
-                        <td>:<input type="text" name="id" disabled value="<?php echo $updatemyinfo['id']; ?>"></td>
-                      </tr>
+
 
                       <tr>
                         <td>Gender</td>
