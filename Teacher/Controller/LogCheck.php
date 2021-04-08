@@ -1,116 +1,85 @@
 <?php
 	session_start();
+	require_once('../Model/DatabaseConnection.php');
 
 	if(isset($_POST['submit'])){
 
-		$username = $_POST['name'];
+		$Id = $_POST['ID'];
 		$password = $_POST['password'];
 
-		if($username == "" || $password == ""){
+		if($Id == "" || $password == ""){
 			echo "null submission...";
 		}else{
-			$userr = $_SESSION['current_user'];
 
-			if($username == $userr['name'] && $password == $userr['password']){
-				$_SESSION['flag'] = true;
-				header('location: ../View/TeacherDashboard.php');
-			}else{
-				echo "invalid user";
-			}
+                 
+			if(isset($_POST['ID']))
+                            {
+
+                                $ID = $_POST['ID'];
+                                $password = $_POST['password'];
+                                $Validation = false;
+
+
+
+
+								if(strlen($password) > 7)
+                                {
+
+                                    for($j=0;$j<strlen($password);$j++)
+                                    {
+                                        
+                                       
+                                        if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%'))
+                                        {   
+											
+											if(strlen($ID) == 3)
+                                           {
+                                        
+                                            $Validation = true;
+
+											$status = validateUser($Id, $password);
+											if($status){
+								
+												$_SESSION['flag'] = true;
+												$_SESSION['id'] = $Id;
+												
+												$user = getUserById($Id);
+												
+												header('location: ../View/TeacherDashboard.php');
+								
+											}else{
+												echo "invalid user";
+											}
+                                            
+                                        
+                                       
+                                    
+
+                                         }else{
+                                              echo "ID not valid (must contain 03 digits and integer number only) ";
+                                         }
+                                            
+                                        }else{
+											echo "Password not valid (must contain a special character) ";
+										}
+                                       
+                                    }
+
+                                }else{
+                                    echo "Password not valid (length should be greater than 7) ";
+                                }
+
+
+
+                            }
+
+
+
+
+
+
+			
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        if(isset($_POST['name']) && isset($_POST['password']))
-        {
-            $username = $_POST['name'];
-            $password = $_POST['password'];
-            
-            $capitalLetters = false;
-            $smallLetters = false;
-            $numbers = false;
-            $underScore = false;
-            $period = false;
-            $dash = false;
-    
-            for($i=0;$i<strlen($username);$i++)
-            {
-                
-                if((ord($username[$i]) >= 97 && ord($username[$i]) <= 122) || (ord($username[$i]) >= 65 && ord($username[$i]) <= 90) || (ord($username[$i]) >= 48 && ord($username[$i]) <= 57) || ($username[$i] == '.') || ($username[$i] == '-') || ($username[$i] == '_'))
-                {
-                    $capitalLetters = true;
-                    $smallLetters = true;
-                    $numbers = true;
-                    $period = true;
-                    $dash = true;
-                    $underScore = true;
-                }
-                else{
-                    echo "Username must contain alphanumeric characters, period, dash or underscore only";
-                    return;
-                }
-
-            }
-            if(strlen($username)<2)
-              {
-                echo "User name is not valid.";
-              }
-            else{
-                  true;
-            }
-
-            if(strlen($password)<8)
-              {
-                echo "Password is not strong.";
-              }
-            else{
-                  true;
-            }
-
-            
-            $Ch=false;
-            
-            for($j=0;$j<strlen($password);$j++)
-            {
-                if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%'))
-                {
-                  
-                    $Ch=true;
-                    break;
-                }
-                
-
-            }
-
-            if($Ch==false){
-                echo "Password is not vaild.";
-                return;
-            }
-            
-
-        }
-
-
-
-
-
-
-
 
 	}
 ?>

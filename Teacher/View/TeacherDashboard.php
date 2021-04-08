@@ -19,7 +19,7 @@
             <td align="Left">
             <b>
               Logged in as<br><br>
-              <a href="ViewProfile.php"><?php $userr = $_SESSION['current_user']; $name= $userr['name']; echo "$name"; ?></a><br>
+              <a href="ViewProfile.php"><?php $userr = $_SESSION['current_user']; $name= $userr['uname']; echo "$name"; ?></a><br>
               (Teacher)
             </b>
             </td>

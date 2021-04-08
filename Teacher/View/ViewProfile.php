@@ -19,7 +19,7 @@
             <td align="Left">
             <b>
               Logged in as<br><br>
-              <a href="ViewProfile.php"><?php $userr = $_SESSION['current_user']; $name= $userr['name']; echo "$name"; ?></a><br>
+              <a href="ViewProfile.php"><?php $userr = $_SESSION['current_user']; $name= $userr['uname']; echo "$name"; ?></a><br>
               (Teacher)
             </b>
             </td>
@@ -46,7 +46,7 @@
                <table>
                <tr>
                 <td>Name</td>
-                <td>:<?php $userr = $_SESSION['current_user']; $name= $userr['name']; echo "$name"; ?></td>
+                <td>:<?php $userr = $_SESSION['current_user']; $name= $userr['uname']; echo "$name"; ?></td>
                 <td rowspan="4"><img height="60px" weight="60px" src="user.png" alt=""><br><a href="ProfilePic.php">Change</a></td>
                </tr>
                <tr>

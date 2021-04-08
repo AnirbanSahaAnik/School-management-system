@@ -37,7 +37,7 @@
                           <table width="100.7%" height="100px" align="center">
                               <tr>
                                   <td width="30%" height="30px">Name</td>
-                                  <td width="60%" height="30px">:<input type="text" name="name" value=""></td>
+                                  <td width="60%" height="30px">:<input type="text" name="uname" value=""></td>
                               </tr>
                              
                               <tr>
@@ -47,12 +47,12 @@
 
                              <tr>
                                   <td width="30%" height="30px">Mobile No.</td>
-                                  <td width="60%" height="30px">:<input type="text" name="mobile" value=""></td>
+                                  <td width="60%" height="30px">:<input type="number" name="mobile" value=""></td>
                               </tr>
 
                               <tr>
                                   <td width="30%" height="30px">ID</td>
-                                  <td width="60%" height="30px">:<input type="text" name="ID" value=""></td>
+                                  <td width="60%" height="30px">:<input type="number" name="ID" value=""></td>
                               </tr>
 
                               <tr>
@@ -66,7 +66,7 @@
                             </tr>
                            
                               <tr>
-                                <td width="30%" height="30px">
+                                <td colspan="2">
                                 <fieldset>
                                 <legend>Gender</legend>
                                 <input type="radio" name="gender" value="Male">Male
@@ -77,20 +77,14 @@
                             </tr>
                             
                             <tr>
-                                <td width="79%">
+                                <td colspan="2">
                                 <fieldset>
                                 <legend>Date of Birth</legend>
-                                <input type="text" name="dob" value=""> / <input type="text" name="dob1" value=""> / <input type="text" name="dob2" value="">(dd/mm/yyyy)
+                                <input type="date" name="dob" value="">
                                 </fieldset>
                                 </td>
                             </tr>
-                             <tr>
-                                  <td width="30%" height="30px">Present Address</td>
-                                  <td width="60%" height="30px">:<input type="text" name="address" value=""></td>
-                              </tr>
-                            <tr>
-                                <td><hr></td>
-                            </tr>
+                             
                             <tr>
                                 <td height="30px" align="center" colspan="3"><input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset"></td>
                             </tr>

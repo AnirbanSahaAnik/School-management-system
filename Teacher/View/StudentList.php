@@ -41,92 +41,18 @@
             <fieldset>
                 <legend>STUDENT LIST</legend>
             <form class="" action="" method="post">
-               <table border="1">
-               <tr>
-                <td>Name</td>
-                <td>Email</td>
-                <td>Mobile No.</td>
-                <td>ID</td>
-                <td>Gender</td>
-                <td>Date of Birth</td>
-                <td>Present Address</td>
-                <td>Class</td>
-                <td>Section</td>
-                <td>Roll</td>
-               </tr>
-               <tr>
-                <td><a href="StudentProfile.php">Kowshik</a></td>
-                <td>kowshikchakraborty6@gmail.com</td>
-                <td>01764199181</td>
-                <td>4</td>
-                <td>Male</td>
-                <td>09/08/2010</td>
-                <td>Dhaka,Bangladesh</td>
-                <td>Seven</td>
-                <td>A</td>
-                <td>10</td>
-               </tr>
-               <tr>
-                <td><a href="StudentProfile.php">Anirban</a></td> 
-                <td>anirban12@gmail.com</td>
-                <td>01764198121</td>
-                <td>5</td>
-                <td>Male</td>
-                <td>10/07/2010</td>
-                <td>Dhaka,Bangladesh</td>
-                <td>Seven</td>
-                <td>A</td>
-                <td>12</td>
-               </tr>
-               <tr>
-                <td><a href="StudentProfile.php">Kader</a></td> 
-                <td>kader2@gmail.com</td>
-                <td>01765198182</td>
-                <td>6</td>
-                <td>Male</td>
-                <td>19/06/2009</td>
-                <td>Dhaka,Bangladesh</td>
-                <td>Seven</td>
-                <td>A</td>
-                <td>15</td>
-               </tr>
-               <tr>
-                <td><a href="StudentProfile.php">Bishowjit</a></td> 
-                <td>bishowjit7@gmail.com</td>
-                <td>01965197189</td>
-                <td>7</td>
-                <td>Male</td>
-                <td>10/08/2009</td>
-                <td>Dhaka,Bangladesh</td>
-                <td>Seven</td>
-                <td>A</td>
-                <td>12</td>
-               </tr>
-               <tr>
-                <td><a href="StudentProfile.php">Alex</a></td>
-                <td>alex@gmail.com</td>
-                <td>01564799189</td>
-                <td>8</td>
-                <td>Male</td>
-                <td>09/08/2011</td>
-                <td>Dhaka,Bangladesh</td>
-                <td>Six</td> 
-                <td>B</td>
-                <td>18</td>
-               </tr>
-               <tr>
-                <td><a href="StudentProfile.php">Bob</a></td> 
-                <td>bob@gmail.com</td>
-                <td>01865179151</td>
-                <td>9</td>
-                <td>Male</td>
-                <td>09/08/2009</td>
-                <td>Dhaka,Bangladesh</td>
-                <td>Eight</td>
-                <td>C</td>
-                <td>10</td>
-               </tr>
-               </table>
+
+                <?php
+                  
+                  require_once('../Model/DatabaseConnection.php');
+
+                  getAllUsers();
+
+
+                ?>
+
+               
+               
             </form>
             </fieldset>
         </td>

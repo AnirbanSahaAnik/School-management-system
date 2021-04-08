@@ -37,8 +37,8 @@
         <form class="" action="" method="post">
            <table>
            <tr>
-            <td>Name:</td> 
-            <td><input type="text" name="name" value=""></td>
+            <td>ID:</td> 
+            <td><input type="text" name="ID" value=""></td>
            </tr>
            <tr>
             <td>Password:</td> 
