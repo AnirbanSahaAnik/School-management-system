@@ -35,13 +35,13 @@
 								    <td>{$UsersList[$i]['mobile']}</td>
 										<td>{$UsersList[$i]['gender']}</td>
 										<td>{$UsersList[$i]['dob']}</td>
-								    <td> <a href='editTeacher.php?id={$UsersList[$i]['id']}'> Edit </a> | <a href='deleteTeacher.php?id={$UsersList[$i]['id']}'> Delete </a> | <a href='blockTeacher.php?id={$UsersList[$i]['id']}'> Block</a> </td>
+								    <td> <a href='editTeacher.php?id={$UsersList[$i]['id']}'> Edit </a> | <a href='deleteTeacher.php?id={$UsersList[$i]['id']}'> Delete </a>  </td>
 								</tr>";
 								}
 								echo "</table>";
 								?>
 
-              
+
               </td>
             </tr>
           </table>

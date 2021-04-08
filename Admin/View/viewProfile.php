@@ -1,6 +1,9 @@
 <?php
 	$title= "view profile";
 	include('header.php');
+	include_once('../model/adminModel.php');
+	$viemyinfo = getUserbyid($_SESSION['id']);
+
 ?>
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
@@ -12,28 +15,31 @@
               </td>
 
               <td>
-								<table>
-									<tr>
-										<td>ID</td>
-										<td>: <?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->id;  ?></td>
-									</tr>
-									<tr>
-										<td>Name</td>
-										<td>: <?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->name;  ?></td>
-									</tr>
-									<tr>
-										<td>Email</td>
-										<td>: <?php $Username = json_decode(file_get_contents('../Model/admin.json')); echo $Username->email;  ?></td>
-									</tr>
-								</table>
-								<hr>
-								<br>
-								<a href="EditProfile.php">Edit Profile</a>
+								<fieldset>
+                  <legend>View Profile Information</legend>
+										<table>
+											<tr>
+												<td>ID</td>
+												<td>: <?php echo $viemyinfo['id']; ?></td>
+											</tr>
+											<tr>
+												<td>Name</td>
+												<td>: <?php echo $viemyinfo['name']; ?></td>
+											</tr>
+											<tr>
+												<td>Email</td>
+												<td>: <?php echo $viemyinfo['email']; ?></td>
+											</tr>
+										</table>
+										<hr>
+										<br>
+										<a href="EditProfile.php">Edit Profile</a>
 
 
-              </td>
-            </tr>
-          </table>
+		              </td>
+		            </tr>
+		          </table>
+						</fieldset>
         </td>
       </tr>
 

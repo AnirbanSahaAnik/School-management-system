@@ -58,11 +58,11 @@ function deleteUserbyid($id){
     $sql = "delete from teacher where id='$id'";
     $result = mysqli_query($conn,$sql);
     if($result){
-        header('location: ../view/userlist.php?your info is deleted');
+        header('location: ../view/viewTeacher.php?your info is deleted');
     }
     else
     {
-        header('location: ../view/userlist.php?Not deleted your info');
+        header('location: ../view/viewTeacher.php?Not deleted your info');
     }
 
 }
