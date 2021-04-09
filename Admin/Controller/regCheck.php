@@ -10,76 +10,54 @@
 		$password = $_POST['password'];
 		$repass = $_POST['repass'];
 
-    // function NameValidate($nameVal)
-    //                     {
-    //                           if(isset($_POST['name']))
-    //                           {
-    //                               $name = $_POST['name'];
-    //                               $nameVal = false;
-    //                               // $smallLetters = false;
-    //                               // $numbers = false;
-    //                               // $underScore = false;
-    //                               // $period = false;
-    //                               // $dash = false;
-    //                               // $len = false;
-    //
-    //                               for($i=0;$i<strlen($name);$i++)
-    //                               {
-    //
-    //                                   if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57) || ($name[$i] == '.') || ($name[$i] == '-') || ($name[$i] == '_') || ($name[$i] > 2))
-    //                                   {
-    //                                       $nameVal = true;
-    //                                       // $capitalLetters = true;
-    //                                       // $smallLetters = true;
-    //                                       // $numbers = true;
-    //                                       // $period = true;
-    //                                       // $dash = true;
-    //                                       // $underScore = true;
-    //                                       // $len = true;
-    //
-    //
-    //                                   }
-    //                                   else{
-    //                                       echo "Username may contain alphanumeric characters, period, dash or underscore only ";
-    //                                       return;
-    //                                   }
-    //                               }
-    //
-    //                               if(strlen($name)<2)
-    //                             {
-    //                               echo "User name is not valid. ";
-    //                             }
-    //
-    //                           }
-    //                       }
 
 		if($id == "" || $name == "" || $email == "" || $password == "" || $repass == ""){
 			echo "null submission...";
 		}
     else{
 			if($password == $repass){
+        if(strlen($id) == 4){
+            if(strlen($password) > 7){
+              for($j=0; $j<strlen($password); $j++){
+                if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%')){
+                  for($i=0; $i<strlen($name); $i++){
+                    if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90)
+                    || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57)){
+                      if(strlen($name) > 2){
 
-				$userinfo = [
-              'id'=>$id,
-							'name'=>$name,
-              'email'=> $email,
-							'password'=>$password
+                				$userinfo = [
+                              'id'=>$id,
+                							'name'=>$name,
+                              'email'=> $email,
+                							'password'=>$password
 
-						];
+                						];
 
-            $result = insert($userinfo);
-            if($result){
-                header('location: ../view/adminlogin.php');
-            }else{
-                echo "not insert";
+                            $result = insert($userinfo);
+                            if($result){
+                                header('location: ../view/adminlogin.php');
+                            }else{
+                                echo "not insert";
+                            }
+
+                      }else {
+                        echo "Name length should be greater than 2";
+                      }
+                    }else {
+                      echo "Name contain only alphanumeric characters";
+                    }
+                  }
+
+                }else {
+                  echo "Password must contain a special character";
+                }
+              }
+            }else {
+              echo "Password length should be greater than 7";
             }
-
-				// $data = json_encode($users);
-				// $userData = fopen("../model/admin.json", "w");
-				// fwrite($userData, $data);
-				// fclose($userData);
-
-
+        }else {
+          echo "Id must contain 04 digits and integer number only";
+        }
 			}else{
 				echo "password & confirm password mismatch..";
 			}
