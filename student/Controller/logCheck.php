@@ -1,6 +1,8 @@
 <?php
-	$myfile = fopen('../Model/student.json', 'r');
-	$data = fread($myfile, filesize('../Model/student.json'));
+
+	include_once('../model/DatabaseConnection.php');
+	session_start();
+	
 
 	if(isset($_POST['submit'])){
 
@@ -10,9 +12,17 @@
 		if($id == "" || $password == ""){
 			echo "null submission...";
 		}else{
-			$users = json_decode($data, true);
-			if($id == $users['id'] && $password == $users['password']){
-				header('location: ../view/dashboard.html');
+			
+
+			$status = validateUser($id, $password);
+			if($status){
+
+					$_SESSION['id'] = $id;
+					setcookie('id', $id, time()+3600, '/');
+					$_SESSION['flag'] = true;
+
+					setcookie('flag', true, time()+3600, '/');
+					header('location: ../view/dashboard.php');
 			}else{
 				echo "invalid user";
 			}
