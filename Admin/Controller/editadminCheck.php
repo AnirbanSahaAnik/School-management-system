@@ -3,7 +3,7 @@
 	require_once('../model/adminModel.php');
 	if(isset($_POST['submit']))
 	{
-    $id = $_SESSION['id'];
+    $id = $_COOKIE['id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
 
