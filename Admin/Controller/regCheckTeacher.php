@@ -29,7 +29,7 @@
                 if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%')){
                   for($i=0; $i<strlen($name); $i++){
                     if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90)
-                    || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57) || ($name[$i] == '.') || ($name[$i] == '-') || ($name[$i] == '_')){
+                    || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57)){
                       if(strlen($name) > 2){
                         $userinfo = [
                             'name'=>$name,
@@ -69,7 +69,7 @@
           }
 
         }else {
-          echo "ID must contain 04 digits and integer number only";
+          echo "Id must contain 04 digits and integer number only";
         }
 			}else{
 				echo "password & confirm password mismatch..";
