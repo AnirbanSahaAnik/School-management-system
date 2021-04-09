@@ -4,10 +4,10 @@
 
 	if(isset($_POST['submit'])){
 
-		$Id = $_POST['ID'];
+		$ID = $_POST['ID'];
 		$password = $_POST['password'];
 
-		if($Id == "" || $password == ""){
+		if($ID == "" || $password == ""){
 			echo "null submission...";
 		}else{
 
@@ -20,9 +20,10 @@
                                 $Validation = false;
 
 
-
-
-								if(strlen($password) > 7)
+								if(strlen($ID) == 4)
+								{
+                                    
+									if(strlen($password) > 7)
                                 {
 
                                     for($j=0;$j<strlen($password);$j++)
@@ -32,16 +33,16 @@
                                         if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%'))
                                         {   
 											
-											if(strlen($ID) == 3)
-                                           {
                                         
                                             $Validation = true;
 
-											$status = validateUser($Id, $password);
+											$status = validateUser($ID, $password);
 											if($status){
 								
 												$_SESSION['flag'] = true;
-												$_SESSION['id'] = $Id;
+												//$_SESSION['id'] = $Id;
+												setcookie('ID', $ID, time()+3600, '/');
+												setcookie('flag', true, time()+3600, '/');
 												
 												$user = getUserById($Id);
 												
@@ -55,9 +56,7 @@
                                        
                                     
 
-                                         }else{
-                                              echo "ID not valid (must contain 03 digits and integer number only) ";
-                                         }
+                                         
                                             
                                         }else{
 											echo "Password not valid (must contain a special character) ";
@@ -69,6 +68,10 @@
                                     echo "Password not valid (length should be greater than 7) ";
                                 }
 
+
+								}else{
+									echo "ID not valid (must contain 04 digits and integer number only) ";
+								}
 
 
                             }

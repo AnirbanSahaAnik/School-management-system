@@ -56,7 +56,7 @@
 
 
 
-                                if(strlen($ID) == 3)
+                                if(strlen($ID) == 4)
                                 {
 
                                     if(strlen($mobile) == 11)
@@ -79,7 +79,7 @@
                                                for($i=0;$i<strlen($name);$i++)
                                                {
                                            
-                                                   if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57) || ($name[$i] == '.') || ($name[$i] == '-') || ($name[$i] == '_'))
+                                                   if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || !((ord($name[$i]) >= 48 && ord($name[$i]) <= 57)))
                                                    {
                                               
                                                        $Validation = true;
@@ -133,7 +133,7 @@
 
 
                                 }else{
-                                    echo "ID not valid (must contain 03 digits and integer number only) ";
+                                    echo "ID not valid (must contain 04 digits and integer number only) ";
                                 }
 
                                 

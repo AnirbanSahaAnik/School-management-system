@@ -1,6 +1,8 @@
 <?php
 	session_start();
-	if(isset($_SESSION['flag']))
+  require_once('../Model/DatabaseConnection.php');
+  $User = getUserById($_COOKIE['ID']);
+	if(isset($_COOKIE['flag']))
 	{
 ?>
 
@@ -19,7 +21,7 @@
             <td align="Left">
             <b>
               Logged in as<br><br>
-              <a href="ViewProfile.php"><?php $userr = $_SESSION['current_user']; $name= $userr['uname']; echo "$name"; ?></a><br>
+              <a href="ViewProfile.php"><?php echo $User['name'];?></a><br>
               (Teacher)
             </b>
             </td>
@@ -35,6 +37,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="ViewProfile.php">Student Marks</a></li>
                     <li><a href="ViewProfile.php">Book History</a></li>
+                    <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
@@ -46,32 +49,27 @@
                <table>
                <tr>
                 <td>Name</td>
-                <td>:<?php $userr = $_SESSION['current_user']; $name= $userr['uname']; echo "$name"; ?></td>
-                <td rowspan="4"><img height="60px" weight="60px" src="user.png" alt=""><br><a href="ProfilePic.php">Change</a></td>
+                <td>:<?php echo $User['name'];?></td>
                </tr>
                <tr>
                 <td>Email</td> 
-                <td>:<?php $userr = $_SESSION['current_user']; $email= $userr['email']; echo "$email"; ?></td>
+                <td>:<?php echo $User['email'];?></td>
                </tr>
                <tr>
                 <td>Mobile No.</td> 
-                <td>:<?php $userr = $_SESSION['current_user']; $mobile= $userr['mobile']; echo "$mobile"; ?></td>
+                <td>:<?php echo $User['mobile'];?></td>
                </tr>
                <tr>
                 <td>ID</td> 
-                <td>:<?php $userr = $_SESSION['current_user']; $ID= $userr['ID']; echo "$ID"; ?></td>
+                <td>:<?php echo $User['id'];?></td>
                </tr>
                <tr>
                 <td>Gender</td> 
-                <td>:<?php $userr = $_SESSION['current_user']; $gender= $userr['gender']; echo "$gender"; ?></td>
+                <td>:<?php echo $User['gender'];?></td>
                </tr>
                <tr>
                 <td>Date of Birth</td> 
-                <td>:<?php $userr = $_SESSION['current_user']; $dob= $userr['dob']; echo "$dob"; ?>/<?php $userr = $_SESSION['current_user']; $dob1= $userr['dob1']; echo "$dob1"; ?>/<?php $userr = $_SESSION['current_user']; $dob2= $userr['dob2']; echo "$dob2"; ?></td>
-               </tr>
-               <tr>
-                <td>Present Address</td> 
-                <td>:<?php $userr = $_SESSION['current_user']; $address= $userr['address']; echo "$address"; ?></td>
+                <td>:<?php echo $User['dob'];?></td>
                </tr>
                </table>
                 <hr>

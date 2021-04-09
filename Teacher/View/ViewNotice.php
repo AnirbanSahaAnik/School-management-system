@@ -1,6 +1,8 @@
 <?php
 	session_start();
-	if(isset($_SESSION['flag']))
+  require_once('../Model/DatabaseConnection.php');
+	$GetNotice = getAllNotice();
+	if(isset($_COOKIE['flag']))
 	{
 ?>
 
@@ -33,6 +35,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
+                    <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
@@ -41,13 +44,22 @@
             <fieldset>
                 <legend>NOTICES</legend>
             <form class="" action="" method="post">
-            <table align="center">
-                        <tr>
-                          <td>
-
-                          </td>
-                        </tr>
-                      </table>
+            <?php
+								echo "<table border = 1 width='100%' cellspacing = 0  >
+								<tr align = 'center'>
+								    <td>ID</td>
+								    <td>Notice</td>
+								    <td>Time</td>
+								</tr>";
+								for($i = 0; $i<count($GetNotice); $i++){
+								    echo "<tr align = 'center'>
+								    <td>{$GetNotice[$i]['id']}</td>
+								    <td>{$GetNotice[$i]['notice']}</td>
+								    <td>{$GetNotice[$i]['time']}</td>
+								</tr>";
+								}
+								echo "</table>";
+								?>
             </form>
             </fieldset>
         </td>

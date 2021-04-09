@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(isset($_SESSION['flag']))
+	if(isset($_COOKIE['flag']))
 	{
 ?>
 
@@ -33,6 +33,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
+                    <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
@@ -44,7 +45,6 @@
                <tr>
                 <td>Teacher's Name</td>
                 <td>:</td>
-                <td rowspan="3"><img height="60px" weight="60px" src="user.png" alt=""><br><a href="ProfilePic.php">Change</a></td>
                </tr>
                <tr>
                 <td>Subject</td> 

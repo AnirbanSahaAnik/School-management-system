@@ -2,11 +2,11 @@
 	
 	require_once('db.php');
 
-	function validateUser($Id, $password){
+	function validateUser($ID, $password){
 
 		$conn = getConnection();
 
-		$sql = "select * from teacher where id='{$Id}' and password='{$password}'";
+		$sql = "select * from teacher where id='{$ID}' and password='{$password}'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 
@@ -31,6 +31,19 @@
 	}
 
 
+	function insertNotice($user){
+
+		$conn = getConnection();
+		$sql = "insert into notice (notice) values ( '{$user['notice']}')";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 
 	function getUserById($Id){
 
@@ -43,6 +56,18 @@
 		return $row;
 	}
 
+
+
+	function getStudentById($Id){
+
+		$conn = getConnection();
+
+		$sql = "select * from student where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
 
 
 	function getEmailByAllUsers(){
@@ -71,55 +96,50 @@
 
 
 	
-	function getAllUsers(){
-
+	function getAllUser(){
 		$conn = getConnection();
-
 		$sql = "select * from student";
 		$result = mysqli_query($conn, $sql);
-         
-        echo "<table border=1> 
-			<tr>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Mobile No.</td>
-			<td>ID</td>
-			<td>Gender</td>
-			<td>Date of Birth</td>
-			<td>Present Address</td>
-			<td>Class</td>
-			<td>Section</td>
-			<td>Roll</td>
-			</tr>";
+		$users =[];
 
-
-		while($row = mysqli_fetch_assoc($result))
-		{
-			echo "<tr>
-			
-			      <td><a href= ../View/StudentProfile.php>{$row['name']}</a></td>
-				  <td>{$row['email']}</td>
-				  <td>{$row['mobile']}</td>
-				  <td>{$row['id']}</td>
-				  <td>{$row['gender']}</td>
-				  <td>{$row['dob']}</td>
-				  <td>{$row['p_address']}</td>
-				  <td>{$row['class']}</td>
-				  <td>{$row['section']}</td>
-				  <td>{$row['roll']}</td>
-			     
-			
-			     </tr>";
-		   
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
 		}
-		echo "</table>";
+
+		return $users;
+	}
+
+
+	function getAllNotice(){
+		$conn = getConnection();
+		$sql = "select * from notice";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
 	}
 
 
 
 	function updatePassword($Id, $newpass){
 		$conn = getConnection();
-		$sql = "update registration set Password='{$newpass}' where ID='{$Id}'";
+		$sql = "update teacher set password='{$newpass}' where id='{$Id}'";
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	function updateProfile($Id, $userinfo){
+		$conn = getConnection();
+		$sql = "update teacher set name='{$userinfo['uname']}', email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}' where id='{$Id}'";
 		if(mysqli_query($conn, $sql)){
 			return true;
 		}else{

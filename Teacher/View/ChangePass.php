@@ -1,7 +1,5 @@
 <?php
 	session_start();
-  require_once('../Model/DatabaseConnection.php');
-  $User = getUserById($_COOKIE['ID']);
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -16,13 +14,11 @@
     <table border="1" cellspacing="0" width="80%" >
     <?php include("TeacherHeader.php") ?>
       <tr>
-         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Teacher.jpg" alt=""></td>
-            <td align="Left">
+        <tr>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/password.webp" alt=""></td>
+            <td align="Center">
             <b>
-              Logged in as<br><br>
-              <a href="ViewProfile.php"><?php echo $User['name'];?></a><br>
-              (Teacher)
+              Password Change
             </b>
             </td>
           </tr>
@@ -42,7 +38,29 @@
                 </ul>
 
         </td>
-        <td><h1>Welcome <?php echo $User['name'];?></h1></td>
+        <td>
+            <fieldset>
+                <legend>PASSWORD CHANGE</legend>
+            <form class="" action="../Controller/ChangePassCheck.php" method="post">
+               <table border="1">
+			   <tr>
+			                  <td>Current Password:</td>
+			                  <td><input type="password" name="password" value=""></td>
+			                </tr>
+			                <tr>
+			                  <td>New Password:</td>
+			                  <td><input type="password" name="newpassword" value=""></td>
+			                </tr>
+			                <tr>
+			                  <td>Retype New Password:</td>
+			                  <td><input type="password" name="repassword" value=""></td>
+			                </tr>
+               </table>
+			             <hr>
+			              <input type="submit" name="Change" value="Change"> <br>
+            </form>
+            </fieldset>
+        </td>
       </tr>
       <?php include("TeacherFooter.php") ?>
     </table>
@@ -58,3 +76,4 @@
 	}
 
 ?>
+

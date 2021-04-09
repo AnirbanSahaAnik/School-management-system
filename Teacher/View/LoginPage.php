@@ -46,7 +46,7 @@
            </tr>
            </table>
             <hr>
-            <div align="center"><input type="submit" name="submit" value="Submit"></div>
+            <div align="center"><input type="submit" name="submit" value="Submit"> <a href="Registration.php"><input type="button" name="Sign Up" value="Sign Up"></a></div>
         </form>
                         </fieldset>
                         </form>

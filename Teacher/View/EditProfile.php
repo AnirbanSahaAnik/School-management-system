@@ -1,7 +1,7 @@
 <?php
 	session_start();
-  require_once('../Model/DatabaseConnection.php');
-	$StudentList = getAllUser();
+    require_once('../Model/DatabaseConnection.php');
+    $User = getUserById($_COOKIE['ID']);
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -20,7 +20,7 @@
             <td align="Left"><img height="80px" weight="80px" src="../Resources/Student.jpg" alt=""></td>
             <td align="Center">
             <b>
-              Student List
+              Profile Infromation Change
             </b>
             </td>
           </tr>
@@ -42,42 +42,40 @@
         </td>
         <td>
             <fieldset>
-                <legend>STUDENT LIST</legend>
-            <form class="" action="" method="post">
+                <legend>EDIT PROFILE</legend>
+            <form class="" action="../Controller/EditCheck.php" method="post">
 
-            <?php
-								echo "<table border = 1 width='100%' cellspacing = 0  >
-								<tr align = 'center'>
-								    <td>ID</td>
-								    <td>Name</td>
-								    <td>Email</td>
-								    <td>Mobile</td>
-										<td>Gender</td>
-										<td>Date of Birth</td>
-                    <td>Class</td>
-                    <td>Section</td>
-                    <td>Roll</td>
-                    <td>Present Address</td>
-								    <td>Profile View</td>
-								</tr>";
-								for($i = 0; $i<count($StudentList); $i++){
-								    echo "<tr align = 'center'>
-								    <td>{$StudentList[$i]['id']}</td>
-								    <td>{$StudentList[$i]['name']}</td>
-								    <td>{$StudentList[$i]['email']}</td>
-								    <td>{$StudentList[$i]['mobile']}</td>
-										<td>{$StudentList[$i]['gender']}</td>
-										<td>{$StudentList[$i]['dob']}</td>
-                    <td>{$StudentList[$i]['class']}</td>
-                    <td>{$StudentList[$i]['section']}</td>
-                    <td>{$StudentList[$i]['roll']}</td>
-                    <td>{$StudentList[$i]['p_address']}</td>
-								    <td> <a href='StudentProfile.php?id={$StudentList[$i]['id']}'> View Profile </a></td>
-								</tr>";
-								}
-								echo "</table>";
-								?>
+            <table>
+					<tr>
+						<td>ID</td>
+						<td>: <input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+					</tr>
+					<tr>
+						<td>Name</td>
+						<td>: <input type="text" name="uname" value="<?php echo $User['name']; ?>"></td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>: <input type="email" name="email" value="<?php echo $User['email']; ?>"></td>
+					</tr>
+                    <tr>
+						<td>Mobile No.</td>
+						<td>: <input type="number" name="mobile" value="<?php echo $User['mobile']; ?>"></td>
+					</tr>
+                    <tr>
+						<td>Gender</td>
+						<td>:<input type="radio" name="gender" <?php  if($User['gender']=="Male"){?> checked="true" <?php } ?> value="Male">Male
+                          <input type="radio" name="gender"  <?php if($User['gender']=="Female"){?> checked="true" <?php } ?>  value="Female">Female
+                          <input type="radio" name="gender" <?php if($User['gender']=="Other"){?> checked="true" <?php } ?> value="Other">Other</td>
+					</tr>
+                    <tr>
+						<td>Date of Birth</td>
+						<td>: <input type="date" name="dob" value="<?php echo $User['dob']; ?>"></td>
+					</tr>
 
+				</table>
+				<hr>
+				<input type="submit" name="submit" value="Edit">
                
                
             </form>

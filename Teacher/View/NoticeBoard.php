@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(isset($_SESSION['flag']))
+	if(isset($_COOKIE['flag']))
 	{
 ?>
 
@@ -33,6 +33,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
+                    <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
@@ -40,18 +41,18 @@
         <td>
             <fieldset>
                 <legend>NOTICE</legend>
-            <form class="" action="" method="post">
+            <form class="" action="../Controller/NoticeCheck.php" method="post">
             <table align="center">
                         <tr>
                           <td>
-                            <textarea name="name" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
+                            <textarea name="notice" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
                           </td>
                         </tr>
                       </table>
                       <hr>
                       <center>
                         <input type="submit" name="submit" value="Submit">
-                        <a href="ViewNotice.php">See Notice</a>
+                        <a href="ViewNotice.php">View Notice</a>
                     </center>
             </form>
             </fieldset>

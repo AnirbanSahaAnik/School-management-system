@@ -1,6 +1,10 @@
 <?php
 	session_start();
-	if(isset($_SESSION['flag']))
+  require_once('../Model/DatabaseConnection.php');
+  $Id = $_GET['id'];
+	$User =  getStudentById($Id);
+  $_SESSION['id'] = $Id;
+	if(isset($_COOKIE['flag']))
 	{
 ?>
 
@@ -33,6 +37,7 @@
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
+                    <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
 
@@ -41,46 +46,46 @@
             <fieldset>
                 <legend>STUDENT PROFILE</legend>
             <form class="" action="" method="post">
-               <table>
+            <table>
                <tr>
                 <td>Name</td>
-                <td>:</td>
+                <td>:<?php echo $User['name'];?></td>
                </tr>
                <tr>
                 <td>Email</td> 
-                <td>:</td>
+                <td>:<?php echo $User['email'];?></td>
                </tr>
                <tr>
                 <td>Mobile No.</td> 
-                <td>:</td>
+                <td>:<?php echo $User['mobile'];?></td>
                </tr>
                <tr>
                 <td>ID</td> 
-                <td>:</td>
+                <td>:<?php echo $User['id'];?></td>
                </tr>
                <tr>
                 <td>Gender</td> 
-                <td>:</td>
+                <td>:<?php echo $User['gender'];?></td>
                </tr>
                <tr>
                 <td>Date of Birth</td> 
-                <td>:</td>
+                <td>:<?php echo $User['dob'];?></td>
                </tr>
                <tr>
                 <td>Present Address</td> 
-                <td>:</td>
+                <td>:<?php echo $User['p_address'];?></td>
                </tr>
                <tr>
                 <td>Class</td> 
-                <td>:</td>
+                <td>:<?php echo $User['class'];?></td>
                </tr>
                <tr>
                 <td>Section</td> 
-                <td>:</td>
+                <td>:<?php echo $User['section'];?></td>
                </tr>
                <tr>
-                <td>Roll No.</td> 
-                <td>:</td>
+                <td>Roll</td> 
+                <td>:<?php echo $User['roll'];?></td>
                </tr>
                </table>
             </form>
