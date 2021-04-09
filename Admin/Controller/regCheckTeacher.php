@@ -5,7 +5,6 @@
 
 	if(isset($_POST['submit'])){
 
-
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
@@ -15,9 +14,6 @@
     $gender = $_POST['gender'];
     $dob = $_POST['dob'];
 
-
-
-
 		if($id == "" || $name == "" || $email == "" || $password == "" || $repass == ""|| $mobile == ""|| $gender == ""|| $dob == ""){
 			echo "null submission...";
 		}else{
@@ -26,10 +22,9 @@
           if(strlen($mobile) == 11){
             if(strlen($password) > 7){
               for($j=0; $j<strlen($password); $j++){
-                if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%')){
+                if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%') || ($password[$j] == '!')){
                   for($i=0; $i<strlen($name); $i++){
-                    if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90)
-                    || (ord($name[$i]) >= 48 && ord($name[$i]) <= 57)){
+                    if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || ord($name[$i]) == ' '){
                       if(strlen($name) > 2){
                         $userinfo = [
                             'name'=>$name,
