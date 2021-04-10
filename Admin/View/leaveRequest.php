@@ -1,6 +1,8 @@
 <?php
 	$title= "leaveRequest";
 	include('header.php');
+	include_once('../model/leaveRequestModel.php');
+	$UsersList = allUserList();
 ?>
                 <ul>
                   <li><a href="leaveRequest.php">Student's leave request</a></li>
@@ -11,60 +13,32 @@
               <td>
                 <form  class="" action="regCheckCourse.php" method="post">
                   <fieldset >
-                    <legend>Student's leave request</legend>
-                    <table width="100%" border="1">
-                      <tr align="center" >
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>Class</td>
-                        <td>section</td>
-                        <td>Roll</td>
-                        <td>Action</td>
+                    <legend>Student's leave request list</legend>
+										<?php
+										echo "<table border = 1 width='100%' cellspacing = 0  >
+										<tr align = 'center'>
+		                    <td>ID</td>
+										    <td>Name</td>
+										    <td>Leave From</td>
+												<td>Leave To</td>
+												<td>Action</td>
 
-                      </tr>
+										</tr>";
+										for($i = 0; $i<count($UsersList); $i++){
+										    echo "<tr align = 'center'>
+										    <td>{$UsersList[$i]['id']}</td>
+										    <td>{$UsersList[$i]['name']}</td>
+										    <td>{$UsersList[$i]['leave_from']}</td>
+												<td>{$UsersList[$i]['leave_to']}</td>
+												<td>{$UsersList[$i]['action']}</td>
 
-                      <tr align="center">
-                        <td>4001</td>
-                        <td>a</td>
-                        <td>Six</td>
-                        <td>A</td>
-                        <td>1</td>
-                        <td>Accepted</td>
-
-                      </tr>
-
-                      <tr align="center">
-                        <td>4002</td>
-                        <td>b</td>
-                        <td>Six</td>
-                        <td>B</td>
-                        <td>2</td>
-                        <td>Rejected</td>
-
-                      </tr>
-
-                      <tr align="center">
-                        <td>4101</td>
-                        <td>ab</td>
-                        <td>Seven</td>
-                        <td>A</td>
-                        <td>1</td>
-                        <td>Accepted</td>
-
-                      </tr>
-
-                      <tr align="center">
-                        <td>4102</td>
-                        <td>bc</td>
-                        <td>Seven</td>
-                        <td>B</td>
-                        <td>2</td>
-                        <td>Accepted</td>
-
-                      </tr>
+										</tr>";
+										}
+										echo "</table>";
+										?>
 
 
-                    </table>
+
                   </fieldset>
                 </form>
               </td>
