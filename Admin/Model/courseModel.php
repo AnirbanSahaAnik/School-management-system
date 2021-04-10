@@ -27,7 +27,7 @@ function allUserList(){
 }
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
-    $sql = "update course set name='{$userinfo['name']}', class='{$userinfo['class']}' ,description='{$userinfo['description']}'   where id='{$id}'";
+    $sql = "update course set course_name='{$userinfo['course_name']}', class='{$userinfo['class']}' ,description='{$userinfo['description']}'   where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{
