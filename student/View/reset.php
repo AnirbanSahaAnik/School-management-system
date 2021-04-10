@@ -7,7 +7,7 @@ include('header.php');
 
 
               <td>
-								<form class="" action="../controller/chaPassCheck.php" method="post">
+								<form class="" action="../controller/passCheck.php" method="post">
 			            <fieldset>
 			              <legend>CHANGE PASSWORD</legend>
 			              <table>

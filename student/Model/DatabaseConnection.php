@@ -127,5 +127,30 @@
 	}
 
 
+	function changePassword($id, $newPass){
+		$conn = getConnection();
+		$sql = "update student set password='{$newPass}' where id='{$id}'";
+		if(mysqli_query($conn, $sql)){
+		  return true;
+		}else{
+		  return false;
+		}
+	  }
+
+
+	  function getAllNotice(){
+		$conn = getConnection();
+		$sql = "select * from notice";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
 
 ?>

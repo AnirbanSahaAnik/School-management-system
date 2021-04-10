@@ -40,7 +40,6 @@
                     <input type="checkbox" name="" value=""> Remember Me <br>
                     <br>
                     <input type="submit" name="submit" value="LOGIN">
-                    <a href="reset.">Reset Password?</a>
                     <a href="registration.php">Sign Up</a>
                   </fieldset>
                 </form>
