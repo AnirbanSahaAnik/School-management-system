@@ -16,12 +16,11 @@
 			for($i=0; $i<strlen($name); $i++){
 				if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || ord($name[$i]) == ' '){
 					if(strlen($name) > 2){
-						$userinfo = array('id' => $id,'name' => $name, 'email' => $email, 'mobile' => $mobile,'gender' => $gender,'dob' => $dob,'p_address' => $p_address,'class' => $class,'section' => $section,'roll' => $roll);
+						$userinfo = array('id' => $id,'name' => $name, 'email' => $email, 'mobile' => $mobile,'gender' => $gender,'dob' => $dob,'p_address' => $p_address);
 						$check = updateEditInfo($id, $userinfo);
 						if($check)
 						{
 							echo "info updated!";
-
               $deletemyinfo = deleteEditUserbyid($id);
 							header('location: ../view/viewStudent.php');
 						}
