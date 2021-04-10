@@ -56,6 +56,17 @@
 		return $row;
 	}
 
+	function getScheduleById($Id){
+
+		$conn = getConnection();
+
+		$sql = "select * from teacher where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
+
 
 
 	function getStudentById($Id){
@@ -63,6 +74,18 @@
 		$conn = getConnection();
 
 		$sql = "select * from student where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
+
+
+	function getNoticeById($Id){
+
+		$conn = getConnection();
+
+		$sql = "select * from notice where id='{$Id}'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 
@@ -109,6 +132,19 @@
 		return $users;
 	}
 
+	function getAllBooks(){
+		$conn = getConnection();
+		$sql = "select isbn, title, author, edition from book_info";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
 
 	function getAllNotice(){
 		$conn = getConnection();
@@ -145,6 +181,32 @@
 		}else{
 			return false;
 		}
+	}
+
+
+	function updateNotice($Id, $userinfo){
+		$conn = getConnection();
+		$sql = "update notice set notice='{$userinfo['notice']}' where id='{$Id}'";
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+	function deleteNoticeById($Id){
+		$conn = getConnection();
+		$sql = "delete from notice where id='$Id'";
+		$result = mysqli_query($conn,$sql);
+		if($result){
+			header('location: ../View/ViewNotice.php?your info is deleted');
+		}
+		else
+		{
+			header('location: ../View/ViewNotice.php?Not deleted your info');
+		}
+	
 	}
 
 

@@ -1,7 +1,9 @@
 <?php
 	session_start();
   require_once('../Model/DatabaseConnection.php');
-	$List = getAllBooks();
+  $Id = $_GET['id'];
+	$User =  getNoticeById($Id);
+  $_SESSION['id'] = $Id;
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -17,10 +19,10 @@
     <?php include("TeacherHeader.php") ?>
       <tr>
         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Book.jpg" alt=""></td>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/Student.jpg" alt=""></td>
             <td align="Center">
             <b>
-              Book Arrival List
+              Notice Update
             </b>
             </td>
           </tr>
@@ -42,26 +44,24 @@
         </td>
         <td>
             <fieldset>
-                <legend>LIST OF BOOKS</legend>
-            <form class="" action="" method="post">
-            <?php
-								echo "<table border = 1 width='100%' cellspacing = 0  >
-								<tr align = 'center'>
-								    <td>ISBN</td>
-								    <td>Title</td>
-								    <td>Author</td>
-								    <td>Edition</td>
-								</tr>";
-								for($i = 0; $i<count($List); $i++){
-								    echo "<tr align = 'center'>
-								    <td>{$List[$i]['isbn']}</td>
-								    <td>{$List[$i]['title']}</td>
-								    <td>{$List[$i]['author']}</td>
-								    <td>{$List[$i]['edition']}</td>
-								</tr>";
-								}
-								echo "</table>";
-								?>
+                <legend>EDIT NOTICE</legend>
+            <form class="" action="../Controller/UpdateNoticeCheck.php" method="post">
+            <table>
+               <tr>
+                <td>ID</td>
+                <td>:<input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+               </tr>
+               <tr>
+                <td>Notice</td> 
+                <td>:<textarea name="notice" rows="8" cols="80"><?php echo $User['notice']; ?></textarea></td>
+               </tr>
+               <tr>
+                <td>Time</td> 
+                <td>:<input type="text" name="times" disabled value="<?php echo $User['time']; ?>"></td>
+               </tr>
+               </table>
+               <hr>
+			   <input type="submit" name="update" value="Update">
             </form>
             </fieldset>
         </td>

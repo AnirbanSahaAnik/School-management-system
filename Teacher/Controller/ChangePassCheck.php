@@ -23,7 +23,7 @@
 			   
 				if(($newpass[$j] == '@') || ($newpass[$j] == '#') || ($newpass[$j] == '$') || ($newpass[$j] == '%'))
 				{
-					session_start();
+					//session_start();
 					$User = getUserById($_COOKIE['ID']);
 					$Id = $User['id'];
 					$password = $User['password'];

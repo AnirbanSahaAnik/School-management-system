@@ -1,5 +1,7 @@
 <?php
 	session_start();
+  require_once('../Model/DatabaseConnection.php');
+  $User = getUserById($_COOKIE['ID']);
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -44,15 +46,15 @@
                <table>
                <tr>
                 <td>Teacher's Name</td>
-                <td>:</td>
+                <td>:<?php echo $User['name'];?></td>
                </tr>
                <tr>
                 <td>Subject</td> 
-                <td>:</td>
+                <td>:<?php echo $User['subject'];?></td>
                </tr>
                <tr>
                 <td>Time</td> 
-                <td>:</td>
+                <td>:<?php echo $User['class_time'];?></td>
                </tr>
                </table>
             </form>

@@ -50,12 +50,14 @@
 								    <td>ID</td>
 								    <td>Notice</td>
 								    <td>Time</td>
+                    <td>Action</td>
 								</tr>";
 								for($i = 0; $i<count($GetNotice); $i++){
 								    echo "<tr align = 'center'>
 								    <td>{$GetNotice[$i]['id']}</td>
 								    <td>{$GetNotice[$i]['notice']}</td>
 								    <td>{$GetNotice[$i]['time']}</td>
+                    <td> <a href='EditNotice.php?id={$GetNotice[$i]['id']}'> Edit </a> | <a href='DeleteNotice.php?id={$GetNotice[$i]['id']}'> Delete </a>  </td>
 								</tr>";
 								}
 								echo "</table>";
