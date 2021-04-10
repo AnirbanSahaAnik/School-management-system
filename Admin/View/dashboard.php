@@ -38,9 +38,9 @@
 
                   <tr>
 										<td align = "center">
-                      <a href="notice.php"><img height="100px" weight="100px" src="../Resources/notice.jpg" alt=""></a>
+                      <a href="postNotice.php"><img height="100px" weight="100px" src="../Resources/notice.jpg" alt=""></a>
                       <br>
-                      <a href="notice.php">Notice Board</a>
+                      <a href="postNotice.php">Notice Board</a>
                     </td>
 
 										<td align = "center">

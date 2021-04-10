@@ -3,27 +3,24 @@
 	include('header.php');
 ?>
                 <ul>
-                  <li><a href="notice.php">Notice</a></li>
-
+                  <li><a href="postNotice.php">Notice</a></li>
+									<li><a href="viewNotice.php">View Notice</a></li>
                 </ul>
               </td>
-
               <td>
-                <form  class="" action="" method="post">
+                <form  class="" action="../Controller/postCheckNotice.php" method="post">
                   <fieldset >
                     <legend>Notice</legend>
                       <table align="center">
                         <tr>
                           <td>
-                            <textarea name="name" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
+                            <textarea name="notice" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
                           </td>
                         </tr>
-
                       </table>
                       <hr>
                       <center>
-                        <input type="submit" name="submit" value="Submit">
-
+                        <input type="submit" name="submit" value="POST">
                     </center>
                   </fieldset>
                 </form>
