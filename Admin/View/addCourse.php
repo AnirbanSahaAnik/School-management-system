@@ -9,7 +9,7 @@
               </td>
 
               <td>
-                <form  class="" action="regCheckCourse.php" method="post">
+                <form  class="" action="../Controller/addCheckCourse.php" method="post">
                   <fieldset >
                     <legend>Create Course</legend>
                       <table align="center">
@@ -29,9 +29,8 @@
                           </td>
                         <tr>
                           <td>Description</td>
-                          <td>:<input type="text" name="des" value=""></td>
+                          <td>:<textarea name="description" rows="3" cols="20"></textarea></td>
                         </tr>
-
                       </table>
                       <hr>
                       <center>
