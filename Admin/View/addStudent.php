@@ -5,7 +5,7 @@
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
-                  <li><a href="editrequestStudent.php">Edit Request</a></li>
+                  <li><a href="editrequestlist.php">Edit Request</a></li>
                   <li><a href="dashboard.php">Dashbord</a></li>
                   <li><a href="../Controller/logout.php">Logout</a></li>
                 </ul>

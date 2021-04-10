@@ -39,9 +39,36 @@ function allUserList(){
 
 
 }
+function alleditUserList(){
+    $conn = getConnection();
+    $sql = "select * from edit_student";
+    $result = mysqli_query($conn, $sql);
+    $users =[];
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+
+
+}
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
     $sql = " update student set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}',p_address='{$userinfo['p_address']}',class='{$userinfo['class']}',section='{$userinfo['section']}',roll='{$userinfo['roll']}'   where id='{$id}'";
+
+    if(mysqli_query($conn, $sql))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+}
+function updateEditInfo($id, $userinfo){
+    $conn = getConnection();
+    $sql = " update student set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}',p_address='{$userinfo['p_address']}'   where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{
@@ -58,14 +85,29 @@ function deleteUserbyid($id){
     $sql = "delete from student where id='$id'";
     $result = mysqli_query($conn,$sql);
     if($result){
-        header('location: ../view/userlist.php?your info is deleted');
+        header('location: ../view/viewStudent.php?your info is deleted');
     }
     else
     {
-        header('location: ../view/userlist.php?Not deleted your info');
+        header('location: ../view/viewStudent.php?Not deleted your info');
     }
 
 }
+
+function deleteEditUserbyid($id){
+    $conn = getConnection();
+    $sql = "delete from edit_student where id='$id'";
+    $result = mysqli_query($conn,$sql);
+    if($result){
+        header('location: ../view/viewStudent.php?your info is deleted');
+    }
+    else
+    {
+        header('location: ../view/viewStudent.php?Not deleted your info');
+    }
+
+}
+
 function getUserbyid($id){
     $conn = getConnection();
     $sql = "select * from student where id='$id'";
@@ -74,9 +116,15 @@ function getUserbyid($id){
     return $row;
 
 }
-function forgetpass(){
+
+
+function getRequestUserbyid($id){
+    $conn = getConnection();
+    $sql = "select * from edit_student where id='$id'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row;
 
 }
-
 
 ?>

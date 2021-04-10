@@ -2,12 +2,12 @@
 	$title= "View Sturdnt";
 	include('header.php');
 	include_once('../model/studentModel.php');
-	$UsersList = allUserList();
+	$UsersList = alleditUserList();
 ?>
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
-                    <li><a href="editrequestlist.php">Edit Request</a></li>
+                  <li><a href="editrequestlist.php">Edit Request</a></li>
                   <li><a href="dashboard.php">Dashbord</a></li>
                   <li><a href="../Controller/logout.php">Logout</a></li>
 
@@ -15,7 +15,7 @@
               </td>
 
               <td>
-                <center><h2>Student list</h2></center>
+                <center><h2>Student Information edit request list</h2></center>
 								<?php
 								echo "<table border = 1 width='100%' cellspacing = 0  >
 								<tr align = 'center'>
@@ -26,9 +26,6 @@
 										<td>Gender</td>
 										<td>DOB</td>
 										<td>Present Address</td>
-										<td>Class</td>
-										<td>Section</td>
-										<td>Roll</td>
 										<td>Action</td>
 								</tr>";
 								for($i = 0; $i<count($UsersList); $i++){
@@ -39,11 +36,8 @@
 										<td>{$UsersList[$i]['mobile']}</td>
 										<td>{$UsersList[$i]['gender']}</td>
 										<td>{$UsersList[$i]['dob']}</td>
-										<td>{$UsersList[$i]['p_address']}</td>
-										<td>{$UsersList[$i]['class']}</td>
-										<td>{$UsersList[$i]['section']}</td>
-										<td>{$UsersList[$i]['roll']}</td>
-										<td> <a href='editStudent.php?id={$UsersList[$i]['id']}'> Edit </a> | <a href='deleteStudent.php?id={$UsersList[$i]['id']}'> Delete </a>  </td>
+                    <td>{$UsersList[$i]['p_address']}</td>
+										<td> <a href='editrequestStudent.php?id={$UsersList[$i]['id']}'> view </a>  </td>
 								</tr>";
 								}
 								echo "</table>";
