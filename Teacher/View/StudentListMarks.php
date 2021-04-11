@@ -1,7 +1,7 @@
 <?php
 	session_start();
   require_once('../Model/DatabaseConnection.php');
-	$StudentList = getAllUser();
+	$MarksList = getAllUser();
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -20,7 +20,7 @@
             <td align="Left"><img height="80px" weight="80px" src="../Resources/grades.svg" alt=""></td>
             <td align="Center">
             <b>
-              Student List
+              Marks List
             </b>
             </td>
           </tr>
@@ -29,7 +29,6 @@
                     <li><a href="TeacherDashboard.php">Dashboard</a></li>
                     <li><a href="ViewProfile.php">View Profile</a></li>
                     <li><a href="StudentList.php">View Student's Profile</a></li>
-                    <li><a href="Attendance.php">Student Attendance</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
@@ -42,36 +41,32 @@
         </td>
         <td>
             <fieldset>
-                <legend>STUDENT LIST</legend>
+                <legend>STUDENT MARKS LIST</legend>
             <form class="" action="" method="post">
             <?php
 								echo "<table border = 1 width='100%' cellspacing = 0  >
 								<tr align = 'center'>
 								    <td>ID</td>
 								    <td>Name</td>
-								    <td>Email</td>
-								    <td>Mobile</td>
-										<td>Gender</td>
-										<td>Date of Birth</td>
                     <td>Class</td>
+                    <td>Subject</td>
                     <td>Section</td>
                     <td>Roll</td>
-                    <td>Present Address</td>
-								    <td>Marks Upload</td>
+                    <td>Marks</td>
+								    <td>Marks Update</td>
+                    <td>Marks Delete</td>
 								</tr>";
-								for($i = 0; $i<count($StudentList); $i++){
+								for($i = 0; $i<count($MarksList); $i++){
 								    echo "<tr align = 'center'>
-								    <td>{$StudentList[$i]['id']}</td>
-								    <td>{$StudentList[$i]['name']}</td>
-								    <td>{$StudentList[$i]['email']}</td>
-								    <td>{$StudentList[$i]['mobile']}</td>
-										<td>{$StudentList[$i]['gender']}</td>
-										<td>{$StudentList[$i]['dob']}</td>
-                    <td>{$StudentList[$i]['class']}</td>
-                    <td>{$StudentList[$i]['section']}</td>
-                    <td>{$StudentList[$i]['roll']}</td>
-                    <td>{$StudentList[$i]['p_address']}</td>
-								    <td> <a href='Marks.php?id={$StudentList[$i]['id']}'> Upload </a></td>
+								    <td>{$MarksList[$i]['id']}</td>
+								    <td>{$MarksList[$i]['name']}</td>
+                    <td>{$MarksList[$i]['class']}</td>
+                    <td>{$MarksList[$i]['subject']}</td>
+                    <td>{$MarksList[$i]['section']}</td>
+                    <td>{$MarksList[$i]['roll']}</td>
+                    <td>{$MarksList[$i]['marks']}</td>
+								    <td> <a href='Marks.php?id={$MarksList[$i]['id']}'> Update </a></td>
+                    <td> <a href='DeleteMarks.php?id={$MarksList[$i]['id']}'> Delete </a> </td>
 								</tr>";
 								}
 								echo "</table>";

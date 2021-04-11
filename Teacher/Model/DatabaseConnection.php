@@ -17,6 +17,21 @@
 		}
 	}
 
+	function validateRegistration($email, $mobile){
+
+		$conn = getConnection();
+
+		$sql = "select email, mobile from teacher where id='{$ID}' and email='{$email}' and mobile='{$mobile}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		if(is_countable($row) && count($row) > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 	function insertUser($user){
 
@@ -93,6 +108,18 @@
 	}
 
 
+	function getMarksById($Id){
+
+		$conn = getConnection();
+
+		$sql = "select id, name, class, roll, marks from student where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
+
+
 	function getEmailByAllUsers(){
 
 		$conn = getConnection();
@@ -122,6 +149,20 @@
 	function getAllUser(){
 		$conn = getConnection();
 		$sql = "select * from student";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
+	function getAllStudentsMarks(){
+		$conn = getConnection();
+		$sql = "select id, name, class, subject, section, roll, marks from student";
 		$result = mysqli_query($conn, $sql);
 		$users =[];
 
@@ -195,6 +236,17 @@
 	}
 
 
+	function updateMarks($Id, $userinfo){
+		$conn = getConnection();
+		$sql = "update student set marks='{$userinfo['marks']}' where id='{$Id}'";
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 	function deleteNoticeById($Id){
 		$conn = getConnection();
 		$sql = "delete from notice where id='$Id'";
@@ -205,6 +257,20 @@
 		else
 		{
 			header('location: ../View/ViewNotice.php?Not deleted your info');
+		}
+	
+	}
+
+	function deleteMarksById($Id){
+		$conn = getConnection();
+		$sql = "update student set marks=NULL where id='$Id'";
+		$result = mysqli_query($conn,$sql);
+		if($result){
+			header('location: ../View/StudentListMarks.php?your info is deleted');
+		}
+		else
+		{
+			header('location: ../View/StudentListMarks.php?Not deleted your info');
 		}
 	
 	}

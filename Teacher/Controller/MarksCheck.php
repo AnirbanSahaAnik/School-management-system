@@ -3,15 +3,34 @@
 
     require_once('../Model/DatabaseConnection.php');
 
-	if(isset($_POST['submit'])){
+	if(isset($_POST['upload'])){
 
-		$marks = $_POST['marks'];
+		$Id = $_SESSION['id'];
+        $marks = $_POST['marks'];
 
 		if($marks == ""){
 			echo "null submission...";
 		}else{
 
-            echo "Success!!";
+
+			if(is_numeric($marks) && strlen($marks) >= 2 && strlen($marks) <= 3)
+			{
+
+				$userinfo = array('id' => $Id,'marks' => $marks);
+				$check =  updateMarks($Id, $userinfo);
+				if($check)
+				{
+					echo "Marks updated!";
+					header('location: ../View/StudentListMarks.php');
+				}
+				else
+				{
+					echo "Can't update the Information!";
+				}
+
+			}else{
+				echo "Marks should be integer only and length should be equal to 3 digits ";
+			}
 
 			
 		}

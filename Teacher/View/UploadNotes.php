@@ -27,7 +27,6 @@
                     <li><a href="TeacherDashboard.php">Dashboard</a></li>
                     <li><a href="ViewProfile.php">View Profile</a></li>
                     <li><a href="StudentList.php">View Student's Profile</a></li>
-                    <li><a href="Attendance.php">Student Attendance</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
@@ -40,7 +39,7 @@
         </td>
         <td>
             <fieldset>
-                <form class="" action="" method="post">
+                <form class="" action="../Controller/UploadNotesCheck.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                       <legend>Upload Notes</legend>
                       <input type="file" id="photo" name="photo"><br>

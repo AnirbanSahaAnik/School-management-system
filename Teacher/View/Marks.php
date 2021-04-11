@@ -1,5 +1,9 @@
 <?php
 	session_start();
+  require_once('../Model/DatabaseConnection.php');
+  $Id = $_GET['id'];
+	$User =  getStudentById($Id);
+  $_SESSION['id'] = $Id;
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -27,7 +31,6 @@
                     <li><a href="TeacherDashboard.php">Dashboard</a></li>
                     <li><a href="ViewProfile.php">View Profile</a></li>
                     <li><a href="StudentList.php">View Student's Profile</a></li>
-                    <li><a href="Attendance.php">Student Attendance</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
@@ -43,15 +46,32 @@
                 <legend>MARKS UPLOAD</legend>
             <form class="" action="../Controller/MarksCheck.php" method="post">
             <table align="center">
+                <tr>
+                <td>ID</td>
+                <td>:<input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+               </tr>
+               <tr>
+                <td>Name</td>
+                <td>:<input type="text" name="name" disabled value="<?php echo $User['name']; ?>"></td>
+               </tr>
+               <tr>
+                <td>Class</td>
+                <td>:<input type="text" name="class" disabled value="<?php echo $User['class']; ?>"></td>
+               </tr>
+               <tr>
+                <td>Roll</td>
+                <td>:<input type="number" name="roll" disabled value="<?php echo $User['roll']; ?>"></td>
+               </tr>
                         <tr>
+                        <td>Update Marks</td>
                           <td>
-                            <textarea name="marks" rows="8" cols="80" placeholder="Enter Student's Marks"></textarea>
+                            :<input type="text" name="marks" value="<?php echo $User['marks']; ?>">
                           </td>
                         </tr>
                       </table>
                       <hr>
                       <center>
-                        <input type="submit" name="submit" value="Submit">
+                        <input type="submit" name="upload" value="Submit">
                     </center>
             </form>
             </fieldset>
