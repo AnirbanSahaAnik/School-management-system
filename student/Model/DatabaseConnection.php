@@ -153,4 +153,117 @@
 
 
 
+
+
+
+
+	function getAllteacher(){
+
+		$conn = getConnection();
+
+		$sql = "select * from teacher";
+		$result = mysqli_query($conn, $sql);
+		$user=[];
+         
+      
+			
+
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			
+			array_push($user, $row);
+			   
+			    
+		   
+		}
+		return $user;
+		
+	}
+
+
+
+
+
+	function getAllcourse(){
+
+		$conn = getConnection();
+
+		$sql = "select * from course";
+		$result = mysqli_query($conn, $sql);
+		$user=[];
+         
+      
+			
+
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			
+			array_push($user, $row);
+			   
+			    
+		   
+		}
+		return $user;
+		
+	}
+
+
+
+
+
+	function getAllschoolnotice(){
+
+		$conn = getConnection();
+
+		$sql = "select * from school_notice";
+		$result = mysqli_query($conn, $sql);
+		$user=[];
+         
+      
+			
+
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			
+			array_push($user, $row);
+			   
+			    
+		   
+		}
+		return $user;
+		
+	}
+
+
+
+
+	function getAllbook(){
+
+		$conn = getConnection();
+
+		$sql = "select * from book_info";
+		$result = mysqli_query($conn, $sql);
+		$user=[];
+         
+      
+			
+
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			
+			array_push($user, $row);
+			   
+			    
+		   
+		}
+		return $user;
+		
+	}
+
+
+
 ?>

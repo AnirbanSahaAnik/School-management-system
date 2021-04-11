@@ -1,5 +1,7 @@
 <?php
 $title= "Dashboard";
+require_once('../Model/DatabaseConnection.php');
+$teacherList=getAllteacher();
 include('header.php');
 ?>
 
@@ -8,28 +10,29 @@ include('header.php');
           <fieldset>
             <legend>Teacher Profile</legend>
         <form class="" action="" method="post">
-           <table>
-           <tr>
-            <td>Name</td>
-            <td>:</td>
-           </tr>
-          
-           <tr>
-            <td>Email</td> 
-            <td>:</td>
-           </tr>
-           
-           <tr>
-            <td>Phone Number</td> 
-            <td>:</td>
-           </tr>
-
-           <tr>
-            <td>Subject</td> 
-            <td>:</td>
-           </tr>
-
-           </table>
+        <?php
+                echo "<table border = 1 width='100%' cellspacing = 0  >
+                <tr align = 'center'>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Mobile</td>
+                    <td>Gender</td>
+                    <td>Date of Birth</td>
+                </tr>";
+                for($i = 0; $i<count($teacherList); $i++){
+                    echo "<tr align = 'center'>
+                    <td>{$teacherList[$i]['id']}</td>
+                    <td>{$teacherList[$i]['name']}</td>
+                    <td>{$teacherList[$i]['email']}</td>
+                    <td>{$teacherList[$i]['mobile']}</td>
+                    <td>{$teacherList[$i]['gender']}</td>
+                    <td>{$teacherList[$i]['dob']}</td>
+                    
+                </tr>";
+                }
+                echo "</table>";
+                ?>
 
         </form>
         </fieldset>

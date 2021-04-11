@@ -1,5 +1,7 @@
 <?php
 $title= "Dashboard";
+require_once('../Model/DatabaseConnection.php');
+$noticeList=getAllschoolnotice();
 include('header.php');
 ?>
 
@@ -8,11 +10,23 @@ include('header.php');
             <form method="post" action="">
                 <fieldset>
                     <legend>School Notice</legend>
-                    <table>
-                        <tr>
-                               <p>The school will be closed from May 10 to 21 as  Eid-ul-Fitr break. Classes will be held as per daily routine from 22-05-2021. </p>
-                        </tr>
-                    </table>
+                    
+       
+            <?php
+                echo "<table  width='100%' cellspacing = 0  >
+                <tr align = 'center'>
+                 
+                    
+                </tr>";
+                for($i = 0; $i<count($noticeList); $i++){
+                    echo "<tr align = 'center'>
+                    <td>{$noticeList[$i]['notice']}</td>
+                    <td>(Time: {$noticeList[$i]['time']})</td>
+                 
+                </tr>";
+                }
+                echo "</table>";
+                ?>
                 </fieldset>
             </form>
         </td>
