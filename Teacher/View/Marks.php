@@ -41,11 +41,11 @@
         <td>
             <fieldset>
                 <legend>MARKS UPLOAD</legend>
-            <form class="" action="" method="post">
+            <form class="" action="../Controller/MarksCheck.php" method="post">
             <table align="center">
                         <tr>
                           <td>
-                            <textarea name="name" rows="8" cols="80" placeholder="Enter Student's Marks"></textarea>
+                            <textarea name="marks" rows="8" cols="80" placeholder="Enter Student's Marks"></textarea>
                           </td>
                         </tr>
                       </table>

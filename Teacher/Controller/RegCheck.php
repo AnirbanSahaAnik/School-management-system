@@ -43,7 +43,7 @@
 
                         function FormValidation()
                         {
-                            if(isset($_POST['uname']))
+                            if(isset($_POST['uname']) || isset($_POST['email']) || isset($_POST['mobile']) || isset($_POST['ID']) || isset($_POST['Password']) || isset($_POST['gender']) || isset($_POST['dob']))
                             {
                                 $name = $_POST['uname'];
                                 $email = $_POST['email'];
@@ -55,85 +55,87 @@
                                 $Validation = false;
 
 
-
-                                if(strlen($ID) == 4)
+                                if(strlen($name) > 3)
                                 {
 
-                                    if(strlen($mobile) == 11)
-                                {
-
-                                    if(strlen($password) > 7)
-                                {
-
-                                    for($j=0;$j<strlen($password);$j++)
+                                    if(strlen($ID) == 4)
                                     {
-                                        
-                                       
-                                        if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%'))
+    
+                                        if(strlen($mobile) == 11)
+                                    {
+    
+                                        if(strlen($password) > 7)
+                                    {
+    
+                                        for($j=0;$j<strlen($password);$j++)
                                         {
-
-
-                                            if(strlen($name) > 2)
-                                            {
-   
-                                               for($i=0;$i<strlen($name);$i++)
-                                               {
+                                            
                                            
-                                                   if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || !((ord($name[$i]) >= 48 && ord($name[$i]) <= 57)))
+                                            if(($password[$j] == '@') || ($password[$j] == '#') || ($password[$j] == '$') || ($password[$j] == '%'))
+                                            {
+       
+                                                   for($i=0;$i<strlen($name);$i++)
                                                    {
-                                              
-                                                       $Validation = true;
-       
-       
-                                                       $user = [	
-                                                       'uname'=>$name, 
-                                                       'mobile'=>$mobile,
-                                                       'ID' => $ID,
-                                                       'gender'=>$gender,
-                                                       'password'=>$password, 
-                                                       'email'=> $email,
-                                                       'dob'=>$dd
-                                                         ];
-                           
-                                                             $status = insertUser($user);
-                           
-                                                              if($status){
-                                                                 header('location: ../View/LoginPage.php');
-                                                             }else{
-                                                               echo "error";
-                                                             }
-       
-                                              
-                                              
                                                
-                                              
+                                                       if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90))
+                                                       {
+                                                  
+                                                           $Validation = true;
+           
+           
+                                                           $user = [	
+                                                           'uname'=>$name, 
+                                                           'mobile'=>$mobile,
+                                                           'ID' => $ID,
+                                                           'gender'=>$gender,
+                                                           'password'=>$password, 
+                                                           'email'=> $email,
+                                                           'dob'=>$dd
+                                                             ];
+                               
+                                                                 $status = insertUser($user);
+                               
+                                                                  if($status){
+                                                                     header('location: ../View/LoginPage.php');
+                                                                 }else{
+                                                                   echo "error";
+                                                                 }
+           
+                                                  
+                                                  
+                                                   
+                                                  
+           
+                                                        }else{
+                                                            echo "Name not valid (Should be Alphabet) ";
+                                                        }
+                                                   }
        
-                                                    }
-                                               }
-   
-                                             }else{
-                                               echo "Username not valid (may contain alphanumeric characters, period, dash or underscore only and length should be greater than 2) ";
-                                                }
-                                            
-                                            
-                                        }else{
-                                            echo "Password not valid (must contain a special character)";
+                                                 
+                                                
+                                                
+                                            }else{
+                                                echo "Password not valid (must contain a special character) ";
+                                            }
+                                           
                                         }
-                                       
+    
+                                    }else{
+                                        echo "Password not valid (length should be greater than 7) ";
+                                    }
+    
+    
+                                    }else{
+                                        echo "Mobile number not valid (must contain 11 digits and integer number only) ";
+                                    }
+    
+    
+                                    }else{
+                                        echo "ID not valid (must contain 04 digits and integer number only) ";
                                     }
 
                                 }else{
-                                    echo "Password not valid (length should be greater than 7) ";
-                                }
-
-
-                                }else{
-                                    echo "Mobile number not valid (must contain 11 digits and integer number only) ";
-                                }
-
-
-                                }else{
-                                    echo "ID not valid (must contain 04 digits and integer number only) ";
+                                    echo "Name not valid (length should be greater than 3) ";
                                 }
 
                                 
