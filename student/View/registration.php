@@ -11,7 +11,7 @@
         <fieldset >
           <legend>REGESTRATION</legend>
             <table align="center">
-
+ 
               <tr>
                 <td>Name</td>
                 <td>:<input type="text" name="name" placeholder="Enter Full Name"></td>

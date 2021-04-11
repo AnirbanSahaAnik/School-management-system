@@ -47,7 +47,7 @@
 
 
 
-                                if(strlen($ID) == 3)
+                                if(strlen($ID) == 4)
                                 {
 
                                     if(strlen($mobile) == 11)
