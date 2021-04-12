@@ -8,7 +8,7 @@
 		$name = $_POST['name'];
         $email = $_POST['email'];
         $mobile = $_POST['mobile'];
-        $ID = $_POST['id'];
+        $ID = $_POST['id']; 
 		$password = $_POST['password'];
 		$confirm = $_POST['confirm'];
         $gender = $_POST['gender'];

@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Book Information";
 require_once('../Model/DatabaseConnection.php');
 $bookList=getAllbook();
 include('header.php');

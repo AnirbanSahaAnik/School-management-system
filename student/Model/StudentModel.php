@@ -1,7 +1,7 @@
 <?php
 	
-	require_once('db.php');
-
+	 
+ $conn = mysqli_connect('localhost','root','','school_management_system');
 function insertUserleave($user){
 
 $conn = getConnection();

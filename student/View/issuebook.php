@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Issue Book History";
 include('header.php');
 include_once('../model/DatabaseConnection.php');
 $viewhistory = getUserbyid($_COOKIE['id']);

@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Teacher Notice";
 include('header.php');
 require_once('../model/DatabaseConnection.php');
 $GetNotice = getAllNotice();

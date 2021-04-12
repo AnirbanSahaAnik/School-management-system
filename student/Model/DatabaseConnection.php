@@ -284,4 +284,51 @@
 
 
 
+
+	function updateMyInfo($id, $userinfo){
+		$conn = getConnection();
+		$sql = " update student set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}',p_address='{$userinfo['p_address']}' where id='{$id}'";
+		
+		 if(mysqli_query($conn, $sql))
+		{
+		return true;
+		}
+		else
+		{
+		return false;
+		}
+		
+		}
+
+
+
+	
+
+
+		function getAllroutine(){
+
+			$conn = getConnection();
+	
+			$sql = "select * from routine";
+			$result = mysqli_query($conn, $sql);
+			$user=[];
+			 
+		  
+				
+	
+	
+			while($row = mysqli_fetch_assoc($result))
+			{
+				
+				array_push($user, $row);
+				   
+					
+			   
+			}
+			return $user;
+			
+		}
+
+
+
 ?>

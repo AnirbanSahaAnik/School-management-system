@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Request for leave";
 include('header.php');
 include_once('../model/DatabaseConnection.php');
 $viemyinfo = getUserbyid($_COOKIE['id']);

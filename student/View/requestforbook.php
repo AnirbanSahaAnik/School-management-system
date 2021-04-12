@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Request for Books";
 include('header.php');
 ?>
 
@@ -10,8 +10,8 @@ include('header.php');
             <form class="" action="" method="post">
                <table>
                 <tr>
-                    <td>STUDENT ID</td>
-                    <td><input type="text" name="STUDENT ID" value=""> </td>
+                    <td>Id</td>
+                    <td><input type="text" name="STUDENT ID" value="<?php echo $_COOKIE['id']; ?>"> </td>
                 </tr>
                 <tr>
                     <td>Book Name</td>

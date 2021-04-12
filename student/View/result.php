@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Result";
 include('header.php');
 include_once('../model/DatabaseConnection.php');
 $viewmyresult = getUserbyid($_COOKIE['id']);

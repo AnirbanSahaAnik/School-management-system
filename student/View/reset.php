@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "CHANGE PASSWORD";
 include('header.php');
 ?>
 

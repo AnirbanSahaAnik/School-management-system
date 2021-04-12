@@ -1,12 +1,12 @@
 <?php
-$title= "View Profile";
+$title= "Edit Profile";
 include('header.php');
 include_once('../model/DatabaseConnection.php');
 $viemyinfo = getUserbyid($_COOKIE['id']);
 ?>
 
 <?php include('sideBar.php'); ?> 
-        <td>
+        <td> 
             <fieldset>
                 <legend>Edit Profile</legend>
             <form class="" action="../Controller/editCheck.php" method="post"> 
@@ -62,7 +62,7 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
                
                </table>
 
-               <input type="submit" name="submit" value="Submit">
+               <input type="submit" name="submit" value="UPDATE">
             </form>
             </fieldset>
             

@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Teacher Profile";
 require_once('../Model/DatabaseConnection.php');
 $teacherList=getAllteacher();
 include('header.php');

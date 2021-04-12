@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('../Model/StudentModel.php');
+    //require_once('../Model/StudentModel.php');
 
 	if(isset($_POST['submit'])){
 
@@ -23,8 +23,9 @@
                                             'leave_to'=>$leave_to
                                                      
                                                          ];
-                           
-                                                             $status = insertUserleave($user);
+                                                             $conn = mysqli_connect('localhost','root','','school_management_system');
+                                                             $sql = "insert into leave_request  values ( '','{$user['id']}', '{$user['name']}', '{$user['leave_from']}', '{$user['leave_to']}','')";
+                                                             $status = mysqli_query($conn, $sql);
                            
                                                               if($status){
                                                                  header('location: ../View/leaverequest.php');
@@ -38,5 +39,5 @@
                                               
        
                                                     
-                                                            }                    
+                                                            }
 ?>

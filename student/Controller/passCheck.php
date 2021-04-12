@@ -1,6 +1,6 @@
 <?php
 
-	require_once('../model/DatabaseConnection.php');
+	require_once('../model/DatabaseConnection.php'); 
 
 	if(isset($_POST['Change']))
 	{

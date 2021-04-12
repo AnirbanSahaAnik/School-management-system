@@ -1,5 +1,5 @@
 <?php
-$title= "Dashboard";
+$title= "Course Details";
 require_once('../Model/DatabaseConnection.php');
 $courseList=getAllcourse();
 include('header.php');
