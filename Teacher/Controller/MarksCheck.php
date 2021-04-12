@@ -13,7 +13,7 @@
 		}else{
 
 
-			if(is_numeric($marks) && strlen($marks) >= 2 && strlen($marks) <= 3)
+			if(is_numeric($marks) && strlen($marks) >= 2 && strlen($marks) <= 3 && $marks <=100)
 			{
 
 				$userinfo = array('id' => $Id,'marks' => $marks);

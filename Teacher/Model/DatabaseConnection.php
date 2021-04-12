@@ -62,7 +62,20 @@
 	function insertNotes($user){
 
 		$conn = getConnection();
-		$sql = "insert into notes (notes) values ( '{$user['notes']}')";
+		$sql = "insert into notes (notes) values ( '{$user['name']}')";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+	function insertNotes1($user){
+
+		$conn = getConnection();
+		$sql = "insert into id, notes (notes) values ( '{$user['id']}', '{$user['name']}')";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -121,11 +134,35 @@
 	}
 
 
+	function getNotesById($Id){
+
+		$conn = getConnection();
+
+		$sql = "select * from notes where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
+
+
 	function getMarksById($Id){
 
 		$conn = getConnection();
 
 		$sql = "select id, name, class, roll, marks from student where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
+
+
+	function getLeaveById($Sl){
+
+		$conn = getConnection();
+
+		$sql = "select * from leave_request where sl='{$Sl}'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 
@@ -228,6 +265,20 @@
 	}
 
 
+	function getAllLeaves(){
+		$conn = getConnection();
+		$sql = "select * from leave_request";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
 
 	function updatePassword($Id, $newpass){
 		$conn = getConnection();
@@ -274,6 +325,18 @@
 	}
 
 
+	function updateNotes($Id, $userinfo){
+		$conn = getConnection();
+		$sql = "update notes set notes='{$userinfo['name']}' where id='{$Id}'";
+		//print_r($sql);
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 	function deleteNoticeById($Id){
 		$conn = getConnection();
 		$sql = "delete from notice where id='$Id'";
@@ -288,6 +351,20 @@
 	
 	}
 
+	function deleteNotesById($Id){
+		$conn = getConnection();
+		$sql = "delete from notes where id='$Id'";
+		$result = mysqli_query($conn,$sql);
+		if($result){
+			header('location: ../View/ViewUploadedNotes(Teacher).php?your info is deleted');
+		}
+		else
+		{
+			header('location: ../View/ViewUploadedNotes(Teacher).php?Not deleted your info');
+		}
+	
+	}
+
 	function deleteMarksById($Id){
 		$conn = getConnection();
 		$sql = "update student set marks=NULL where id='$Id'";
@@ -298,6 +375,21 @@
 		else
 		{
 			header('location: ../View/StudentListMarks.php?Not deleted your info');
+		}
+	
+	}
+
+
+	function updateLeave($Sl, $userinfo){
+		$conn = getConnection();
+		$sql = "update leave_request set action='{$userinfo['request']}' where sl='{$Sl}'";
+		$result = mysqli_query($conn,$sql);
+		if($result){
+			header('location: ../View/LeaveRequest.php?your info is updated');
+		}
+		else
+		{
+			header('location: ../View/LeaveRequest.php?Not updated your info');
 		}
 	
 	}

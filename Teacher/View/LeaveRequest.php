@@ -1,7 +1,7 @@
 <?php
 	session_start();
   require_once('../Model/DatabaseConnection.php');
-  $User = getUserById($_COOKIE['ID']);
+	$Leave = getAllLeaves();
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -16,13 +16,11 @@
     <table border="1" cellspacing="0" width="80%" >
     <?php include("TeacherHeader.php") ?>
       <tr>
-         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Teacher.jpg" alt=""></td>
-            <td align="Left">
+        <tr>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/notice.jpg" alt=""></td>
+            <td align="Center">
             <b>
-              Logged in as<br><br>
-              <a href="ViewProfile.php"><?php echo $User['name'];?></a><br>
-              (Teacher)
+               Student Leave Request
             </b>
             </td>
           </tr>
@@ -42,7 +40,37 @@
                 </ul>
 
         </td>
-        <td><h1>Welcome <?php echo $User['name'];?></h1></td>
+        <td>
+            <fieldset>
+                <legend>LEAVE REQUEST</legend>
+            <form class="" action="" method="post">
+            <?php
+								echo "<table border = 1 width='100%' cellspacing = 0  >
+								<tr align = 'center'>
+                                    <td>Serial</td>
+								    <td>ID</td>
+								    <td>Name</td>
+								    <td>Leave From</td>
+                                    <td>Leave To</td>
+                                    <td>Status</td>
+                                    <td>Action</td>
+								</tr>";
+								for($i = 0; $i<count($Leave); $i++){
+								    echo "<tr align = 'center'>
+                                    <td>{$Leave[$i]['sl']}</td>
+								    <td>{$Leave[$i]['id']}</td>
+								    <td>{$Leave[$i]['name']}</td>
+								    <td>{$Leave[$i]['leave_from']}</td>
+                                    <td>{$Leave[$i]['leave_to']}</td>
+                                    <td>{$Leave[$i]['action']}</td>
+                                    <td> <a href='LeaveAction.php?id={$Leave[$i]['sl']}'> Action </a></td>
+								</tr>";
+								}
+								echo "</table>";
+								?>
+            </form>
+            </fieldset>
+        </td>
       </tr>
       <?php include("TeacherFooter.php") ?>
     </table>

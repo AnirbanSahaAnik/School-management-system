@@ -1,7 +1,9 @@
 <?php
 	session_start();
   require_once('../Model/DatabaseConnection.php');
-  $User = getUserById($_COOKIE['ID']);
+  $Id = $_GET['id'];
+	$User =  getNotesById($Id);
+  $_SESSION['id'] = $Id;
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -16,13 +18,11 @@
     <table border="1" cellspacing="0" width="80%" >
     <?php include("TeacherHeader.php") ?>
       <tr>
-         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Teacher.jpg" alt=""></td>
-            <td align="Left">
+        <tr>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/grades.svg" alt=""></td>
+            <td align="Center">
             <b>
-              Logged in as<br><br>
-              <a href="ViewProfile.php"><?php echo $User['name'];?></a><br>
-              (Teacher)
+              Marks Upload
             </b>
             </td>
           </tr>
@@ -42,9 +42,32 @@
                 </ul>
 
         </td>
-        <td><h1>Welcome <?php echo $User['name'];?></h1></td>
-      </tr>
-      <?php include("TeacherFooter.php") ?>
+        <td>
+            <fieldset>
+                <legend>NOTES UPDATE</legend>
+            <form class="" action="../Controller/EditNotesCheck.php" method="post" enctype="multipart/form-data">
+            <table align="center">
+                <tr>
+                <td>ID</td>
+                <td>:<input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+               </tr>
+               <tr>
+                <td>Notes</td>
+                <td>: <input type="file" name="photo"></td>
+               </tr>
+               <tr>
+                <td>Time</td>
+                <td>:<input type="text" name="time" disabled value="<?php echo $User['time']; ?>"></td>
+               </tr>
+                      </table>
+                      <hr>
+                      <center>
+                        <input type="submit" name="submit" value="Submit">
+                    </center>
+            </form>
+            </fieldset>
+        </td>
+        <?php include("TeacherFooter.php") ?>
     </table>
 
   </body>

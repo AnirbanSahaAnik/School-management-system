@@ -1,5 +1,9 @@
 <?php
 	session_start();
+    require_once('../Model/DatabaseConnection.php');
+    $Sl = $_GET['id'];
+    $User =getLeaveById($Sl);
+     $_SESSION['sl'] = $Sl;
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -8,17 +12,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Public Home</title>
+    <title>Leave Request</title>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
     <?php include("TeacherHeader.php") ?>
       <tr>
         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/password.webp" alt=""></td>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/Student.jpg" alt=""></td>
             <td align="Center">
             <b>
-              Password Change
+              Student Leave Request
             </b>
             </td>
           </tr>
@@ -40,24 +44,38 @@
         </td>
         <td>
             <fieldset>
-                <legend>PASSWORD CHANGE</legend>
-            <form class="" action="../Controller/ChangePassCheck.php" method="post">
-               <table border="1">
-			   <tr>
-			                  <td>Current Password:</td>
-			                  <td><input type="password" name="password" value=""></td>
-			                </tr>
-			                <tr>
-			                  <td>New Password:</td>
-			                  <td><input type="password" name="newpassword" value=""></td>
-			                </tr>
-			                <tr>
-			                  <td>Retype New Password:</td>
-			                  <td><input type="password" name="repassword" value=""></td>
-			                </tr>
-               </table>
-			             <hr>
-			              <input type="submit" name="Change" value="Change"> <br>
+                <legend>LEAVE REQUEST</legend>
+            <form class="" action="../Controller/LeaveCheck.php" method="post">
+
+            <table>
+					<tr>
+						<td>ID</td>
+						<td>: <input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+					</tr>
+					<tr>
+						<td>Name</td>
+						<td>: <input type="text" name="name" disabled value="<?php echo $User['name']; ?>"></td>
+					</tr>
+					<tr>
+						<td>Leave_From</td>
+						<td>: <input type="text" name="leave_from" disabled value="<?php echo $User['leave_from']; ?>"></td>
+					</tr>
+                    <tr>
+						<td>Leave_To</td>
+						<td>: <input type="text" name="leave_to" disabled value="<?php echo $User['leave_to']; ?>"></td>
+					</tr>
+                    <tr>
+						<td>Action</td>
+						<td>:<input type="radio" name="request" value="Accepted">Accepted
+                          <input type="radio" name="request" value="Rejected">Rejected
+                        </td>
+					</tr>
+
+				</table>
+				<hr>
+				<input type="submit" name="submit" value="Update">
+               
+               
             </form>
             </fieldset>
         </td>
@@ -76,4 +94,3 @@
 	}
 
 ?>
-
