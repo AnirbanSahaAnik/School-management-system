@@ -16,28 +16,27 @@
 			echo "null submission...";
 		}
        
-                                    $user = [	
-                                            'name'=>$name, 
-                                            'id' => $ID,    
-                                            'leave_from'=>$leave_from,
-                                            'leave_to'=>$leave_to
+                         $user = [	
+                                  'name'=>$name, 
+                                   'id' => $ID,    
+                                   'leave_from'=>$leave_from,
+                                   'leave_to'=>$leave_to
                                                      
-                                                         ];
-                                                             $conn = mysqli_connect('localhost','root','','school_management_system');
-                                                             $sql = "insert into leave_request  values ( '','{$user['id']}', '{$user['name']}', '{$user['leave_from']}', '{$user['leave_to']}','')";
-                                                             $status = mysqli_query($conn, $sql);
+                                 ];
+                                          $conn = mysqli_connect('localhost','root','','school_management_system');
+                                          $sql = "insert into leave_request  values ( '','{$user['id']}', '{$user['name']}', '{$user['leave_from']}', '{$user['leave_to']}','')";
+                                          $status = mysqli_query($conn, $sql);
                            
-                                                              if($status){
-                                                                 header('location: ../View/leaverequest.php');
-                                                             }else{
-                                                               echo "error";
-                                                             }
-       
+                                            if($status)
+                                            {
+                                                header('location: ../View/leaverequest.php');
+
+                                            }else
+                                            {
+                                               echo "error";
+                                            
+                                            }
+
                                               
-                                              
-                                               
-                                              
-       
-                                                    
-                                                            }
+                                         }
 ?>
