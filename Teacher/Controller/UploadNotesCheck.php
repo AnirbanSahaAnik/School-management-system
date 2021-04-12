@@ -22,12 +22,19 @@
             }else{
                 if($type == "image/png" || $type == "image/jpeg"){
                     $path = '../Resources/'.$name;
-                    if(move_uploaded_file($filetemp_name, $path)){
-                        header('location: ../View/UploadNotes.php');
-                        return true;
-                    }else{
-                       echo "Error Occured!";
-                        }
+                    $status = insertNotes($user);
+                    if($status)
+                    {
+                        if(move_uploaded_file($filetemp_name, $path)){
+                            header('location: ../View/UploadNotes.php');
+                            return true;
+                        }else{
+                           echo "Error Occured!";
+                            }
+
+                    }
+
+                    
                     }else{
                     echo "file type should be Only png or jpeg format";
                     echo "</br>";

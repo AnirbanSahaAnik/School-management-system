@@ -59,6 +59,19 @@
 	}
 
 
+	function insertNotes($user){
+
+		$conn = getConnection();
+		$sql = "insert into notes (notes) values ( '{$user['notes']}')";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 
 	function getUserById($Id){
 
@@ -190,6 +203,20 @@
 	function getAllNotice(){
 		$conn = getConnection();
 		$sql = "select * from notice";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
+	function getAllNotes(){
+		$conn = getConnection();
+		$sql = "select * from notes";
 		$result = mysqli_query($conn, $sql);
 		$users =[];
 

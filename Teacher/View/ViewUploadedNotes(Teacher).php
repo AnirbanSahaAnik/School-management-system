@@ -1,5 +1,7 @@
 <?php
 	session_start();
+  require_once('../Model/DatabaseConnection.php');
+	$GetNotes = getAllNotes();
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -14,11 +16,11 @@
     <table border="1" cellspacing="0" width="80%" >
     <?php include("TeacherHeader.php") ?>
       <tr>
-         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/course.jpg" alt=""></td>
+        <tr>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/notice.jpg" alt=""></td>
             <td align="Center">
             <b>
-            Notes Upload
+              Notice View
             </b>
             </td>
           </tr>
@@ -31,7 +33,7 @@
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
-                    <li><a href="ViewProfile.php">Book History</a></li>
+                    <li><a href="BookHistory.php">Book History</a></li>
                     <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
@@ -39,16 +41,27 @@
         </td>
         <td>
             <fieldset>
-                <form class="" action="../Controller/UploadNotesCheck.php" method="post" enctype="multipart/form-data">
-                    <fieldset>
-                      <legend>Upload Notes</legend>
-                      <input type="file" id="photo" name="photo"><br>
-                      <hr>
-                      <input type="submit" name="submit" value="submit">
-                      <a href="ViewUploadedNotes(Teacher).php"> View Uploaded Notes</a>
-                    </fieldset>
-              
-                  </form>
+                <legend>NOTICES</legend>
+            <form class="" action="" method="post">
+            <?php
+								echo "<table border = 1 width='100%' cellspacing = 0  >
+								<tr align = 'center'>
+								    <td>ID</td>
+								    <td>Notes</td>
+								    <td>Time</td>
+                    <td>Action</td>
+								</tr>";
+								for($i = 0; $i<count($GetNotes); $i++){
+								    echo "<tr align = 'center'>
+								    <td>{$GetNotes[$i]['id']}</td>
+								    <td>{$GetNotes[$i]['notes']}</td>
+								    <td>{$GetNotes[$i]['time']}</td>
+                    <td> <a href='EditNotes.php?id={$GetNotes[$i]['id']}'> Edit </a> | <a href='DeleteNotes.php?id={$GetNotes[$i]['id']}'> Delete </a>  </td>
+								</tr>";
+								}
+								echo "</table>";
+								?>
+            </form>
             </fieldset>
         </td>
       </tr>
