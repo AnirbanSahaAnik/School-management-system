@@ -30,9 +30,19 @@
 		}
 	}
 
-
-
 	
+
+	function insertNotes($user){
+
+		$conn = getConnection();
+		$sql = "insert into notes (notes) values ('{$user['name']}')";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	
 
