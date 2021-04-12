@@ -9,7 +9,7 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
         <td>
             <fieldset>
                 <legend>MY PROFILE</legend>
-            <form class="" action="" method="post">
+            <form class="" action="" method="post"> 
                <table>
                <tr>
                 <td>Name</td>
@@ -78,8 +78,10 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
                
                
                </table>
+               
             </form>
             </fieldset>
+            <a href="edit.php">Edit</a>
         </td>
       </tr>
       <?php include('footer.php'); ?>

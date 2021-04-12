@@ -1,21 +1,31 @@
 <?php
 $title= "Dashboard";
 include('header.php');
+include_once('../model/DatabaseConnection.php');
+$viemyinfo = getUserbyid($_COOKIE['id']);
 ?>
 
 <?php include('sideBar.php'); ?> 
         <td>
             <fieldset>
                 <legend>Request for leave </legend>
-            <form class="" action="" method="post">
+            <form class="" action="../Controller/leaveCheck.php" method="post">
                <table>
                 <tr>
-                    <td>STUDENT ID</td>
-                    <td><input type="text" name="STUDENT ID" value=""> </td>
+                    <td>Id</td>
+                    <td><input type="text" name="id" value="<?php echo $viemyinfo['id']; ?>"> </td>
                 </tr>
                 <tr>
-                    <td>The reason for the holiday</td>
-                    <td><input type="text" name="" value=""> </td>
+                    <td>Name</td>
+                    <td><input type="text" name="name" value="<?php echo $viemyinfo['name']; ?>"> </td>
+                </tr>
+                <tr>
+                    <td>Leave From</td>
+                    <td><input type="date" name="leave_from" value=""> </td>
+                </tr>
+                <tr>
+                    <td>Leave To</td>
+                    <td><input type="date" name="leave_to" value=""> </td>
                 </tr>
                 <tr>
                     <td></td>

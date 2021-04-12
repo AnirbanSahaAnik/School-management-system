@@ -1,41 +1,42 @@
 <?php
 $title= "Dashboard";
 include('header.php');
+include_once('../model/DatabaseConnection.php');
+$viewhistory = getUserbyid($_COOKIE['id']);
 ?>
 
 <?php include('sideBar.php'); ?> 
-        <td>
-            <center><h2>Issue Books History</h2></center>
-            <table border="1" width="100%">
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Borrowed On</th>
-                    <th>Return On</th>
-                    <th>Fine</th>
-                  <tr>  
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>A Prayer for Owen Meany</td>
-                    <td align="center">John Irving</td>
-                    <td align="center">11-02-21</td>
-                    <td align="center">15-02-21</td>
-                    <td align="center">00</td>
-                    
-                  </tr>
-                  <tr>
-                      <td>A Tree Grows in Brooklyn</td>
-                      <td align="center">Betty Smith</td>
-                      <td align="center">16-02-21</td>
-                      <td align="center">18-02-21</td>
-                      <td align="center">00</td>
-                  </tr>
+<td>
+            <fieldset>
+                <legend>Issue Book History</legend>
+            <form class="" action="" method="post"> 
+               <table>
+               <tr>
+                <td>Book Name</td> 
+                <td>:</td>
+                <td><?php echo $viewhistory['bookname']; ?></td>
+               </tr>
 
-                  
-                </tbody>
-              </table>
+               <tr>
+                <td>Issue Date</td> 
+                <td>:</td>
+                <td><?php echo $viewhistory['issuedate']; ?></td>
+               </tr>
+               <tr>
+                <td>Return Date</td> 
+                <td>:</td>
+                <td><?php echo $viewhistory['returndate']; ?></td>
+               </tr>
+               <tr>
+                <td>Fine</td> 
+                <td>:</td>
+                <td><?php echo $viewhistory['fine']; ?></td>
+               </tr>
+
+               </table>
+               
+            </form>
+            </fieldset>
         </td>
       </tr>
 

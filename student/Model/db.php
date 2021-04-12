@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $dbpass = '';
-$db = "school_management_system";
+$db = "school_management_system"; 
 
 function getConnection(){
     global $host,$user,$dbpass,$db;

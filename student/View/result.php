@@ -12,7 +12,7 @@ $viewmyresult = getUserbyid($_COOKIE['id']);
             <form class="" action="" method="post"> 
                <table>
                <tr>
-                <td>Name</td>
+                <td>Name</td> 
                 <td>:</td>
                 <td><?php echo $viewmyresult['name']; ?></td>
                </tr>

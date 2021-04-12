@@ -32,6 +32,24 @@
 
 
 
+	
+
+	
+
+	function updateRequestProfile($user){
+
+		$conn = getConnection();
+		$sql = "insert into edit_student (id, name, email, mobile, gender, dob, p_address) values ('{$user['id']}', '{$user['name']}', '{$user['email']}', '{$user['mobile']}', '{$user['gender']}', '{$user['dob']}', '{$user['p_address']}')";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
 	function getUserById($Id){
 
 		$conn = getConnection();
@@ -67,7 +85,7 @@
 	   return $row;
 	}
 
-
+	
 
 	
 	function getAllUsers(){

@@ -31,7 +31,7 @@
               </tr>
 
               <tr>
-                <td>Id</td>
+                <td>Id</td> 
                 <td>:<input type="number" name="id" value=""></td>
               </tr>
 
