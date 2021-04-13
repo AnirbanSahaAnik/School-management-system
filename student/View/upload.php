@@ -1,7 +1,6 @@
 <?php
 $title = "Request for leave";
 include('header.php');
-include_once('../model/DatabaseConnection.php');
 ?>
 
 <?php include('sideBar.php'); ?>
