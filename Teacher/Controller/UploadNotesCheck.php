@@ -12,12 +12,12 @@
     
         }else{
             $size = $file_info['size'];
-            $KB =   $size/1024;
+            $MB =   $size/1048576;
             $name = $file_info['name'];
             $type = $file_info['type'];
             $filetemp_name = $file_info['tmp_name'];
-            if($KB >= 900){
-                echo "file size should be minimum";
+            if($MB >= 5){
+                echo "file size should be minimum(less than 5 MB)";
                 echo "</br>";
             }else{
                 if($type == "image/png" || $type == "image/jpeg"){
@@ -37,7 +37,7 @@
 
                     
                     }else{
-                    echo "file type should be Only png or jpeg format";
+                    echo "file type should be only png or jpg or jpeg format";
                     echo "</br>";
     
                 }

@@ -22,7 +22,7 @@
             <td align="Left"><img height="80px" weight="80px" src="../Resources/grades.svg" alt=""></td>
             <td align="Center">
             <b>
-              Marks Upload
+              Notes Re-upload
             </b>
             </td>
           </tr>

@@ -20,7 +20,7 @@
             <td align="Left"><img height="80px" weight="80px" src="../Resources/notice.jpg" alt=""></td>
             <td align="Center">
             <b>
-              Notice View
+              Uploaded Notes List
             </b>
             </td>
           </tr>
@@ -42,7 +42,7 @@
         </td>
         <td>
             <fieldset>
-                <legend>NOTICES</legend>
+                <legend>NOTES</legend>
             <form class="" action="" method="post">
             <?php
 								echo "<table border = 1 width='100%' cellspacing = 0  >
