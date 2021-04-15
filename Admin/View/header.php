@@ -40,13 +40,8 @@
                 <center>
                   <h3>Login As</h3>
                   <h2>
-										<?php
-										echo $_COOKIE['id'];
-											// include_once('../model/adminModel.php');
-											//  $viemyinfo = getUserbyid($_COOKIE['id']);
-											// echo $viemyinfo['name'];
-										?>
-								</h2>
+										<a href="viewProfile.php"><?php echo $_COOKIE['name'];?></a>
+									</h2>
                   <p>(Admin)</p>
                 </center>
                 <hr>

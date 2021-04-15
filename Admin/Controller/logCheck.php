@@ -19,10 +19,10 @@
 			$status = validateUser($id, $password);
 			if($status){
 
-					//$_SESSION['id'] = $id;
-					//$_SESSION['password'] = $password;
-					//$_SESSION['flag'] = true;
+					$profile = getUserbyid($id);
+					$name = $profile['name'];
 					setcookie('id', $id, time()+3600, '/');
+					setcookie('name', $name, time()+3600, '/');
 					setcookie('flag', true, time()+3600, '/');
 					header('location: ../view/dashboard.php');
 			}else{

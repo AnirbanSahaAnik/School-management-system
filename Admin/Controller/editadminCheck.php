@@ -16,6 +16,7 @@
 					if($check)
 					{
 						echo "info updated!";
+						setcookie('name', $name, time()+3600, '/');
 						header('location: ../view/EditProfile.php');
 					}
 					else
