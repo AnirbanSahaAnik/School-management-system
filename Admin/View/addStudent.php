@@ -1,5 +1,6 @@
 <?php
 	$title= "add student";
+	$js = "addStuValidation.js";
 	include('header.php');
 ?>
                 <ul>
@@ -12,53 +13,60 @@
               </td>
 
               <td>
-                <form  class="" action="../Controller/regCheckStudent.php" method="post">
+                <form  class=""  id="inform" action="../Controller/regCheckStudent.php" onsubmit="return validation()" method="post">
                   <fieldset >
                     <legend>REGESTRATION</legend>
                       <table align="center">
-                        <tr>
+												<tr>
+													<td colspan="2">
+	                          <center>
+	                          <div id="error_messege">
+	                          </div>
+	                        </center>
+												</tr>
+												<tr>
                           <td>Name</td>
-                          <td>:<input type="text" name="name" placeholder="Enter Full Name"></td>
+                          <td>:<input type="text" id="name" name="name" placeholder="Enter Full Name"></td>
                         </tr>
                         <tr>
                           <td>Email</td>
-                          <td>:<input type="email" name="email" value=""></td>
+                          <td>:<input type="email" id="email" name="email" value=""></td>
                         </tr>
                         <tr>
                           <td>Mobile No</td>
-                          <td>:<input type="number" name="mobile" value=""></td>
+                          <td>:<input type="number" id="mobile" name="mobile" value=""></td>
                         </tr>
                         <tr>
                           <td>Id</td>
-                          <td>:<input type="text" name="id" value=""></td>
+                          <td>:<input type="text" id="id" name="id" value=""></td>
                         </tr>
                         <tr>
                           <td>Password</td>
-                          <td>:<input type="password" name="password" value=""></td>
+                          <td>:<input type="password" id="password" name="password" value=""></td>
                         </tr>
                         <tr>
                           <td>Confirm Password</td>
-                          <td>:<input type="password" name="repass" value=""></td>
+                          <td>:<input type="password" id="repass" name="repass" value=""></td>
                         </tr>
                         <tr>
                           <td>Gender</td>
                           <td>
-                            :<input type="radio" name="gender" value="male">Male
-                            <input type="radio" name="gender" value="female">Female
-                            <input type="radio" name="gender" value="other">Other
+                            :<input type="radio" id="gender" name="gender" value="male">Male
+                            <input type="radio" id="gender" name="gender" value="female">Female
+                            <input type="radio" id="gender" name="gender" value="other">Other
                           </td>
                         </tr>
                         <tr>
                           <td>Date of Birth</td>
-                          <td>:<input type="date" name="dob" value=""></td>
+                          <td>:<input type="date" id="dob" name="dob" value=""></td>
                         </tr>
                         <tr>
                           <td>Present Address</td>
-                          <td>:<input type="text" name="p_address" value=""></td>
+                          <td>:<input type="text"  id="p_address" name="p_address" value=""></td>
                         </tr>
                         <tr>
                           <td>Class</td>
-                          <td>:<select name="class">
+                          <td>:<select id="class" name="class">
                               <option value="Six">Six</option>
                               <option value="Seven">Seven</option>
                               <option value="Eight">Eight</option>
@@ -70,7 +78,7 @@
 
                         <tr>
                           <td>Section</td>
-                          <td>:<select  name="section">
+                          <td>:<select id="section" name="section">
                               <option value="A">A</option>
                               <option value="B">B</option>
                             </select>
@@ -78,7 +86,7 @@
                         </tr>
                         <tr>
                           <td>Roll No</td>
-                          <td>:<input type="number" name="roll" value=""></td>
+                          <td>:<input type="number" id="roll" name="roll" value=""></td>
                         </tr>
                       </table>
                       <hr>
