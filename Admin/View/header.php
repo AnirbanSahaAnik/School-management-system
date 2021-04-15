@@ -13,6 +13,14 @@
   <head>
     <meta charset="utf-8">
     <title><?=$title?></title>
+		<style media="screen">
+      #error_messege{
+        color: red;
+        font-weight: bold;
+      }
+			</style>
+		<script src="<?=$js?>"></script>
+
   </head>
   <body>
     <table border="1" cellspacing="0" width="100%" >
