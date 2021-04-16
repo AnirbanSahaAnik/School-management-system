@@ -1,6 +1,6 @@
 <?php
 	$title= "Change Password";
-	$js = "ChangPassVal.js";
+	$js = "../Script/ChangPassVal.js";
 	include('header.php');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 	$title= "Update Librarian";
-	$js = "editValidation.js";
+	$js = "../Script/editValidation.js";
 	include('header.php');
 	include_once('../model/librarianModel.php');
   $id = $_GET['id'];

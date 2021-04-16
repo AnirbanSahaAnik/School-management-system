@@ -1,6 +1,6 @@
 <?php
 	$title= "Edit student request";
-	$js = "editReqValidation.js";
+	$js = "../Script/editReqValidation.js";
 	include('header.php');
 	include_once('../model/studentModel.php');
   $id = $_GET['id'];

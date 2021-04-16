@@ -9,7 +9,7 @@
         font-weight: bold;
       }
     </style>
-    <script src="adminloginVal.js"></script>
+    <script src="../Script/adminloginVal.js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="100%" >

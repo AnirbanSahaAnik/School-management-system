@@ -1,6 +1,6 @@
 <?php
 	$title = "add Teacher";
-	$js = "addValidation.js";
+	$js = "../Script/addValidation.js";
 	include('header.php');
 
 ?>

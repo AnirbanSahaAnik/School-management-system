@@ -1,6 +1,6 @@
 <?php
 	$title= "add student";
-	$js = "addStuValidation.js";
+	$js = "../Script/addStuValidation.js";
 	include('header.php');
 ?>
                 <ul>

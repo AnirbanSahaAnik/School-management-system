@@ -1,6 +1,6 @@
 <?php
 	$title= "Edit Profile";
-	$js = "EditProfileVal.js";
+	$js = "../Script/EditProfileVal.js";
 	include('header.php');
 	include_once('../model/adminModel.php');
 	$viemyinfo = getUserbyid($_COOKIE['id']);

@@ -1,6 +1,6 @@
 <?php
 	$title= "Update teacher";
-	$js = "editValidation.js";
+	$js = "../Script/editValidation.js";
 	include('header.php');
 	include_once('../model/teacherModel.php');
   $id = $_GET['id'];

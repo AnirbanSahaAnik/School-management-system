@@ -1,5 +1,6 @@
 <?php
-	$title= "Dashbord";
+	$title= "Add course";
+	$js = "../Script/addCourseVal.js";
 	include('header.php');
 ?>
                 <ul>
@@ -9,17 +10,24 @@
               </td>
 
               <td>
-                <form  class="" action="../Controller/addCheckCourse.php" method="post">
+                <form id="inform" class="" action="../Controller/addCheckCourse.php" onsubmit="return validation()" method="post">
                   <fieldset >
                     <legend>Create Course</legend>
                       <table align="center">
+												<tr>
+													<td colspan="2">
+														<center>
+														<div id="error_messege">
+														</div>
+													</center>
+												</tr>
                         <tr>
                           <td>Course Name</td>
-                          <td>:<input type="text" name="name" placeholder=""></td>
+                          <td>:<input type="text" id="name" name="name" placeholder=""></td>
                         </tr>
                         <tr>
                           <td>Class</td>
-                          <td>:<select name="class">
+                          <td>:<select id="classE" name="class">
                               <option value="Six">Six</option>
                               <option value="Seven">Seven</option>
                               <option value="Eight">Eight</option>
@@ -29,7 +37,7 @@
                           </td>
                         <tr>
                           <td>Description</td>
-                          <td>:<textarea name="description" rows="3" cols="20"></textarea></td>
+                          <td>:<textarea name="description" id="description" rows="3" cols="20"></textarea></td>
                         </tr>
                       </table>
                       <hr>
@@ -44,8 +52,4 @@
           </table>
         </td>
       </tr>
-
-
-
-
-    <?php include('footer.php'); ?>
+<?php include('footer.php'); ?>
