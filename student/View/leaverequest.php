@@ -1,5 +1,6 @@
 <?php
 $title= "Request for leave";
+$javascript = "../Script/leaveval.js";
 include('header.php');
 include_once('../model/DatabaseConnection.php');
 $viemyinfo = getUserbyid($_COOKIE['id']);
@@ -9,7 +10,7 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
         <td>
             <fieldset>
                 <legend>Request for leave </legend>
-            <form class="" action="../Controller/leaveCheck.php" method="post">
+            <form class="" action="../Controller/leaveCheck.php" onsubmit="return val()" method="post">
                <table>
                 <tr>
                     <td>Id</td>
@@ -21,11 +22,11 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
                 </tr>
                 <tr>
                     <td>Leave From</td>
-                    <td><input type="date" name="leave_from" value=""> </td>
+                    <td><input type="date" id="leave_from" name="leave_from" value=""> </td>
                 </tr>
                 <tr>
                     <td>Leave To</td>
-                    <td><input type="date" name="leave_to" value=""> </td>
+                    <td><input type="date" id="leave_to" name="leave_to" value=""> </td>
                 </tr>
                 <tr>
                     <td></td>
@@ -33,6 +34,15 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
                         <input type="submit" name="submit" value="Submit"> 
                     </td>
                 </tr>
+
+                <tr>
+					<td colspan="2">
+						<center>
+							<div id="error_messege">
+							</div>
+						</center>
+					</td>
+					</tr>
     
                </table>
     

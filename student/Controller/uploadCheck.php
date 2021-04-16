@@ -16,7 +16,7 @@
             $name = $file['name'];
             $type = $file['type'];
             $filetemp_name = $file['tmp_name'];
-            if($KB >= 900){
+            if($KB >= 700){
                 echo "file size should be minimum";
                 echo "</br>";
             }else{

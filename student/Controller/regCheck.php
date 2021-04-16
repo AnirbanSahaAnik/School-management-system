@@ -6,7 +6,7 @@
 	if(isset($_POST['submit'])){
 
 		$name = $_POST['name'];
-        $email = $_POST['email'];
+        $email = $_POST['email']; 
         $mobile = $_POST['mobile'];
         $ID = $_POST['id']; 
 		$password = $_POST['password'];
@@ -16,7 +16,7 @@
 		$paddress = $_POST['paddress'];
 		$class = $_POST['class'];
 		$section = $_POST['section'];
-		$roll = $_POST['roll'];
+		$roll = $_POST['roll']; 
 
 
 		if($name == "" || $email == "" || $mobile == "" || $ID == "" || $password == "" || $confirm == "" || $gender == "" || $dd == ""|| $paddress == ""|| $class == ""|| $section == ""|| $roll == ""){
