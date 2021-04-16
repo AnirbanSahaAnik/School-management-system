@@ -1,5 +1,6 @@
 <?php
 	$title= "Update course";
+	$js = "../Script/addCourseVal.js";
 	include('header.php');
 	include_once('../model/courseModel.php');
   $id = $_GET['id'];
@@ -12,22 +13,29 @@
                 </ul>
               </td>
               <td>
-                <form action="../controller/updateCheckCourse.php" method="post">
+                <form id="inform" action="../controller/updateCheckCourse.php" onsubmit="return validation()"  method="post">
 
                 <fieldset>
                   <legend>Update Course</legend>
                     <table align="center">
+											<tr>
+												<td colspan="2">
+													<center>
+													<div id="error_messege">
+													</div>
+												</center>
+											</tr>
                       <tr>
                         <td>Id</td>
                         <td>:<input type="text" name="id" disabled value="<?php echo $updatemyinfo['id']; ?>"></td>
                       </tr>
                       <tr>
                         <td>Course Name</td>
-                        <td>:<input type="text" name="name" value="<?php echo $updatemyinfo['course_name']; ?>"></td>
+                        <td>:<input type="text" id="name" name="name" value="<?php echo $updatemyinfo['course_name']; ?>"></td>
                       </tr>
                       <tr>
                         <td>Class</td>
-                        <td>:<select name="class">
+                        <td>:<select id="classE" name="class">
                             <option  <?php  if($updatemyinfo['class']=="Six"){?> selected="true" <?php } ?>  value="Six">Six</option>
                             <option  <?php  if($updatemyinfo['class']=="Seven"){?> selected="true" <?php } ?>  value="Seven">Seven</option>
                             <option  <?php  if($updatemyinfo['class']=="Eight"){?> selected="true" <?php } ?>  value="Eight">Eight</option>
@@ -37,7 +45,7 @@
                         </td>
                       <tr>
                         <td>Description</td>
-                        <td>:<textarea name="description" rows="3" cols="20"><?php echo $updatemyinfo['description']; ?></textarea></td>
+                        <td>:<textarea id="description" name="description" rows="3" cols="20"><?php echo $updatemyinfo['description']; ?></textarea></td>
                       </tr>
 
                       </table>

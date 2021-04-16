@@ -1,5 +1,6 @@
 <?php
 	$title= "Update Notice";
+	$js = "../Script/noticeVal.js";
 	include('header.php');
 	include_once('../model/noticeModel.php');
   $id = $_GET['id'];
@@ -12,14 +13,21 @@
                 </ul>
               </td>
               <td>
-                <form action="../controller/updateCheckNotice.php" method="post">
+                <form id="inform" action="../controller/updateCheckNotice.php" onsubmit="return validation()" method="post">
 
                   <fieldset >
                     <legend>Notice</legend>
                       <table align="center">
+												<tr>
+													<td colspan="2">
+														<center>
+														<div id="error_messege">
+														</div>
+													</center>
+												</tr>
                         <tr>
                           <td>
-                            <textarea name="notice" rows="8" cols="80" placeholder="Enter notice Here"><?php echo $updatemyinfo['notice']; ?></textarea>
+                            <textarea id="notice" name="notice" rows="8" cols="80" placeholder="Enter notice Here"><?php echo $updatemyinfo['notice']; ?></textarea>
                           </td>
                         </tr>
                       </table>

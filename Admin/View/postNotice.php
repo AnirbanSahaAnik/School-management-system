@@ -1,5 +1,6 @@
 <?php
 	$title= "notice";
+	$js = "../Script/noticeVal.js";
 	include('header.php');
 ?>
                 <ul>
@@ -8,13 +9,20 @@
                 </ul>
               </td>
               <td>
-                <form  class="" action="../Controller/postCheckNotice.php" method="post">
+                <form  class="" id="inform" action="../Controller/postCheckNotice.php" onsubmit="return validation()" method="post">
                   <fieldset >
                     <legend>Notice</legend>
                       <table align="center">
+												<tr>
+													<td colspan="2">
+														<center>
+														<div id="error_messege">
+														</div>
+													</center>
+												</tr>
                         <tr>
                           <td>
-                            <textarea name="notice" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
+                            <textarea id="notice" name="notice" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
                           </td>
                         </tr>
                       </table>
