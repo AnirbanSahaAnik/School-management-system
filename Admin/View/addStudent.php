@@ -66,7 +66,7 @@
                         </tr>
                         <tr>
                           <td>Class</td>
-                          <td>:<select id="class" name="class">
+                          <td>:<select id="classE" name="class">
                               <option value="Six">Six</option>
                               <option value="Seven">Seven</option>
                               <option value="Eight">Eight</option>
@@ -102,7 +102,4 @@
         </td>
       </tr>
 
-
-
-
-      <?php include('footer.php'); ?>
+<?php include('footer.php'); ?>

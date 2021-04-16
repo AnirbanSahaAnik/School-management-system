@@ -8,15 +8,14 @@ function validation(){
   var gender = document.getElementById("gender").value;
   var dob = document.getElementById("dob").value;
   var p_address = document.getElementById("p_address").value;
-  var class = document.getElementById("class").value;
+  var classE = document.getElementById("classE").value;
   var section = document.getElementById("section").value;
   var roll = document.getElementById("roll").value;
   var error_messege = document.getElementById("error_messege");
   var text;
 
 
-  if(id == "" || name == "" || email == "" || password == "" || repass == ""
-  || mobile == "" || gender == "" || dob == "" || class == "" || section == "" || roll == "" || p_address == "" ){
+  if(id == "" || name == "" || email == "" || password == "" || repass == "" || mobile == "" || gender == "" || dob == "" || classE == "" || section == "" || roll == "" || p_address == "" ){
     text = "Please fill all the field";
     error_messege.innerHTML = text;
     return false;
