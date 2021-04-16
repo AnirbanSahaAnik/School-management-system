@@ -1,5 +1,6 @@
 <?php
 	$title= "Edit Profile";
+	$js = "EditProfileVal.js";
 	include('header.php');
 	include_once('../model/adminModel.php');
 	$viemyinfo = getUserbyid($_COOKIE['id']);
@@ -14,19 +15,26 @@
               </td>
 
               <td>
-								<form class="" action="../Controller/editadminCheck.php" method="post">
+								<form class="" id="inform" action="../Controller/editadminCheck.php" onsubmit="return validation()" method="post">
 								<table>
 									<tr>
+										<td colspan="2">
+											<center>
+											<div id="error_messege">
+											</div>
+										</center>
+									</tr>
+									<tr>
 										<td>ID</td>
-										<td>: <input type="text" name="id" disabled value="<?php echo $viemyinfo['id']; ?>"></td>
+										<td>: <input type="text" id="id" name="id" disabled value="<?php echo $viemyinfo['id']; ?>"></td>
 									</tr>
 									<tr>
 										<td>Name</td>
-										<td>: <input type="text" name="name" value="<?php echo $viemyinfo['name']; ?>"></td>
+										<td>: <input type="text" id="name" name="name" value="<?php echo $viemyinfo['name']; ?>"></td>
 									</tr>
 									<tr>
 										<td>Email</td>
-										<td>: <input type="email" name="email" value="<?php echo $viemyinfo['email']; ?>"></td>
+										<td>: <input type="email" id="email" name="email" value="<?php echo $viemyinfo['email']; ?>"></td>
 									</tr>
 
 								</table>

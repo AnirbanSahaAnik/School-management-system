@@ -1,7 +1,8 @@
 <?php
 	$title= "Change Password";
+	$js = "ChangPassVal.js";
 	include('header.php');
-  
+
 ?>
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
@@ -13,21 +14,28 @@
               </td>
 
               <td>
-								<form class="" action="../controller/chaPassCheck.php" method="post">
+								<form class="" id="inform" action="../controller/chaPassCheck.php" onsubmit="return validation()" method="post">
 			            <fieldset>
 			              <legend>CHANGE PASSWORD</legend>
 			              <table>
+											<tr>
+												<td colspan="2">
+													<center>
+													<div id="error_messege">
+													</div>
+												</center>
+											</tr>
 			                <tr>
 			                  <td>Current Password:</td>
-			                  <td><input type="password" name="cpas" value=""></td>
+			                  <td><input type="password" id="cpas" name="cpas" value=""></td>
 			                </tr>
 			                <tr>
 			                  <td>New Password:</td>
-			                  <td><input type="password" name="npass" value=""></td>
+			                  <td><input type="password" id="npass" name="npass" value=""></td>
 			                </tr>
 			                <tr>
 			                  <td>Retype New Password:</td>
-			                  <td><input type="password" name="rnpass" value=""></td>
+			                  <td><input type="password" id="rnpass" name="rnpass" value=""></td>
 			                </tr>
 			              </table>
 			              <hr>

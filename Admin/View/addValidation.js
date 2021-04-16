@@ -48,7 +48,7 @@ function validation(){
             error_messege.innerHTML = text;
             return false;
           }
-          alert("Form Submited Sucessfully!")
+          alert("User added Sucessfully!")
           return true;
         }
       }
