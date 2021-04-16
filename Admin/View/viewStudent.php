@@ -1,5 +1,6 @@
 <?php
 	$title= "View Sturdnt";
+	$js = "../script/StudentSearch.js";
 	include('header.php');
 	include_once('../model/studentModel.php');
 	$UsersList = allUserList();
@@ -15,7 +16,12 @@
               </td>
 
               <td>
-                <center><h2>Student list</h2></center>
+                <center><h2>Student list</h2>
+									<input type="text" name="name" id="name" onkeyup="ajax()" />
+									<input type="button" name="" value="Search">
+								</center>
+								<div id="myh1" class="">
+									<br>
 								<?php
 								echo "<table border = 1 width='100%' cellspacing = 0  >
 								<tr align = 'center'>
@@ -48,6 +54,7 @@
 								}
 								echo "</table>";
 								?>
+								</div>
 
               </td>
             </tr>

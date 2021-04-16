@@ -1,5 +1,6 @@
 <?php
 	$title= "View Librarian";
+	$js = "../script/LibrarianSearch.js";
 	include('header.php');
 	include_once('../model/librarianModel.php');
 	$UsersList = allUserList();
@@ -15,7 +16,12 @@
               </td>
 
               <td>
-                <center><h2>Librarian list</h2></center>
+                <center><h2>Librarian list</h2>
+									<input type="text" name="name" id="name" onkeyup="ajax()" />
+									<input type="button" name="" value="Search">
+								</center>
+								<br>
+								<div id="myh1" class="">
 								<?php
 								echo "<table border = 1 width='100%' cellspacing = 0  >
 								<tr align = 'center'>
@@ -40,6 +46,7 @@
 								}
 								echo "</table>";
 								?>
+								</div>
 
               </td>
             </tr>
