@@ -4,17 +4,24 @@ function validation(){
   var error_messege = document.getElementById("error_messege");
   var text;
 
-  if(name == "" || emaill == ""){
+  if(name == "" || email == ""){
     text = "Please fill all the field";
     error_messege.innerHTML = text;
     return false;
-  }
-    if (name.length<2) {
-      text = "Length of name is too short";
+  }else {
+    if (email.length < 6){
+      text = "Please Enter the Valid Email";
       error_messege.innerHTML = text;
       return false;
+    }else {
+      if (name.length<3) {
+        text = "Length of name is too short";
+        error_messege.innerHTML = text;
+        return false;
+      }
+      text = "Information is Sucessfully Updated";
+      error_messege.innerHTML = text;
+      return true;
     }
-    text = "Information is Sucessfully Updated";
-    error_messege.innerHTML = text;
-    return true;
+  }
 }

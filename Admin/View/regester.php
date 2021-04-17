@@ -10,7 +10,7 @@
         font-weight: bold;
       }
     </style>
-    <script src="regester.js"></script>
+    <script src="../Script/regester.js"></script>
 
   </head>
   <body>

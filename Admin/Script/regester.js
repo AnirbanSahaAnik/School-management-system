@@ -34,7 +34,7 @@ function validation(){
             return false;
           }
 
-          if (name.length<2){
+          if (name.length<3){
             text = "Length of name is too short";
             error_messege.innerHTML = text;
             return false;
