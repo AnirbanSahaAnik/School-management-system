@@ -47,7 +47,7 @@
                       </tr>
                       <tr>
                         <td>ID</td>
-                        <td>: <input type="number" id="id" name="id" value=""></td>
+                        <td>: <input type="text" id="id" name="id" value=""></td>
                       </tr>
                       <tr>
                         <td>Name</td>

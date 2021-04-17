@@ -29,6 +29,15 @@ function validation(){
             text = "Length of name is too short";
             error_messege.innerHTML = text;
             return false;
+          }else {
+            for(i=0; i<name.length; i++){
+              ch = name.charAt(i);
+              if(!(ch >= 'a' && ch <= 'z') && !(ch >= 'A' && ch <= 'Z') && !(ch == ' ')){
+                text = "Name contain only characters";
+                error_messege.innerHTML = text;
+                return false;
+              }
+            }
           }
           alert("User Information Updated Sucessfully!")
           return true;
