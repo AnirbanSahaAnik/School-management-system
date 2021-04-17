@@ -55,7 +55,7 @@
             <table>
 					<tr>
 						<td>ID</td>
-						<td>: <input type="number" id="id" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+						<td>: <input type="text" id="id" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
 					</tr>
 					<tr>
 						<td>Name</td>
@@ -67,7 +67,7 @@
 					</tr>
                     <tr>
 						<td>Mobile No.</td>
-						<td>: <input type="number" id="mobile" name="mobile" value="<?php echo $User['mobile']; ?>"></td>
+						<td>: <input type="text" id="mobile" name="mobile" value="<?php echo $User['mobile']; ?>"></td>
 					</tr>
                     <tr>
 						<td>Gender</td>

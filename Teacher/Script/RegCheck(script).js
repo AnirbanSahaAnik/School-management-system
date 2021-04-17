@@ -33,14 +33,14 @@ function Registration(){
           }
           else {  
 
-            if (mobile.length != 11){
+            if (isNaN(mobile) || mobile.length != 11){
                 text = "**Please enter valid mobile Number**";
                 error_messege.innerHTML = text;
                 return false;
               }
             else {
-                if (id.length != 4){
-                  text = "**ID must be 4 digit**";
+                if (isNaN(id) || id.length != 4){
+                  text = "**Please enter valid ID**";
                   error_messege.innerHTML = text;
                   return false;
                 }

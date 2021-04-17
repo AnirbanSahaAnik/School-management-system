@@ -55,12 +55,12 @@
 
                              <tr>
                                   <td width="30%" height="30px">Mobile No.</td>
-                                  <td width="60%" height="30px">:<input type="number" id= "mobile" name="mobile" value=""></td>
+                                  <td width="60%" height="30px">:<input type="text" id= "mobile" name="mobile" value=""></td>
                               </tr>
 
                               <tr>
                                   <td width="30%" height="30px">ID</td>
-                                  <td width="60%" height="30px">:<input type="number" id= "id" name="ID" value=""></td>
+                                  <td width="60%" height="30px">:<input type="text" id= "id" name="ID" value=""></td>
                               </tr>
 
                               <tr>
