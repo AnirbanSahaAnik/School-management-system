@@ -10,33 +10,25 @@ function Marks(){
       return false;
     }else {
 
-        if(!(marks.length >= 2) || !(marks.length <= 3) || !(marks <= 100))
-        {
+      if(isNaN(marks))
+      {
+        text = "**Marks should be integer only**";
+         error_messege.innerHTML = text;
+         return false;
+      }else{
+
+           if(!(marks.length >= 2) || !(marks.length <= 3) || !(marks >= 0) || !(marks <= 100))
+           {
             text = "**Marks length not valid**";
             error_messege.innerHTML = text;
             return false;
 
-        }else{
-                
-            for(i=0; i<marks.length; i++)
-            {
-              ch = marks.charAt(i);
-              if((ch >= 'a' && ch <= 'z') && (ch >= 'A' && ch <= 'Z') && (ch == ' '))
-              {
-    
-                text = "**Marks should be integer only**";
-                error_messege.innerHTML = text;
-                return false;
-    
-              }else{
-                      
-                     alert("Successfully Uploaded!!")
-                     return true;
-    
-                   }
-            }
-
              }
+
+           }
+
+             alert("Successfully Uploaded!!")
+             return true;
         
       
        }
