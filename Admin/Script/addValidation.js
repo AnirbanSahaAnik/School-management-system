@@ -32,8 +32,18 @@ function validation(){
           return false;
         }
         else {
+          if (isNaN(id)){
+            text = "ID must be Number";
+            error_messege.innerHTML = text;
+            return false;
+          }
           if (id.length != 4){
             text = "ID must be 4 digit";
+            error_messege.innerHTML = text;
+            return false;
+          }
+          if (isNaN(mobile)){
+            text = "Mobile Number must be Number";
             error_messege.innerHTML = text;
             return false;
           }

@@ -20,6 +20,11 @@ function validation(){
           return false;
         }
         else {
+          if (isNaN(mobile)){
+            text = "Mobile Number must be Number";
+            error_messege.innerHTML = text;
+            return false;
+          }
           if (mobile.length != 11){
             text = "Mobile Number must be 11 digit";
             error_messege.innerHTML = text;

@@ -43,7 +43,7 @@
                       </tr>
                       <tr>
                         <td>Mobile No</td>
-                        <td>:<input type="number" id="mobile" name="mobile" value="<?php echo $updatemyinfo['mobile']; ?>"></td>
+                        <td>:<input type="text" id="mobile" name="mobile" value="<?php echo $updatemyinfo['mobile']; ?>"></td>
                       </tr>
 
 
@@ -85,7 +85,7 @@
                       </tr>
                       <tr>
                         <td>Roll No</td>
-                        <td>:<input type="number" id="roll" name="roll" value="<?php echo $updatemyinfo['roll']; ?>"></td>
+                        <td>:<input type="text" id="roll" name="roll" value="<?php echo $updatemyinfo['roll']; ?>"></td>
                       </tr>
                     </table>
                     <hr>

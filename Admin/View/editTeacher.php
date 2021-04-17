@@ -42,7 +42,7 @@
                       </tr>
                       <tr>
                         <td>Mobile No</td>
-                        <td>:<input type="number" id="mobile" name="mobile" value="<?php echo $updatemyinfo['mobile']; ?>"></td>
+                        <td>:<input type="text" id="mobile" name="mobile" value="<?php echo $updatemyinfo['mobile']; ?>"></td>
                       </tr>
 
 

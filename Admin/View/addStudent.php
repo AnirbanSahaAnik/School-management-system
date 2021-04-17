@@ -34,7 +34,7 @@
                         </tr>
                         <tr>
                           <td>Mobile No</td>
-                          <td>:<input type="number" id="mobile" name="mobile" value=""></td>
+                          <td>:<input type="text" id="mobile" name="mobile" value=""></td>
                         </tr>
                         <tr>
                           <td>Id</td>
@@ -86,7 +86,7 @@
                         </tr>
                         <tr>
                           <td>Roll No</td>
-                          <td>:<input type="number" id="roll" name="roll" value=""></td>
+                          <td>:<input type="text" id="roll" name="roll" value=""></td>
                         </tr>
                       </table>
                       <hr>

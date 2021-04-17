@@ -34,7 +34,7 @@
                         </tr>
                         <tr>
                           <td>Mobile No</td>
-                          <td>:<input type="number"  id="mobile" name="mobile" value=""></td>
+                          <td>:<input type="text"  id="mobile" name="mobile" value=""></td>
                         </tr>
                         <tr>
                           <td>Id</td>
