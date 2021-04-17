@@ -13,6 +13,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/NoticeCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -45,23 +52,27 @@
         <td>
             <fieldset>
                 <legend>EDIT NOTICE</legend>
-            <form class="" action="../Controller/UpdateNoticeCheck.php" method="post">
+            <form class="" id="EditNotice" action="../Controller/UpdateNoticeCheck.php" method="post" onsubmit="return Notice()">
             <table>
                <tr>
                 <td>ID</td>
-                <td>:<input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+                <td>:<input type="number" id="id" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
                </tr>
                <tr>
                 <td>Notice</td> 
-                <td>:<textarea name="notice" rows="8" cols="80"><?php echo $User['notice']; ?></textarea></td>
+                <td>:<textarea id="notice" name="notice" rows="8" cols="80"><?php echo $User['notice']; ?></textarea></td>
                </tr>
                <tr>
                 <td>Time</td> 
-                <td>:<input type="text" name="times" disabled value="<?php echo $User['time']; ?>"></td>
+                <td>:<input type="text" id="times" name="times" disabled value="<?php echo $User['time']; ?>"></td>
                </tr>
                </table>
                <hr>
 			   <input type="submit" name="update" value="Update">
+         <center>
+            <div id="error_messege">
+            </div>
+         </center>
             </form>
             </fieldset>
         </td>

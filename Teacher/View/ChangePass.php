@@ -9,6 +9,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/ChangePassCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -41,23 +48,27 @@
         <td>
             <fieldset>
                 <legend>PASSWORD CHANGE</legend>
-            <form class="" action="../Controller/ChangePassCheck.php" method="post">
+            <form class="" id="ChangePassword" action="../Controller/ChangePassCheck.php" method="post" onsubmit="return ChangePassword()">
                <table border="1">
 			   <tr>
 			                  <td>Current Password:</td>
-			                  <td><input type="password" name="password" value=""></td>
+			                  <td><input type="password" id ="password" name="password" value=""></td>
 			                </tr>
 			                <tr>
 			                  <td>New Password:</td>
-			                  <td><input type="password" name="newpassword" value=""></td>
+			                  <td><input type="password" id="newpass" name="newpassword" value=""></td>
 			                </tr>
 			                <tr>
 			                  <td>Retype New Password:</td>
-			                  <td><input type="password" name="repassword" value=""></td>
+			                  <td><input type="password" id="repass" name="repassword" value=""></td>
 			                </tr>
                </table>
 			             <hr>
 			              <input type="submit" name="Change" value="Change"> <br>
+                    <center>
+                       <div id="error_messege">
+                       </div>
+                     </center>
             </form>
             </fieldset>
         </td>

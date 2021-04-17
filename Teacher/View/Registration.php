@@ -2,6 +2,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/RegCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="90%" >
@@ -31,47 +38,48 @@
              <tr>
                 <td></td>
                 <td>
-                    <form method="post" action="../Controller/RegCheck.php"> 
+                    <form method="post" id="RegistrationForm" action="../Controller/RegCheck.php" onsubmit="return Registration()"> 
                         <fieldset width="5px">
                             <legend>REGISTRATION</legend>
                           <table width="100.7%" height="100px" align="center">
+ 
                               <tr>
                                   <td width="30%" height="30px">Name</td>
-                                  <td width="60%" height="30px">:<input type="text" name="uname" value=""></td>
+                                  <td width="60%" height="30px">:<input type="text" id= "uname" name="uname" value=""></td>
                               </tr>
                              
                               <tr>
                                 <td width="30%" height="30px">Email</td>
-                                <td width="60%" height="30px">:<input type="email" name="email" value=""></td>
+                                <td width="60%" height="30px">:<input type="email" id= "email" name="email" value=""></td>
                             </tr>
 
                              <tr>
                                   <td width="30%" height="30px">Mobile No.</td>
-                                  <td width="60%" height="30px">:<input type="number" name="mobile" value=""></td>
+                                  <td width="60%" height="30px">:<input type="number" id= "mobile" name="mobile" value=""></td>
                               </tr>
 
                               <tr>
                                   <td width="30%" height="30px">ID</td>
-                                  <td width="60%" height="30px">:<input type="number" name="ID" value=""></td>
+                                  <td width="60%" height="30px">:<input type="number" id= "id" name="ID" value=""></td>
                               </tr>
 
                               <tr>
                                 <td width="30%" height="30px">Password</td>
-                                <td width="60%" height="30px">:<input type="password" name="password"></td>
+                                <td width="60%" height="30px">:<input type="password" id= "password" name="password"></td>
                              </tr>
                     
                             <tr>
                                 <td width="30%" height="30px">Confirm Password</td>
-                                <td width="60%" height="30px">:<input type="password" name="confirm"></td>
+                                <td width="60%" height="30px">:<input type="password" id= "repass" name="confirm"></td>
                             </tr>
                            
                               <tr>
                                 <td colspan="2">
                                 <fieldset>
                                 <legend>Gender</legend>
-                                <input type="radio" name="gender" value="Male">Male
-                                <input type="radio" name="gender" value="Female">Female
-                                <input type="radio" name="gender" value="Other">Other
+                                <input type="radio" id= "gender" name="gender" value="Male">Male
+                                <input type="radio" id= "gender" name="gender" value="Female">Female
+                                <input type="radio" id= "gender" name="gender" value="Other">Other
                                 </fieldset>
                                 </td>
                             </tr>
@@ -80,7 +88,7 @@
                                 <td colspan="2">
                                 <fieldset>
                                 <legend>Date of Birth</legend>
-                                <input type="date" name="dob" value="">
+                                <input type="date" id= "dob" name="dob" value="">
                                 </fieldset>
                                 </td>
                             </tr>
@@ -88,6 +96,16 @@
                             <tr>
                                 <td height="30px" align="center" colspan="3"><input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset"></td>
                             </tr>
+
+                            <tr>
+                            <td colspan="2">
+                             <center>
+                             <div id="error_messege">
+                             </div>
+                             </center>
+                             </td>
+                             </tr> 
+
                           </table>
                         </fieldset>
                         </form>

@@ -9,6 +9,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/NoticeCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -41,11 +48,11 @@
         <td>
             <fieldset>
                 <legend>NOTICE</legend>
-            <form class="" action="../Controller/NoticeCheck.php" method="post">
+            <form class="" id="Notice" action="../Controller/NoticeCheck.php" method="post" onsubmit="return Notice()">
             <table align="center">
                         <tr>
                           <td>
-                            <textarea name="notice" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
+                            <textarea id="notice" name="notice" rows="8" cols="80" placeholder="Enter notice Here"></textarea>
                           </td>
                         </tr>
                       </table>
@@ -53,6 +60,10 @@
                       <center>
                         <input type="submit" name="submit" value="Submit">
                         <a href="ViewNotice.php">View Notice</a>
+                    </center>
+                    <center>
+                      <div id="error_messege">
+                      </div>
                     </center>
             </form>
             </fieldset>

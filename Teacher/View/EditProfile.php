@@ -11,6 +11,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/EditCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -43,39 +50,43 @@
         <td>
             <fieldset>
                 <legend>EDIT PROFILE</legend>
-            <form class="" action="../Controller/EditCheck.php" method="post">
+            <form class="" id="EditProfile" action="../Controller/EditCheck.php" method="post" onsubmit="return EditProfile()">
 
             <table>
 					<tr>
 						<td>ID</td>
-						<td>: <input type="number" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
+						<td>: <input type="number" id="id" name="ID" disabled value="<?php echo $User['id']; ?>"></td>
 					</tr>
 					<tr>
 						<td>Name</td>
-						<td>: <input type="text" name="uname" value="<?php echo $User['name']; ?>"></td>
+						<td>: <input type="text" id="uname" name="uname" value="<?php echo $User['name']; ?>"></td>
 					</tr>
 					<tr>
 						<td>Email</td>
-						<td>: <input type="email" name="email" value="<?php echo $User['email']; ?>"></td>
+						<td>: <input type="email" id="email" name="email" value="<?php echo $User['email']; ?>"></td>
 					</tr>
                     <tr>
 						<td>Mobile No.</td>
-						<td>: <input type="number" name="mobile" value="<?php echo $User['mobile']; ?>"></td>
+						<td>: <input type="number" id="mobile" name="mobile" value="<?php echo $User['mobile']; ?>"></td>
 					</tr>
                     <tr>
 						<td>Gender</td>
 						<td>:<input type="radio" name="gender" <?php  if($User['gender']=="Male"){?> checked="true" <?php } ?> value="Male">Male
-                          <input type="radio" name="gender"  <?php if($User['gender']=="Female"){?> checked="true" <?php } ?>  value="Female">Female
-                          <input type="radio" name="gender" <?php if($User['gender']=="Other"){?> checked="true" <?php } ?> value="Other">Other</td>
+                          <input type="radio" id="gender" name="gender"  <?php if($User['gender']=="Female"){?> checked="true" <?php } ?>  value="Female">Female
+                          <input type="radio" id="gender" name="gender" <?php if($User['gender']=="Other"){?> checked="true" <?php } ?> value="Other">Other</td>
 					</tr>
                     <tr>
 						<td>Date of Birth</td>
-						<td>: <input type="date" name="dob" value="<?php echo $User['dob']; ?>"></td>
+						<td>: <input type="date" id="dob" name="dob" value="<?php echo $User['dob']; ?>"></td>
 					</tr>
 
 				</table>
 				<hr>
 				<input type="submit" name="submit" value="Edit">
+          <center>
+          <div id="error_messege">
+          </div>
+          </center>
                
                
             </form>
