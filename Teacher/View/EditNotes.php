@@ -13,6 +13,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/FileUploadCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -45,7 +52,7 @@
         <td>
             <fieldset>
                 <legend>NOTES UPDATE</legend>
-            <form class="" action="../Controller/EditNotesCheck.php" method="post" enctype="multipart/form-data">
+            <form class="" name="Upload" action="../Controller/EditNotesCheck.php" method="post" enctype="multipart/form-data" onsubmit="return FileUpload()">
             <table align="center">
                 <tr>
                 <td>ID</td>
@@ -63,6 +70,10 @@
                       <hr>
                       <center>
                         <input type="submit" name="submit" value="Submit">
+                    </center>
+                    <center>
+                       <div id="error_messege">
+                       </div>
                     </center>
             </form>
             </fieldset>

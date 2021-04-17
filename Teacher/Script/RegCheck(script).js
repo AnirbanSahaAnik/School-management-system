@@ -49,7 +49,21 @@ function Registration(){
                   text = "**Length of name should be greater than 3**";
                   error_messege.innerHTML = text;
                   return false;
-                }
+                }else{
+                        for(i=0; i<name.length; i++)
+                        {
+                          ch = name.charAt(i);
+                          if(!(ch >= 'a' && ch <= 'z') && !(ch >= 'A' && ch <= 'Z') && !(ch == ' '))
+                          {
+
+                            text = "**Name should be characters only**";
+                            error_messege.innerHTML = text;
+                            return false;
+
+                          }
+                        }
+                      
+                    }
                 alert("Resgistration done sucessfully!!")
                 return true;
               }

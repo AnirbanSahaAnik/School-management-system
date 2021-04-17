@@ -9,6 +9,13 @@
 <html>
   <head>
     <title>Public Home</title>
+    <style media="screen">
+      #error_messege{
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../Script/FileUploadCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -40,13 +47,17 @@
         </td>
         <td>
             <fieldset>
-                <form class="" action="../Controller/UploadNotesCheck.php" method="post" enctype="multipart/form-data">
+                <form class="" name="Upload" action="../Controller/UploadNotesCheck.php" method="post" enctype="multipart/form-data" onsubmit="return FileUpload()">
                     <fieldset>
                       <legend>Upload Notes</legend>
                       <input type="file" name="photo"><br>
                       <hr>
                       <input type="submit" name="submit" value="submit">
                       <a href="ViewUploadedNotes(Teacher).php"> View Uploaded Notes</a>
+                      <center>
+                         <div id="error_messege">
+                         </div>
+                      </center>
                     </fieldset>
               
                   </form>
