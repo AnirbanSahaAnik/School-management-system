@@ -21,7 +21,7 @@ function val(){
 
                 if(parseFloat(img.files[0].size/(1024)) >= 200)
                 {
-                  text = "File size less than 200 KB";
+                  text = "Your file size must be within 200 KB";
                   error_messege.innerHTML = text;
                   return false;
                 }else{
