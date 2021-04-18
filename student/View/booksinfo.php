@@ -1,5 +1,6 @@
 <?php
 $title= "Book Information";
+$javascript = "../Script/bookSearch.js";
 require_once('../Model/DatabaseConnection.php');
 $bookList=getAllbook();
 include('header.php');
@@ -10,6 +11,12 @@ include('header.php');
 
         <td>
             <center><h2>Book Information</h2></center>
+            <center>
+                  <b>Find Book:</b><input type="text" onkeyup="ajax()" name="name" id="name">
+                  <input type="button" name="" value="Find">
+                </center>
+          <div id="myh1" class="">
+                  <br>
             <?php
                 echo "<table border = 1 width='100%' cellspacing = 0  >
                 <tr align = 'center'>
@@ -28,6 +35,7 @@ include('header.php');
                 }
                 echo "</table>";
                 ?>
+                </div>
        
       </tr>
       <?php include('footer.php'); ?>

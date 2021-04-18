@@ -1,5 +1,6 @@
 <?php
 $title= "Teacher Profile";
+$javascript = "../Script/teacherSearch.js";
 require_once('../Model/DatabaseConnection.php');
 $teacherList=getAllteacher();
 include('header.php');
@@ -8,7 +9,13 @@ include('header.php');
 <?php include('sideBar.php'); ?> 
         <td>
           <fieldset>
-            <legend>Teacher Profile</legend>
+            <legend>Teacher Profile</legend> 
+            <center>
+                  <b>Find Teacher:</b><input type="text" onkeyup="ajax()" name="name" id="name">
+                  <input type="button" name="" value="Find">
+                </center>
+          <div id="myh1" class="">
+                  <br>
         <form class="" action="" method="post">
         <?php
                 echo "<table border = 1 width='100%' cellspacing = 0  >
@@ -33,6 +40,7 @@ include('header.php');
                 }
                 echo "</table>";
                 ?>
+                </div>
 
         </form>
         </fieldset>
