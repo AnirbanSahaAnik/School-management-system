@@ -11,6 +11,7 @@
 <html>
   <head>
     <title>Public Home</title>
+    <script src="../Script/LeaveRequestSearch(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -44,6 +45,12 @@
             <fieldset>
                 <legend>LEAVE REQUEST</legend>
             <form class="" action="" method="post">
+                <center>
+									<b>Find Leave Request of a Student:</b><input type="text" name="name" id="name">
+									<input type="button" name="" value="Find" onclick="ajax()">
+								</center>
+					<div id="myh1" class="">
+									<br>
             <?php
 								echo "<table border = 1 width='100%' cellspacing = 0  >
 								<tr align = 'center'>
@@ -68,6 +75,7 @@
 								}
 								echo "</table>";
 								?>
+           </div>
             </form>
             </fieldset>
         </td>

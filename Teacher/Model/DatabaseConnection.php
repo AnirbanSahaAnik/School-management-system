@@ -394,6 +394,14 @@
 	
 	}
 
+	// function StudentSearch($name)
+	// {
+	//    $con = mysqli_connect('localhost', 'root', '', 'school_management_system');
+	//    $sql = "select * from student where name like '%{$name}%'";
+	//    $result = mysqli_query($con, $sql);
+	//    $row = mysqli_fetch_assoc($result);
+	// }
+
 
 
 ?>
