@@ -6,7 +6,7 @@
   <title>Login</title>
   <style media="screen">
     #error_messege {
-      color: red;
+      color: green;
       font-weight: bold;
     }
   </style>
