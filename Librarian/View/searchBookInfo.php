@@ -1,29 +1,30 @@
-<?php $title= "Create Student Library Account";
+<?php $title= "Search Book";
 	include('header.php');
-   ?>
-    <script>
-  function studentLibAcc(){
-    var Sturoll = document.getElementById('sturoll').value;
+   ?> 
+  <script>
+  function searchbookinfo(){
+    var Isbnno = document.getElementById('isbnno').value;
     var msg="";
-    if(Sturoll==""){
-                msg+="enter your roll";
-                sturoll.className="error";
+    if(Isbnno==""){
+                msg+="please fill up ISBN";
+                isbnno.className="error";
             }
       if(msg==""){
           return true;
         }else{
-              document.getElementById('msg1').innerHTML = "enter your roll";
+              document.getElementById('msg1').innerHTML = "please fill up the isbn";
               return false;
             }
   }
   function validation(){
-            var Sturoll = document.getElementById('sturoll').value;
-            if(Sturoll!="" && Sturoll.length > 0){
+            var Isbnno = document.getElementById('isbnno').value;
+            if(Isbnno!="" && Isbnno.length == 3){
                 document.getElementById('msg1').innerHTML="";
-                document.getElementById('sturoll').className="success";
+                document.getElementById('isbnno').className="success";
             }
 }
-  </script>  
+  </script> 
+
     <table border="1" cellspacing="0" width="100%" >
       <tr>
         <td colspan="2">
@@ -40,7 +41,7 @@
       </tr>
  
       <tr id="navigation">
-      <td width="350px">
+        <td width="350px">
         <h2 align="center"><a href="viewLibrarianProfile.php">My Profile</a></h2></h2>
           <h3 align="center"><a href="dashboard.php">Go to Dashboard</a></h3></br>
           <hr>
@@ -54,25 +55,24 @@
             <li><a href="viewAllStudentsLibProfile.php">View Student Library Account</a></li>
             <li><a href="issueNewBook.php">Add Issue Book</a></li>
             <li><a href="issuedBookHistory.php">Issue Book History</a></li>
-            <li><a href="searchBookInfo.php">searchBookInfo</a></li>
+            <!-- <li><a href="searchBookInfo.php">searchBookInfo</a></li> -->
           </ul>
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
-            <form action="../Controller/studentAccCheck.php" method="POST" onsubmit="return studentLibAcc()">
-                <table align="center" >
-                     <tr>
-                        <td>Enter Student Roll No.</td>
-                        <td>: <input type="text" name="sturoll" id="sturoll" onkeypress="validation()"><div id="msg1"></div></td>
-                      </tr>
-                      <tr>
-                        <td><input type="submit" name="submit" value="Submit"></td>
-                      </tr>
-                       
-                  </table>
-                </fieldset>
-              </form>
-          
+          <form action="../Controller/searchBookCheck.php" method="post" onsubmit="return searchbookinfo()">
+          <table align="center">
+                    
+                    <tr>
+                        <td>ISBN Number :</td>
+                        <td><input type="text" name="isbnno" id="isbnno" value=""  onkeypress="validation()"><div id="msg1"></div></td>
+                    </tr>
+                    <tr> 
+                        <td></td>
+                        <td><input type="submit" name="searchbook" value="Get Book Info"></td>
+                    </tr>
+             </table>
+          </form>
         </td>
       </tr>
 
-      <?php include('footer.php'); ?>  
+      <?php include('footer.php'); ?>   

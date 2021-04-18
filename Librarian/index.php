@@ -1,5 +1,5 @@
 <?php
 
-	header('location: view/login.html');
+	header('location: View/librarianLogin.php');
 
 ?>

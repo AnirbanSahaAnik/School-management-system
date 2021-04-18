@@ -1,29 +1,13 @@
-<?php $title= "Create Student Library Account";
-	include('header.php');
-   ?>
-    <script>
-  function studentLibAcc(){
-    var Sturoll = document.getElementById('sturoll').value;
-    var msg="";
-    if(Sturoll==""){
-                msg+="enter your roll";
-                sturoll.className="error";
-            }
-      if(msg==""){
-          return true;
-        }else{
-              document.getElementById('msg1').innerHTML = "enter your roll";
-              return false;
-            }
-  }
-  function validation(){
-            var Sturoll = document.getElementById('sturoll').value;
-            if(Sturoll!="" && Sturoll.length > 0){
-                document.getElementById('msg1').innerHTML="";
-                document.getElementById('sturoll').className="success";
-            }
-}
-  </script>  
+<?php  
+$title= "Edit Student Librarian Profile";
+include('header.php');
+session_start();
+require_once('../Model/usersmodel.php');
+$roll = $_GET['roll'];
+$editLibProfile =  viewStudentLibProfile($roll);
+$_SESSION['roll'] = $roll;
+?>   
+
     <table border="1" cellspacing="0" width="100%" >
       <tr>
         <td colspan="2">
@@ -40,7 +24,7 @@
       </tr>
  
       <tr id="navigation">
-      <td width="350px">
+        <td width="350px">
         <h2 align="center"><a href="viewLibrarianProfile.php">My Profile</a></h2></h2>
           <h3 align="center"><a href="dashboard.php">Go to Dashboard</a></h3></br>
           <hr>
@@ -58,21 +42,30 @@
           </ul>
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
-            <form action="../Controller/studentAccCheck.php" method="POST" onsubmit="return studentLibAcc()">
-                <table align="center" >
-                     <tr>
-                        <td>Enter Student Roll No.</td>
-                        <td>: <input type="text" name="sturoll" id="sturoll" onkeypress="validation()"><div id="msg1"></div></td>
-                      </tr>
-                      <tr>
-                        <td><input type="submit" name="submit" value="Submit"></td>
-                      </tr>
-                       
-                  </table>
-                </fieldset>
-              </form>
-          
+        <form action="../Controller/editStudentLibProfileCheck.php" method="POST">
+          <table align="center">
+                    <tr>
+                        <td>Roll :</td>
+                        <td><input type="roll" name="roll" disabled value="<?php echo $editLibProfile['roll']; ?>" ></td>
+                    </tr>
+                    <tr>
+                        <td>Name :</td>
+                        <td><input type="text" name="name" value="<?php echo $editLibProfile['name']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>Mail :</td>
+                        <td><input type="mail" name="mail" value="<?php echo $editLibProfile['mail']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender :</td>
+                        <td><input type="text" name="gender" disabled value="<?php echo $editLibProfile['gender']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" name="editstudentlibprofile" value="Update Profile"></td>
+                    </tr>
+            </table>
+          </form>
         </td>
       </tr>
 
-      <?php include('footer.php'); ?>  
+      <?php include('footer.php'); ?>   

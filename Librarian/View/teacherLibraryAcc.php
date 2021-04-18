@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Dashbord</title>
-  </head>
-  <body>
+<?php $title= "Create Teachers Library Account";
+	include('header.php');
+   ?>
+
     <table border="1" cellspacing="0" width="100%" >
       <tr>
         <td colspan="2">
@@ -22,31 +19,31 @@
  
       <tr id="navigation">
         <td width="350px">
-          <h2 align="center">Login As </h2></br>
+          <h2 align="center">Login As </h2>
+          <h3 align="center"></h3>
+          <h3 align="center"><a href="dashboard.php">Go to Dashboard</a></h3></br>
           <hr>
           <ul>
-            <li><a href="studentLibraryAcc.html">Create Library Account(Student)</a></li>
-            <li><a href="teacherLibraryAcc.html">Create Library Account(Teachers)</a></li>
-            <li><a href="addnewbook.html">Add New Book</a></li>  
-            <li><a href="routine.html">Delete Book</a></li>
-            <li><a href="viewprofile.html">Update Book</a></li>
-            <li><a href="teachernotice.html">View Students List</a></li>
-            <li><a href="schoolnotice.html">View Teachers List</a></li>
-            <li><a href="leaverequest.html">Block Library Account</a></li>
+            <li><a href="studentLibraryAcc.php">Create Student Library Account</a></li>
+            <li><a href="teacherLibraryAcc.php">Create Teachers Library Account</a></li>
+            <li><a href="allBookInfo.php">All Book Information</a></li>
+            <li><a href="addnewbook.php">Add New Book</a></li>  
+            <li><a href="">Delete Book</a></li>
+            <li><a href="">Update Book</a></li>
+            <li><a href="">View Students List</a></li>
+            <li><a href="">View Teachers List</a></li>
+            <li><a href="">Block Library Account</a></li>
             <li><a href="">Delete Library Account</a></li>
             <li><a href="">New Book Arrival Notice</a></li>
-            <li><a href="requestforbook.html">Book Borrow History</a></li>
+            <li><a href="">Book Borrow History</a></li>
             <li><a href="">Issue Book History</a></li>
             <li><a href="">Search Book Information</a></li>
             <li><a href="">Issue Book History</a></li>
-
           </ul>
         </td>
         <td id="main content">
-            <form action="../Controller/studentAccCheck.php" method="POST">
-                <fieldset>
-                  <legend>Create Library Account(Students)</legend>
-                    <table>
+            <form action="../Controller/studentAccCheck.php" method="POST"><h2 align="center" ><?php echo $title; ?></h2><hr>
+                  <table align="center">
                       <tr>
                         <td>Your Email Address</td>
                         <td>: <input type="email" name="mail" value="" ></td>
@@ -79,9 +76,13 @@
                             <td>Choose a Password</td>
                             <td>: <input type="password" name="password" value=""></td>
                           </tr>
+                          <tr>
+                            <td>Confirm Password</td>
+                            <td>: <input type="password" name="cpassword" value=""></td>
+                          </tr>
                     <tr>
                       <td></td>
-                      <td><input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset"></td>
+                      <td><input type="submit" name="submit" value="Create Account"><input type="reset" name="reset" value="Reset"></td>
                     </tr>
                   </table>
                 </fieldset>
@@ -90,11 +91,4 @@
         </td>
       </tr>
 
-      <tr>
-        <td align="center" colspan="2" >Copyright &copy; 2021</td>
-      </tr>
-
-    </table>
-
-  </body>
-</html>
+      <?php include('footer.php'); ?>  

@@ -1,7 +1,7 @@
-<?php $title= "Dashboard";
-include_once('../Model/usersmodel.php');
-$allnotices = viewAllNotice();
-	include('header.php');
+<?php $title= "Reset Password";
+session_start();
+// echo $_SESSION['librarianid'];
+include('header.php');
    ?> 
 
     <table border="1" cellspacing="0" width="100%" >
@@ -34,30 +34,31 @@ $allnotices = viewAllNotice();
             <li><a href="issueNewBook.php">Add Issue Book</a></li>
             <li><a href="issuedBookHistory.php">Issue Book History</a></li>
             <li><a href="searchBookInfo.php">searchBookInfo</a></li>
-            <li><a href="requestBookInfo.php">Request of Book</a></li>
           </ul>
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
-          <h1>Welcome to Library</h1>
-          <p>A library is fundamentally an organized set of resources, which include human services as well as the entire spectrum of media (e.g., text, video, hypermedia). Libraries have physical components such as space, equipment, and storage media; intellectual components such as collection policies that determine what materials will be included and organizational schemes that determine how the collection is accessed; and people who manage the physical and intellectual components and interact with users to solve information problems. </p>
-          <table border="1">
-        <tr>
-            <th>Serial No.</th>
-            <th>Notice Title</th>
-            <th>Notice Details</th>
-            <th>Time</th>
-            <!-- <th>Edition</th> -->
-        </tr>
-        <?php  for($i=0; $i < count($allnotices); $i++){ ?>
-         <tr>
-             <td><?php echo $allnotices[$i]['noticeid'] ?></td>
-             <td><?php echo $allnotices[$i]['noticetitle'] ?></td>
-             <td><?php echo $allnotices[$i]['noticedetails'] ?></td>
-             <td><?php echo $allnotices[$i]['time'] ?></td>
-         </tr><?php  } ?>
-    </table>
+        <form action="../Controller/changeLibrarianPassCheck.php" method="POST">
+          <table align="center">
+          <tr>
+            <td>Current Password:</td>
+            <td><input type="password" name="password" value=""></td>
+          </tr>
+          <tr>
+            <td>New Password:</td>
+            <td><input type="password" name="newpassword" value=""></td>
+          </tr>
+          <tr>
+            <td>Retype New Password:</td>
+            <td><input type="password" name="repassword" value=""></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" name="changepassword" value="Change Password"></td>
+          </tr>
+         </table>
+         </form>
+        
         </td>
       </tr>
 
 <?php include('footer.php'); ?>   
-
