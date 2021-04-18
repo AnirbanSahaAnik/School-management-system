@@ -1,13 +1,20 @@
 <?php
 $title= "Course Details";
+$javascript = "../Script/courseSearch.js";
 require_once('../Model/DatabaseConnection.php');
 $courseList=getAllcourse();
 include('header.php');
 ?>
-
+ 
 <?php include('sideBar.php'); ?> 
         <td>
             <center><h2>Course Details</h2></center>
+            <center>
+                  <b>Find Course Info:</b><input type="text" onkeyup="ajax()" name="name" id="name">
+                  <input type="button" name="" value="Find">
+                </center>
+          <div id="myh1" class="">
+                  <br>
             <?php
                 echo "<table border = 1 width='100%' cellspacing = 0  >
                 <tr align = 'center'>
@@ -26,6 +33,7 @@ include('header.php');
                 }
                 echo "</table>";
                 ?>
+                </div>
         </td>
       </tr>
 
