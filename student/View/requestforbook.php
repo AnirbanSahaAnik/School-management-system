@@ -1,5 +1,6 @@
 <?php
 $title= "Request for Books";
+$javascript = "../Script/requestbook.js";
 include('header.php');
 ?>
 
@@ -7,6 +8,8 @@ include('header.php');
         <td>
             <fieldset>
                 <legend>Request for Books </legend>
+              
+
             <form class="" action="" method="post">
                <table>
                 <tr>
@@ -14,8 +17,8 @@ include('header.php');
                     <td><input type="text" name="STUDENT ID" value="<?php echo $_COOKIE['id']; ?>"> </td>
                 </tr>
                 <tr>
-                    <td>Book Name</td>
-                    <td><input type="text" name="" value=""> </td>
+                    <td>Book Name</td> 
+                    <td><input type="text" onkeyup="ajax()" name="name" id="name"> </td>
                 </tr>
     
                 <tr>
@@ -29,7 +32,11 @@ include('header.php');
     
             </form>
             </fieldset>
+            <div id="myh1" class="">
+            </div>
+
         </td>
+        
       </tr>
 
       <?php include('footer.php'); ?>

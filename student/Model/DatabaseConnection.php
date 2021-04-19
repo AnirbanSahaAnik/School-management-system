@@ -340,5 +340,19 @@
 		}
 
 
+		
+
+		function getbookbyisbn($isbn){
+
+			$conn = getConnection();
+	
+			$sql = "select * from book_info where isbn='{$isbn}'";
+			$result = mysqli_query($conn, $sql);
+			$row = mysqli_fetch_assoc($result);
+	
+			return $row;
+		}
+
+ 
 
 ?>
