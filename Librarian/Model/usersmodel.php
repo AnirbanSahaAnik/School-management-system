@@ -61,10 +61,10 @@ function insertBook($bookinfo){
 		}
 
  } 
-
+//  isbn='{$UpdateBookinfo['isbn']}' , , bookfile='{$UpdateBookinfo['bookfile']}'
  function updateBookInfo($serialno, $UpdateBookinfo){
     $conn = getConnection();
-    $sql = "update book_info set isbn='{$UpdateBookinfo['isbn']}' , booktitle='{$UpdateBookinfo['booktitle']}' , author='{$UpdateBookinfo['author']}' , edition='{$UpdateBookinfo['edition']}' , categories='{$UpdateBookinfo['categories']}' , bookfile='{$UpdateBookinfo['bookfile']}', bookcopy='{$UpdateBookinfo['bookcopy']}' where serialno='{$serialno}'";
+    $sql = "update book_info set booktitle='{$UpdateBookinfo['booktitle']}' , author='{$UpdateBookinfo['author']}' , edition='{$UpdateBookinfo['edition']}' , categories='{$UpdateBookinfo['categories']}' , bookcopy='{$UpdateBookinfo['bookcopy']}' where serialno='{$serialno}'";
     if(mysqli_query($conn, $sql))
 		{
 			return true;
