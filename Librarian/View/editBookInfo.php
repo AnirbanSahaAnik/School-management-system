@@ -1,6 +1,5 @@
 <?php $title= "Edit Book Info";
 include('header.php');
-session_start();
 include_once('../Model/usersmodel.php');
 $serialno = $_GET['serialno'];
 $updateBookInfo = viewBookInfo($serialno);
@@ -74,10 +73,10 @@ $_SESSION['serialno'] = $serialno;
                         <td>Book Copy :</td>
                         <td><input type="text" name="bookcopy" value="<?php echo $updateBookInfo['bookcopy']; ?>"></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                       <td>Upload Book :</td>
                       <td><input type="file" name="bookfile" value="<?php echo $updateBookInfo['bookfile']; ?>"></td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td></td>
                         <td><input type="submit" name="updatebookinfo" value="Update Book Info">

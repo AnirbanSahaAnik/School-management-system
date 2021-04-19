@@ -2,6 +2,12 @@
 include_once('../Model/usersmodel.php');
 $booksinfo = getAllBooksInfo();
 ?>
+<script type="text/javascript" src="../js/booksearch.js"></script>
+
+<input type="text" name="booktitle" id="booktitle" onkeyup="ajax()" />
+	<input type="button" name="" value="Search">
+    <br>
+    <div id="myh1" class="">
 <table border="1">
         <tr>
             <th>Serial No.</th>
@@ -27,7 +33,7 @@ $booksinfo = getAllBooksInfo();
                   <a href="editBookInfo.php?serialno=<?php echo $booksinfo[$i]['serialno']; ?>">UPDATE</a> |
                   <a href="deleteBookInfo.php?serialno=<?php echo $booksinfo[$i]['serialno']; ?>">DELETE</a>
              </td>
-         </tr><?php  } ?>
+         </tr><?php  } ?></div>
          <tr><a href="dashboard.php">Back To Dashboard</a></tr>
         
       

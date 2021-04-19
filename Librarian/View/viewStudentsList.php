@@ -1,8 +1,16 @@
 <?php 
 include_once('../Model/usersmodel.php');
 $studentsinfo = getAllstudentsInfo();
-
 ?>
+<script type="text/javascript" src="../js/searchStudentlist.js"></script>
+
+<input type="text" name="name" id="name" onkeyup="ajax()" />
+	<input type="button" name="" value="Search">
+	<!-- <div id="result">
+		
+	</div> -->
+    <br>
+    <div id="viewstudentlist" class="">
 <table border="1">
         <tr>
             <th>Name</th>
@@ -26,7 +34,7 @@ $studentsinfo = getAllstudentsInfo();
              <td><?php echo $studentsinfo[$i]['section'] ?></td>
              <td><?php echo $studentsinfo[$i]['roll'] ?></td>
              <td><?php echo $studentsinfo[$i]['p_address'] ?></td>
-         </tr><?php  } ?>
+         </tr><?php  } ?></div>
          <tr><a href="dashboard.php">Back To Dashboard</a></tr>
         
       
