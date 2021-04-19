@@ -3,7 +3,6 @@ include_once('../Model/usersmodel.php');
 $booksinfo = getAllBooksInfo();
 ?>
 <script type="text/javascript" src="../js/booksearch.js"></script>
-
 <input type="text" name="booktitle" id="booktitle" onkeyup="ajax()" />
 	<input type="button" name="" value="Search">
     <br>

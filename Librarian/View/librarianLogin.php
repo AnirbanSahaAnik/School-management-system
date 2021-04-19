@@ -85,6 +85,7 @@
                     <br>
                     <input type="submit" name="login" value="LOGIN">
                     <a href="librarianReg.php">Registration</a>
+                    <div id="login"></div>
                   </fieldset>
                 </form>
             </td>

@@ -17,5 +17,6 @@
             border: 3px solid green;
         }
     </style>
+    <link rel="stylesheet" href="../Resources/css/style.css">
 </head>
 <body>
