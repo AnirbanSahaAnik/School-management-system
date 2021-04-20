@@ -5,7 +5,7 @@
 	$name = $_REQUEST['name'];
 
 	$con = mysqli_connect('localhost', 'root', '', 'school_management_system');
-	$sql = "select * from teacher where name like '%{$name}%'";
+	$sql = "select * from teacher where id like '%{$name}%'";
 	$result = mysqli_query($con, $sql);
 
 	$response = "<table border=1 width='100%' cellspacing = 0 >

@@ -22,7 +22,7 @@ function validation(){
       return false;
     }else {
       if (password != repass){
-        text = "Password and Confirm password should match!";
+        text = "Password and Confirm password mismatch!";
         error_messege.innerHTML = text;
         return false;
       }else {
