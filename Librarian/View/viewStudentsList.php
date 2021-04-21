@@ -6,9 +6,6 @@ $studentsinfo = getAllstudentsInfo();
 
 <input type="text" name="name" id="name" onkeyup="ajax()" />
 	<input type="button" name="" value="Search">
-	<!-- <div id="result">
-		
-	</div> -->
     <br>
     <div id="viewstudentlist" class="">
 <table border="1">
@@ -35,7 +32,7 @@ $studentsinfo = getAllstudentsInfo();
              <td><?php echo $studentsinfo[$i]['roll'] ?></td>
              <td><?php echo $studentsinfo[$i]['p_address'] ?></td>
          </tr><?php  } ?></div>
-         <tr><a href="dashboard.php">Back To Dashboard</a></tr>
+         <tr><td colspan="9"><a href="dashboard.php">Back To Dashboard</a></td></tr>
         
       
     </table>

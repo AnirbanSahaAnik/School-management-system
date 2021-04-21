@@ -1,5 +1,5 @@
 <?php $title= "Reset Password";
-session_start();
+// session_start();
 // echo $_SESSION['librarianid'];
 include('header.php');
    ?> 

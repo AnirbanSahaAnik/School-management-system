@@ -1,8 +1,16 @@
 <?php 
 include_once('../Model/usersmodel.php');
 $teachersilist = getAllTeachersList();
-
 ?>
+<script type="text/javascript" src="../js/searchTeacherList.js"></script>
+
+<input type="text" name="id" id="id" onkeyup="ajax()" />
+	<input type="button" name="" value="Search">
+	<!-- <div id="result">
+		
+	</div> -->
+    <br>
+    <div id="viewteacherlist" class="">
 <table border="1">
         <tr>
             <th>ID</th>
@@ -21,8 +29,8 @@ $teachersilist = getAllTeachersList();
              <td><?php echo $teachersilist[$i]['gender'] ?></td>
              <td><?php echo $teachersilist[$i]['dob'] ?></td>
          </tr>
-         <?php  } ?>
-         <tr><a href="dashboard.php">Back To Dashboard</a></tr>
+         <?php  } ?></div>
+         <tr><td colspan="7"><a href="dashboard.php">Back To Dashboard</a></td></tr>
         
       
     </table>

@@ -17,13 +17,13 @@ $librarianinfo =  viewLibrarianProfile($librarianid);
             <th>Action</th>
         </tr>
         <tr>
-            <td><?php echo $librarianinfo['librarianid']; ?></td>
+            <td><?php echo $librarianinfo['id']; ?></td>
             <td><?php echo $librarianinfo['name']; ?></td>
-            <td><?php echo $librarianinfo['mail']; ?></td>
+            <td><?php echo $librarianinfo['email']; ?></td>
             <td><?php echo $librarianinfo['gender']; ?></td>
             <td><?php echo $librarianinfo['dob']; ?></td>
-            <td><?php echo $librarianinfo['mobileno']; ?></td>
-            <td><?php echo $librarianinfo['address']; ?></td>
+            <td><?php echo $librarianinfo['mobile']; ?></td>
+            <td><?php echo $librarianinfo['p_address']; ?></td>
             <td><a href="changeLibrarianPassword.php">Reset Password</a></td>
         </tr>
         <tr><a href="dashboard.php">Go to Dashboard</a></tr>

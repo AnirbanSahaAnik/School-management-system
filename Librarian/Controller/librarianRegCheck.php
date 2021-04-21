@@ -166,7 +166,7 @@ if(isset($_POST['register'])){
     if(mailValidation($mail) && nameValidation($name) && librarianidValidation($librarianid) && genderValidation($gender) && mobilenoValidation($mobileno) && dobValidation($dob) && addressValidation($address) && passwordValidation($password)){
         if(passwordMatching($password, $cpassword) == true){
             $conn = getConnection();
-            $sql= "select * from librarian where librarianid='$librarianid'";
+            $sql= "select * from librarian where id='$librarianid'";
             $result = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($result);
             if($row >= 1){
@@ -175,12 +175,12 @@ if(isset($_POST['register'])){
             }else{
                 $userinfo = [
                     'name' => $name,
-                    'mail' => $mail,
-                    'librarianid' => $librarianid,
+                    'email' => $mail,
+                    'id' => $librarianid,
                     'gender' => $gender,
-                    'mobileno' => $mobileno,
+                    'mobile' => $mobileno,
                     'dob' => $dob,
-                    'address' => $address,
+                    'p_address' => $address,
                     'password' => $password
                 ];
                 $status = insertUser($userinfo);

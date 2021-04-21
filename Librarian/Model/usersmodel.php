@@ -3,7 +3,7 @@ require_once('db.php');
 
 function insertUser($userinfo){
     $conn = getConnection();
-    $sql = "insert into librarian values('','{$userinfo['librarianid']}','{$userinfo['name']}','{$userinfo['mail']}','{$userinfo['gender']}','{$userinfo['dob']}','{$userinfo['password']}','{$userinfo['mobileno']}','{$userinfo['address']}')";
+    $sql = "insert into librarian values('','{$userinfo['id']}','{$userinfo['name']}','{$userinfo['email']}','{$userinfo['gender']}','{$userinfo['dob']}','{$userinfo['password']}','{$userinfo['mobile']}','{$userinfo['p_address']}')";
     
     if(mysqli_query($conn,$sql)){
         return true;
@@ -15,7 +15,7 @@ function insertUser($userinfo){
 
 function validateUser($librarianid,$password){
     $conn = getConnection();
-    $sql = "select * from librarian where librarianid='$librarianid' and password='$password'";
+    $sql = "select * from librarian where id='$librarianid' and password='$password'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     if($row){
@@ -278,7 +278,7 @@ function viewAllNotice()
 
  function viewLibrarianProfile($librarianid){
     $conn = getConnection();
-    $sql = "select * from librarian where librarianid='$librarianid'";
+    $sql = "select * from librarian where id='$librarianid'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     return $row;
@@ -288,7 +288,7 @@ function viewAllNotice()
  function getUserById($Id){
 
     $conn = getConnection();
-    $sql = "select * from librarian where librarianid='{$Id}'";
+    $sql = "select * from librarian where id='{$Id}'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
@@ -320,9 +320,9 @@ function getISBN($isbnno){
     }
 }
 
- function updateLibrarianPassword($librarianid, $newpassword){
+ function updateLibrarianPassword($id, $newpassword){
     $conn = getConnection();
-    $sql = "update librarian set password='{$newpassword}' where librarianid='{$librarianid}'";
+    $sql = "update librarian set password='{$newpassword}' where id='{$id}'";
     if(mysqli_query($conn, $sql)){
         return true;
     }else{

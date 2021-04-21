@@ -55,10 +55,6 @@ function Librarianregistration(){
        msg+="Retype Password";
        cpassword.className="error";
   }
-  if(Password != Cpassword){
-       msg+="Password doesn't match";
-       cpassword.className="error";
-       }
   
   if(msg==""){
                 return true;
@@ -76,6 +72,7 @@ function Librarianregistration(){
 
   }
 }
+
 function Regvalidation(){
   var Mail = document.getElementById('mail').value;
   var Name = document.getElementById('nam').value;
@@ -86,8 +83,13 @@ function Regvalidation(){
   var Password = document.getElementById('password').value;
   var Cpassword = document.getElementById('cpassword').value;
   if(Mail!=""){
+    var str = document.getElementById('mail').value;
+    var n = str.includes("@gmail");
+    if(n == true){
       document.getElementById('msg1').innerHTML="";
       document.getElementById('mail').className="success";
+      
+     }
     }
   if(Name!=""){
       document.getElementById('msg2').innerHTML="";
@@ -113,7 +115,7 @@ function Regvalidation(){
       document.getElementById('msg7').innerHTML="";
       document.getElementById('password').className="success";
     }
-  if(Cpassword!="" && Cpassword.length == 7){
+   if(Cpassword!="" && Cpassword.length == 7){
       document.getElementById('msg8').innerHTML="";
       document.getElementById('cpassword').className="success";
     }

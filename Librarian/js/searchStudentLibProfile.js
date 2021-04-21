@@ -1,11 +1,8 @@
 "use strict"
-
-
 function ajax(){
-	const booktitle = document.getElementById('booktitle').value;
+	const roll = document.getElementById('roll').value;
 	const xhttp	= new XMLHttpRequest();
-  xhttp.open('POST', '../View/booksearch.php?booktitle='+booktitle, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.open('GET', '../View/searchStudentLibProfile.php?roll='+roll, true);
 	xhttp.send();
 
 	xhttp.onreadystatechange = function(){
