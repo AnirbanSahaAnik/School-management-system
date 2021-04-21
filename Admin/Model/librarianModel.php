@@ -2,7 +2,7 @@
 include_once('db.php');
 function insert($userinfo){
     $conn = getConnection();
-    $sql = "insert into librarian values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}', '{$userinfo['password']}')";
+    $sql = "insert into librarian values('', '{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}', '{$userinfo['password']}')";
     $row = mysqli_query($conn,$sql);
     if($row){
         return true;
