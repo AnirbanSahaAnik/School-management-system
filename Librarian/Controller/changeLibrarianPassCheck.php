@@ -13,7 +13,7 @@
         }else{
             function resetPasswordValidation(){
                 $conn = getConnection();
-                $sql = "select * from librarian where librarianid='{$_SESSION['librarianid']}'";
+                $sql = "select * from librarian where id='{$_SESSION['librarianid']}'";
                 $result = mysqli_query($conn,$sql);
                 $currentpassword = mysqli_fetch_assoc($result);
                 return $currentpassword['password'];
@@ -21,8 +21,7 @@
             }
             
             $user =  getUserById($_SESSION['librarianid']);
-            $id = $user['librarianid'];
-           // $password != $newpassword
+            $id = $user['id'];
             if(resetPasswordValidation() == $password){
                 if(resetPasswordValidation() != $newpassword){
                     if($newpassword == $repassword){

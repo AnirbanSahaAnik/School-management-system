@@ -33,7 +33,7 @@ $booksinfo = getAllBooksInfo();
                   <a href="deleteBookInfo.php?serialno=<?php echo $booksinfo[$i]['serialno']; ?>">DELETE</a>
              </td>
          </tr><?php  } ?></div>
-         <tr><a href="dashboard.php">Back To Dashboard</a></tr>
+         <tr><td colspan="7"><a href="dashboard.php">Back To Dashboard</a></td></tr>
         
       
     </table>

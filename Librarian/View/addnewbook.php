@@ -117,7 +117,7 @@
         <h2 align="center"><a href="viewLibrarianProfile.php">My Profile</a></h2></h2>
           <h3 align="center"><a href="dashboard.php">Go to Dashboard</a></h3></br>
           <hr>
-          <ul>
+          <div id="sidebar">
           <ul>
             <!-- <li><a href="addnewbook.php">Add New Book</a></li> -->
             <li><a href="allBooksInfo.php">All Book Information</a></li>
@@ -130,7 +130,7 @@
             <li><a href="issuedBookHistory.php">Issue Book History</a></li>
             <li><a href="searchBookInfo.php">searchBookInfo</a></li>
           </ul>
-          </ul>
+          </div>
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
           <form action="../Controller/bookInfoCheck.php" method="post" onsubmit="return addNewBook()" enctype="multipart/form-data">
