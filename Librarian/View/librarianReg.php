@@ -170,10 +170,10 @@ function Regvalidation(){
                     <td>Date of Birth</td>
                     <td>: <input type="date" name="dob" id="dob" value=""  onkeypress="Regvalidation()"><div id="msg5"></div></td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td>Present Address</td>
                     <td>: <input type="text" name="address" id="address" value=""  onkeypress="Regvalidation()"><div id="msg6"></div></td>
-                  </tr>
+                  </tr> -->
                   <tr>
                     <tr>
                         <td>Choose a Password</td>

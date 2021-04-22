@@ -3,7 +3,7 @@ require_once('db.php');
 
 function insertUser($userinfo){
     $conn = getConnection();
-    $sql = "insert into librarian values('','{$userinfo['id']}','{$userinfo['name']}','{$userinfo['email']}','{$userinfo['gender']}','{$userinfo['dob']}','{$userinfo['password']}','{$userinfo['mobile']}','{$userinfo['p_address']}')";
+    $sql = "insert into librarian values('','{$userinfo['id']}','{$userinfo['name']}','{$userinfo['email']}','{$userinfo['gender']}','{$userinfo['dob']}','{$userinfo['password']}','{$userinfo['mobile']}')";
     
     if(mysqli_query($conn,$sql)){
         return true;
@@ -273,7 +273,7 @@ function getAllBooksInfo()
 function viewAllNotice()
 	{
 		$conn = getConnection();
-		$sql = "select * from notice";
+		$sql = "select * from librariannotice";
 		$result = mysqli_query($conn, $sql);
 		$notices =[];
 
