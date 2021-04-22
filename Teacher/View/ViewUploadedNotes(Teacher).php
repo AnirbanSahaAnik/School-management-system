@@ -1,7 +1,7 @@
 <?php
 	session_start();
   require_once('../Model/DatabaseConnection.php');
-	$GetNotes = getAllNotes();
+	$GetNotes = getAllTeacherNotes();
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -11,7 +11,7 @@
 <html>
   <head>
     <title>Public Home</title>
-    <script src="../Script/UploadedNotesSearch(script).js"></script>
+    <script src="../Script/TeacherUploadedNotesSearch(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
@@ -32,7 +32,9 @@
                     <li><a href="StudentList.php">View Student's Profile</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
+                    <li><a href="ViewSchoolNotice.php">School Notice</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
+                    <li><a href="ViewUploadedNotes(Student).php">See Student Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="LeaveRequest.php">Student Leave Request</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>

@@ -1,6 +1,7 @@
 <?php
 	session_start();
   require_once('../Model/DatabaseConnection.php');
+  $User = getUserById($_COOKIE['ID']);
 	$MarksList = getAllUser();
 	if(isset($_COOKIE['flag']))
 	{
@@ -32,7 +33,9 @@
                     <li><a href="StudentList.php">View Student's Profile</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
+                    <li><a href="ViewSchoolNotice.php">School Notice</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
+                    <li><a href="ViewUploadedNotes(Student).php">See Student Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="LeaveRequest.php">Student Leave Request</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
@@ -56,9 +59,7 @@
 								<tr align = 'center'>
 								    <td>ID</td>
 								    <td>Name</td>
-                    <td>Class</td>
                     <td>Subject</td>
-                    <td>Section</td>
                     <td>Roll</td>
                     <td>Marks</td>
 								    <td>Marks Update</td>
@@ -68,9 +69,7 @@
 								    echo "<tr align = 'center'>
 								    <td>{$MarksList[$i]['id']}</td>
 								    <td>{$MarksList[$i]['name']}</td>
-                    <td>{$MarksList[$i]['class']}</td>
-                    <td>{$MarksList[$i]['subject']}</td>
-                    <td>{$MarksList[$i]['section']}</td>
+                    <td>{$User['subject']}</td>
                     <td>{$MarksList[$i]['roll']}</td>
                     <td>{$MarksList[$i]['marks']}</td>
 								    <td> <a href='Marks.php?id={$MarksList[$i]['id']}'> Update </a></td>

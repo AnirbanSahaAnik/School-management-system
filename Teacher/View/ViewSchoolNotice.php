@@ -1,5 +1,7 @@
 <?php
 	session_start();
+  require_once('../Model/DatabaseConnection.php');
+	$GetNotice = getAllSchoolNotice();
 	if(isset($_COOKIE['flag']))
 	{
 ?>
@@ -9,23 +11,16 @@
 <html>
   <head>
     <title>Public Home</title>
-    <style media="screen">
-      #error_messege{
-        color: blue;
-        font-weight: bold;
-      }
-    </style>
-    <script src="../Script/FileUploadCheck(script).js"></script>
   </head>
   <body>
     <table border="1" cellspacing="0" width="80%" >
     <?php include("TeacherHeader.php") ?>
       <tr>
-         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/course.jpg" alt=""></td>
+        <tr>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/notice.jpg" alt=""></td>
             <td align="Center">
             <b>
-            Notes Upload
+              Notice View
             </b>
             </td>
           </tr>
@@ -41,7 +36,7 @@
                     <li><a href="ViewUploadedNotes(Student).php">See Student Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="LeaveRequest.php">Student Leave Request</a></li>
-                    <li><a href="ViewProfile.php">Book History</a></li>
+                    <li><a href="BookHistory.php">Book History</a></li>
                     <li><a href="ChangePass.php">Reset Password</a></li>
                     <li><a href="../Controller/Logout.php">Logout</a></li>
                 </ul>
@@ -49,20 +44,25 @@
         </td>
         <td>
             <fieldset>
-                <form class="" name="Upload" action="../Controller/UploadNotesCheck.php" method="post" enctype="multipart/form-data" onsubmit="return FileUpload()">
-                    <fieldset>
-                      <legend>Upload Notes</legend>
-                      <input type="file" name="photo"><br>
-                      <hr>
-                      <input type="submit" name="submit" value="submit">
-                      <a href="ViewUploadedNotes(Teacher).php"> View Uploaded Notes</a>
-                      <center>
-                         <div id="error_messege">
-                         </div>
-                      </center>
-                    </fieldset>
-              
-                  </form>
+                <legend>NOTICES</legend>
+            <form class="" action="" method="post">
+            <?php
+								echo "<table border = 1 width='100%' cellspacing = 0  >
+								<tr align = 'center'>
+								    <td>ID</td>
+								    <td>Notice</td>
+								    <td>Time</td>
+								</tr>";
+								for($i = 0; $i<count($GetNotice); $i++){
+								    echo "<tr align = 'center'>
+								    <td>{$GetNotice[$i]['id']}</td>
+								    <td>{$GetNotice[$i]['notice']}</td>
+								    <td>{$GetNotice[$i]['time']}</td>
+								</tr>";
+								}
+								echo "</table>";
+								?>
+            </form>
             </fieldset>
         </td>
       </tr>
