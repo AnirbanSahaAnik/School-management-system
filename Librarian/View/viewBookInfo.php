@@ -55,7 +55,7 @@ $bookinfo =  viewBookInfo($serialno);
         </tr>
         <tr>
             <td><?php echo $bookinfo['isbn']; ?></td>
-            <td><?php echo $bookinfo['booktitle']; ?></td>
+            <td><?php echo $bookinfo['title']; ?></td>
             <td><?php echo $bookinfo['author']; ?></td>
             <td><?php echo $bookinfo['edition']; ?></td>
             <td><?php echo $bookinfo['categories']; ?></td>

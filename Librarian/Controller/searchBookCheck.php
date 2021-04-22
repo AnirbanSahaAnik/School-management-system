@@ -20,7 +20,7 @@ if(isset($_POST['searchbook'])){
         </tr>
         <tr>
             <td><?php echo $getbookinfo['isbn']; ?></td>
-            <td><?php echo $getbookinfo['booktitle']; ?></td>
+            <td><?php echo $getbookinfo['title']; ?></td>
             <td><?php echo $getbookinfo['author']; ?></td>
             <td><?php echo $getbookinfo['edition']; ?></td>
             <td><?php echo $getbookinfo['categories']; ?></td>

@@ -2,9 +2,9 @@
 
 
 function ajax(){
-	const booktitle = document.getElementById('booktitle').value;
+	const title = document.getElementById('title').value;
 	const xhttp	= new XMLHttpRequest();
-    xhttp.open('POST', '../View/booksearch.php?booktitle='+booktitle, true);
+    xhttp.open('GET', '../View/booksearch.php?title='+title, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send();
 

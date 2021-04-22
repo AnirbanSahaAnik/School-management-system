@@ -68,7 +68,7 @@ $studentsinfo = getAllstudentsInfo();
              <td><?php echo $studentsinfo[$i]['dob'] ?></td>
              <td><?php echo $studentsinfo[$i]['class'] ?></td>
              <td><?php echo $studentsinfo[$i]['section'] ?></td>
-             <td><?php echo $studentsinfo[$i]['roll'] ?></td>
+             <td><?php echo $studentsinfo[$i]['id'] ?></td>
              <td><?php echo $studentsinfo[$i]['p_address'] ?></td>
          </tr><?php  } ?></div>
              </table>

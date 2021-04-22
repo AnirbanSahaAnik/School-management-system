@@ -2,7 +2,7 @@
 $title= "Edit Student Librarian Profile";
 include('header.php');
 require_once('../Model/usersmodel.php');
-$roll = $_GET['roll'];
+$roll = $_GET['id'];
 $editLibProfile =  viewStudentLibProfile($roll);
 $_SESSION['roll'] = $roll;
 ?>   
@@ -45,7 +45,7 @@ $_SESSION['roll'] = $roll;
           <table align="center">
                     <tr>
                         <td>Roll :</td>
-                        <td><input type="roll" name="roll" disabled value="<?php echo $editLibProfile['roll']; ?>" ></td>
+                        <td><input type="roll" name="roll" disabled value="<?php echo $editLibProfile['id']; ?>" ></td>
                     </tr>
                     <tr>
                         <td>Name :</td>

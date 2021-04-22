@@ -42,7 +42,7 @@ $booksinfo = getAllBooksInfo();
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
                     
 <script type="text/javascript" src="../js/booksearch.js"></script>
-<input type="text" name="booktitle" id="booktitle" onkeyup="ajax()" />
+<input type="text" name="title" id="title" onkeyup="ajax()" />
 	<input type="button" name="" value="Search">
     <br>
     <div id="myh1" class="">
@@ -59,17 +59,17 @@ $booksinfo = getAllBooksInfo();
         </tr>
         <?php  for($i=0; $i < count($booksinfo); $i++){ ?>
          <tr>
-             <td><?php echo $booksinfo[$i]['serialno'] ?></td>
+             <td><?php echo $booksinfo[$i]['sl'] ?></td>
              <td><?php echo $booksinfo[$i]['isbn'] ?></td>
-             <td><?php echo $booksinfo[$i]['booktitle'] ?></td>
+             <td><?php echo $booksinfo[$i]['title'] ?></td>
              <td><?php echo $booksinfo[$i]['author'] ?></td>
              <td><?php echo $booksinfo[$i]['edition'] ?></td>
              <td><?php echo $booksinfo[$i]['categories'] ?></td>
              <td><?php echo $booksinfo[$i]['bookcopy'] ?></td>
              <td>
-                  <a href="viewBookInfo.php?serialno=<?php echo $booksinfo[$i]['serialno']; ?>">VIEW</a> |
-                  <a href="editBookInfo.php?serialno=<?php echo $booksinfo[$i]['serialno']; ?>">UPDATE</a> |
-                  <a href="deleteBookInfo.php?serialno=<?php echo $booksinfo[$i]['serialno']; ?>">DELETE</a>
+                  <a href="viewBookInfo.php?serialno=<?php echo $booksinfo[$i]['sl']; ?>">VIEW</a> |
+                  <a href="editBookInfo.php?serialno=<?php echo $booksinfo[$i]['sl']; ?>">UPDATE</a> |
+                  <a href="deleteBookInfo.php?serialno=<?php echo $booksinfo[$i]['sl']; ?>">DELETE</a>
              </td>
          </tr><?php  } ?></div>
              </table>

@@ -51,7 +51,7 @@ $_SESSION['serialno'] = $serialno;
                     </tr>
                     <tr>
                         <td>Enter Title :</td>
-                        <td><input type="text" name="booktitle" value="<?php echo $updateBookInfo['booktitle']; ?>"></td>
+                        <td><input type="text" name="booktitle" value="<?php echo $updateBookInfo['title']; ?>"></td>
                     </tr>
                     <tr>
                         <td>Select Categories :</td>

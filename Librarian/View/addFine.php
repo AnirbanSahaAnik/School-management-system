@@ -1,7 +1,7 @@
 <?php $title= "Add Fine";
 include('header.php');
 include_once('../Model/usersmodel.php');
-$studentroll = $_GET['studentroll'];
+$studentroll = $_GET['id'];
 $_SESSION['studentroll'] = $studentroll;
 $assignlatefine = viewIssuedInfo($studentroll);
 ?> 
@@ -92,7 +92,7 @@ $assignlatefine = viewIssuedInfo($studentroll);
         <form action="../Controller/updateFine.php" method="POST" onsubmit="return addfine()">
         <table align="center" border="1">
                     <tr>
-                      <th>Student ROll</th>
+                      <th>Student Id</th>
                       <th>Issued Date</th>
                       <th>Return Date</th>
                       <th>Return Status</th>
@@ -101,7 +101,7 @@ $assignlatefine = viewIssuedInfo($studentroll);
                     <tr>
 
                  <tr>
-                   <td><?php echo $assignlatefine['studentroll']; ?></td>
+                   <td><?php echo $assignlatefine['id']; ?></td>
                    <td><?php echo $assignlatefine['issuesdate']; ?></td>
                    <td> <input type="date" name="returndate" id="returndate" value="" onkeyup="validation()"><div id="msg1"></div></td>
                    <td><select name="returnstatus" id="returnstatus" onkeyup="validation()">
