@@ -50,7 +50,7 @@ $librarianinfo =  viewLibrarianProfile($librarianid);
             <th>Gender</th>
             <th>DOB</th>
             <th>Mobile No.</th>
-            <th>Address</th>
+            <!-- <th>Address</th> -->
             <th>Action</th>
         </tr>
         <tr>
@@ -60,7 +60,7 @@ $librarianinfo =  viewLibrarianProfile($librarianid);
             <td><?php echo $librarianinfo['gender']; ?></td>
             <td><?php echo $librarianinfo['dob']; ?></td>
             <td><?php echo $librarianinfo['mobile']; ?></td>
-            <td><?php echo $librarianinfo['p_address']; ?></td>
+            <!-- <td><?php echo $librarianinfo['p_address']; ?></td> -->
             <td><a href="changeLibrarianPassword.php">Reset Password</a></td>
         </tr>
    </table>  

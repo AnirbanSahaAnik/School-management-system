@@ -7,7 +7,7 @@ if(isset($_POST['register'])){
     $gender = $_POST['gender'];
     $mobileno = $_POST['mobileno'];
     $dob = $_POST['dob'];
-    $address = $_POST['address'];
+    // $address = $_POST['address'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
@@ -145,25 +145,25 @@ if(isset($_POST['register'])){
         }
     }
 
-    function addressValidation($address){
-        if($address != ""){
-            if(is_numeric($address) != 1){
-                return $address;
+    // function addressValidation($address){
+    //     if($address != ""){
+    //         if(is_numeric($address) != 1){
+    //             return $address;
     
-            }else{
-                echo "Address should be Alphabet only";
-                echo "</br>";
-            }
+    //         }else{
+    //             echo "Address should be Alphabet only";
+    //             echo "</br>";
+    //         }
            
-        }else{
-            echo "Address can't be empty";
-            echo "</br>";
-        }
+    //     }else{
+    //         echo "Address can't be empty";
+    //         echo "</br>";
+    //     }
     
          
-    }
+    // }
 
-    if(mailValidation($mail) && nameValidation($name) && librarianidValidation($librarianid) && genderValidation($gender) && mobilenoValidation($mobileno) && dobValidation($dob) && addressValidation($address) && passwordValidation($password)){
+    if(mailValidation($mail) && nameValidation($name) && librarianidValidation($librarianid) && genderValidation($gender) && mobilenoValidation($mobileno) && dobValidation($dob) && passwordValidation($password)){
         if(passwordMatching($password, $cpassword) == true){
             $conn = getConnection();
             $sql= "select * from librarian where id='$librarianid'";
@@ -180,7 +180,7 @@ if(isset($_POST['register'])){
                     'gender' => $gender,
                     'mobile' => $mobileno,
                     'dob' => $dob,
-                    'p_address' => $address,
+                    // 'p_address' => $address,
                     'password' => $password
                 ];
                 $status = insertUser($userinfo);
