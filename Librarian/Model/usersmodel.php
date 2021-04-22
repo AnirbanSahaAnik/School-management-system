@@ -29,7 +29,7 @@ function validateUser($librarianid,$password){
 
 function insertBook($bookinfo){
     $conn = getConnection();
-    $sql = "insert into book_info values('','{$bookinfo['isbn']}','{$bookinfo['booktitle']}','{$bookinfo['author']}','{$bookinfo['edition']}','{$bookinfo['categories']}','{$bookinfo['uploadbookcopy']}','{$bookinfo['bookcopy']}')";
+    $sql = "insert into book_info values('','{$bookinfo['isbn']}','{$bookinfo['title']}','{$bookinfo['author']}','{$bookinfo['edition']}','{$bookinfo['categories']}','{$bookinfo['uploadbookcopy']}','{$bookinfo['bookcopy']}')";
     if(mysqli_query($conn,$sql)){
         return true;
       }else{
@@ -40,7 +40,16 @@ function insertBook($bookinfo){
 
  function viewBookInfo($serialno){
     $conn = getConnection();
-    $sql = "select * from book_info where serialno='$serialno'";
+    $sql = "select * from book_info where sl='$serialno'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row;
+  
+ } 
+
+ function requestBookInfo($id){
+    $conn = getConnection();
+    $sql = "select * from requestbook where id='$id'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     return $row;
@@ -49,7 +58,7 @@ function insertBook($bookinfo){
 
  function deleteBookInfo($serialno){
     $conn = getConnection();
-    $sql = "delete from book_info where serialno='$serialno'";
+    $sql = "delete from book_info where sl='$serialno'";
     $result = mysqli_query($conn,$sql);
     if($result)
 		{
@@ -61,10 +70,10 @@ function insertBook($bookinfo){
 		}
 
  } 
-//  isbn='{$UpdateBookinfo['isbn']}' , , bookfile='{$UpdateBookinfo['bookfile']}'
+
  function updateBookInfo($serialno, $UpdateBookinfo){
     $conn = getConnection();
-    $sql = "update book_info set booktitle='{$UpdateBookinfo['booktitle']}' , author='{$UpdateBookinfo['author']}' , edition='{$UpdateBookinfo['edition']}' , categories='{$UpdateBookinfo['categories']}' , bookcopy='{$UpdateBookinfo['bookcopy']}' where serialno='{$serialno}'";
+    $sql = "update book_info set title='{$UpdateBookinfo['booktitle']}' , author='{$UpdateBookinfo['author']}' , edition='{$UpdateBookinfo['edition']}' , categories='{$UpdateBookinfo['categories']}' , bookcopy='{$UpdateBookinfo['bookcopy']}' where sl='{$serialno}'";
     if(mysqli_query($conn, $sql))
 		{
 			return true;
@@ -77,21 +86,21 @@ function insertBook($bookinfo){
 } 
 
 
-function createStudentsLibraryAcc($sturoll){
+function createStudentsLibraryAcc($id){
     $conn = getConnection();
-    $existsRoll = getStudentByRoll($sturoll);
-    $have = viewStudentLibProfile($sturoll);
+    $existsRoll = getStudentById($id);
+    $have = viewStudentLibProfile($id);
     if($existsRoll != $have){
-        $sql = "select * from student where roll='{$sturoll}'";
+        $sql = "select * from student where id='{$id}'";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);
         $newinfo = [
-            'roll' => $row['roll'],
+            'id' => $row['id'],
             'name' => $row['name'],
             'mail' => $row['email'],
             'gender' => $row['gender']
         ];
-        $sql1 = "insert into studentslibraryaccount values('','{$newinfo['roll']}','{$newinfo['name']}','{$newinfo['mail']}','{$newinfo['gender']}')";
+        $sql1 = "insert into studentslibraryaccount values('','{$newinfo['id']}','{$newinfo['name']}','{$newinfo['mail']}','{$newinfo['gender']}')";
         if(mysqli_query($conn,$sql1)){
           header('location:../View/viewAllStudentsLibProfile.php');
         }else{
@@ -104,9 +113,9 @@ function createStudentsLibraryAcc($sturoll){
 }
 
 
-function deletestudentlibprofile($roll){
+function deletestudentlibprofile($id){
     $conn = getConnection();
-    $sql = "delete from studentslibraryaccount where roll='$roll'";
+    $sql = "delete from studentslibraryaccount where id='$id'";
     $result = mysqli_query($conn,$sql);
     if($result)
 		{
@@ -136,7 +145,7 @@ function ViewAllStudentsLibInfo()
 
 function viewStudentLibProfile($roll){
         $conn = getConnection();
-        $sql = "select * from studentslibraryaccount where roll='$roll'";
+        $sql = "select * from studentslibraryaccount where id='$roll'";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);
         return $row;
@@ -145,7 +154,7 @@ function viewStudentLibProfile($roll){
     
 function UpdateStudentLibProfile($roll, $UpdateStudentLibProfile){
         $conn = getConnection();
-        $sql = "update studentslibraryaccount set mail='{$UpdateStudentLibProfile['mail']}', name='{$UpdateStudentLibProfile['name']}' where roll='{$roll}'";
+        $sql = "update studentslibraryaccount set mail='{$UpdateStudentLibProfile['mail']}', name='{$UpdateStudentLibProfile['name']}' where id='{$roll}'";
         if(mysqli_query($conn, $sql))
             {
                 return true;
@@ -171,7 +180,7 @@ function insertNotice($noticeinfo){
 
 function issuedBookDetails($issuedbook){
     $conn = getConnection();
-    $sql = "insert into issuedbookdetails values('','{$issuedbook['isbnno']}','{$issuedbook['studentroll']}','{$issuedbook['issuesdate']}','{$issuedbook['returndate']}','{$issuedbook['returnstatus']}','0')";
+    $sql = "insert into issuedbookdetails values('','{$issuedbook['isbnno']}','{$issuedbook['title']}','{$issuedbook['id']}','{$issuedbook['issuesdate']}','{$issuedbook['returndate']}','{$issuedbook['returnstatus']}','0')";
     if(mysqli_query($conn,$sql)){
         return true;
       }else{
@@ -197,7 +206,7 @@ function viewIssuedBookDetails()
 
     function assignBookLateFine($studentroll, $addlatefine){
         $conn = getConnection();
-        $sql = "update issuedbookdetails set returndate='{$addlatefine['returndate']}', returnstatus='{$addlatefine['returnstatus']}' , fine='{$addlatefine['addfine']}' where studentroll='$studentroll'";
+        $sql = "update issuedbookdetails set returndate='{$addlatefine['returndate']}', returnstatus='{$addlatefine['returnstatus']}' , fine='{$addlatefine['addfine']}' where id='$studentroll'";
         if(mysqli_query($conn, $sql))
             {
                 return true;
@@ -211,7 +220,7 @@ function viewIssuedBookDetails()
     
     function viewIssuedInfo($studentroll){
         $conn = getConnection();
-        $sql = "select * from issuedbookdetails where studentroll='$studentroll'";
+        $sql = "select * from issuedbookdetails where id='$studentroll'";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);
         return $row;
@@ -221,7 +230,7 @@ function viewIssuedBookDetails()
      function ViewRequestBook()
      {
          $conn = getConnection();
-         $sql = "select * from bookrequest";
+         $sql = "select * from requestbook";
          $result = mysqli_query($conn, $sql);
          $RequestBook =[];
  
@@ -295,9 +304,9 @@ function viewAllNotice()
     return $row;
 }
 
-function getStudentByRoll($studentroll){
+function getStudentById($id){
     $conn = getConnection();
-    $sql = "select * from student where roll='{$studentroll}'";
+    $sql = "select * from student where id='{$id}'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     if($row){

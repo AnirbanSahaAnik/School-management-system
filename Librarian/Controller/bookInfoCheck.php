@@ -132,7 +132,7 @@ if(isset($_POST['addnewbook'])){
             $uploadbookcopy = $bookfile['name'];
             $bookinfo = [
                 'isbn' => $isbn,
-                'booktitle' => $booktitle,
+                'title' => $booktitle,
                 'author' => $author,
                 'categories' => $categories,
                 'bookcopy' => $bookcopy,

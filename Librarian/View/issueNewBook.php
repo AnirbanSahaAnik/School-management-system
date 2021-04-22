@@ -1,5 +1,8 @@
 <?php $title= "Issue a New Book";
 	include('header.php');
+  include_once('../Model/usersmodel.php');
+  $id = $_GET['id'];
+  $requestBook = requestBookInfo($id);
    ?>
   <script>
   function issuenewbook(){
@@ -75,12 +78,16 @@
           <form action="../Controller/issueNewBookCheck.php" method="post" onsubmit="return issuenewbook()" enctype="multipart/form-data">
           <table align="center">
                     <tr>
-                        <td>Student Roll :</td>
-                        <td><input type="text" name="studentroll" id="studentroll" value="" onkeypress="validation()"><div id="msg1"></div></td>
+                        <td>Student Id :</td>
+                        <td><input type="text" name="studentroll" id="studentroll" value="<?php echo $id ?>" onkeypress="validation()"><div id="msg1"></div></td>
                     </tr>
                     <tr>
                         <td>ISBN Number :</td>
-                        <td><input type="text" name="isbnno" id="isbnno" value="" onkeypress="validation()"><div id="msg2"></div></td>
+                        <td><input type="text" name="isbnno" id="isbnno" value="<?php echo  $requestBook['isbn']; ?> " onkeypress="validation()"><div id="msg2"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Book title :</td>
+                        <td><input type="text" name="title" id="title" value="<?php echo  $requestBook['title']; ?>" onkeypress="validation()"><div id="msg2"></div></td>
                     </tr>
                     <tr> 
                         <td></td>

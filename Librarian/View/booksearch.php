@@ -1,9 +1,9 @@
 <?php
 	
-    $booktitle = $_REQUEST['booktitle'];
+    $booktitle = $_REQUEST['title'];
 
 	$con = mysqli_connect('localhost', 'root', '', 'school_management_system');
-	$sql = "select * from book_info where booktitle like '%{$booktitle}%'";
+	$sql = "select * from book_info where title like '%{$booktitle}%'";
 	$result = mysqli_query($con, $sql);
 
 	$response = "<table border=1>
@@ -20,16 +20,16 @@
 
 	while ($row = mysqli_fetch_assoc($result)) {
 		$response .= 	"<tr>
-             <td>{$row['serialno']}</td>
+             <td>{$row['sl']}</td>
               <td>{$row['isbn']}</td>
-			  <td>{$row['booktitle']}</td>
+			  <td>{$row['title']}</td>
               <td>{$row['author']}</td>
               <td>{$row['edition']}</td>
               <td>{$row['categories']}</td>
               <td>{$row['bookcopy']}</td>
-              <td><a href='viewBookInfo.php?serialno={$row['serialno']}'> View</a> 
-              | <a href='editBookInfo.php?serialno={$row['serialno']}'>UPDATE</a> 
-              | <a href='deleteBookInfo.php?serialno={$row['serialno']}'>DELETE</a> </td>
+              <td><a href='viewBookInfo.php?serialno={$row['sl']}'> View</a> 
+              | <a href='editBookInfo.php?serialno={$row['sl']}'>UPDATE</a> 
+              | <a href='deleteBookInfo.php?serialno={$row['sl']}'>DELETE</a> </td>
 						</tr>";
 	}
 

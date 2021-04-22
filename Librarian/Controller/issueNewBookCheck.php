@@ -2,14 +2,16 @@
 include_once('../Model/usersmodel.php');
 session_start();
 
+
 $studentroll = $_POST['studentroll'];
 $isbnno = $_POST['isbnno'];
+$title = $_POST['title'];
 $issuesdate = date("Y/m/d");
-$rdate =strtotime("tomorrow");
+$rdate = strtotime("tomorrow");
 $returndate = date("Y/m/d",$rdate);
 $returnstatus = 0;
 
-$selectstudentsroll = getStudentByRoll($studentroll);
+$selectstudentsroll = getStudentById($studentroll);
 $selectISBNNo = getISBN($isbnno);
 
 if($studentroll == ""){
@@ -27,7 +29,9 @@ if($studentroll == ""){
                 if($studentroll == $selectstudentsroll && $isbnno == $selectISBNNo){
                     $issuedbook = [
                         'isbnno' => $isbnno,
-                        'studentroll' => $studentroll,
+                        // 'studentroll' => $studentroll,
+                        'title' => $title,
+                        'id' => $studentroll,
                         "issuesdate" => $issuesdate,
                         'returndate' => $returndate,
                         'returnstatus' => $returnstatus

@@ -5,17 +5,13 @@
 	{
 		
 	$serialno = $_SESSION['serialno'];
-	
-    $isbn = $_POST['isbn'];
     $booktitle = $_POST['booktitle'];
     $categories = $_POST['categories'];
     $author = $_POST['author'];
     $edition = $_POST['edition'];
 	$bookcopy = $_POST['bookcopy'];
-    $bookfile = $_POST['bookfile'];
 
-		$UpdateBookinfo = array('isbn' => $isbn, 'booktitle' => $booktitle, 'categories' => $categories, 'author' => $author, 'edition' => $edition, 'bookcopy' => $bookcopy, 'bookfile' => $bookfile);
-		$check = updateBookInfo($serialno, $UpdateBookinfo);
+		$UpdateBookinfo = array('booktitle' => $booktitle, 'categories' => $categories, 'author' => $author, 'edition' => $edition, 'bookcopy' => $bookcopy);$check = updateBookInfo($serialno, $UpdateBookinfo);
 		if($check)
 		{
 			echo "Book info updated!";

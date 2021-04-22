@@ -2,22 +2,22 @@
 session_start();
 require_once('../Model/usersmodel.php');
 if(isset($_POST['submit'])){
-    $sturoll = $_POST['sturoll'];
-    if($sturoll == ""){
-        echo "Roll Number is Required*";
+    $id= $_POST['sturoll'];
+    if($id == ""){
+        echo "ID Number is Required*";
     }else{
-        if(is_numeric($sturoll)){
-            $status = getStudentByRoll($sturoll);
+        if(is_numeric($id)){
+            $status = getStudentById($id);
             if($status){
-                $_SESSION['roll'] = $sturoll;
-                $exist = createStudentsLibraryAcc($sturoll);
+                $_SESSION['id'] = $id;
+                $exist = createStudentsLibraryAcc($id);
             }else{
-                echo "Invalid ROll";
+                echo "Invalid ID";
             }
             
             
         }else{
-            echo "Roll Number Should be Number";
+            echo "ID Number Should be Number";
         }
     }
 }

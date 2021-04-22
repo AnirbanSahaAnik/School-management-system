@@ -47,9 +47,9 @@
                       <th>Serial No</th>
                       <th>ISBN</th>
                       <th>Book Title</th>
-                      <th>Student Roll</th>
-                      <th>Name</th>
-                      <th>Status</th>
+                      <th>Author</th>
+                      <th>Edition</th>
+                      <th>Student ID</th>
                       <th>Request Date</th>
                       <th>Action</th>
                     </tr>
@@ -57,14 +57,15 @@
 
                   <?php  for($i=0; $i < count($requestBookInfo); $i++){ ?>
                  <tr>
-                   <td><?php echo $requestBookInfo[$i]['serialno'] ?></td>
+                   <td><?php echo $requestBookInfo[$i]['sl'] ?></td>
                    <td><?php echo $requestBookInfo[$i]['isbn'] ?></td>
-                   <td><?php echo $requestBookInfo[$i]['booktitle'] ?></td>
-                   <td><?php echo $requestBookInfo[$i]['roll'] ?></td>
-                   <td><?php echo $requestBookInfo[$i]['name'] ?></td>
-                   <td><?php echo $requestBookInfo[$i]['status'] ?></td>
+                   <td><?php echo $requestBookInfo[$i]['title'] ?></td>
+                   <td><?php echo $requestBookInfo[$i]['author'] ?></td>
+                   <td><?php echo $requestBookInfo[$i]['edition'] ?></td>
+                   <td><?php echo $requestBookInfo[$i]['id'] ?></td>
                    <td><?php echo $requestBookInfo[$i]['requestdate'] ?></td>
-                   <td><a href="issueNewBook.php">Add Issue Book</a></td>
+                   <td><a href="issueNewBook.php?id=<?php echo $requestBookInfo[$i]['id']; ?>">Add Issue Book</a></td>
+                   
                   </tr><?php  } ?>
              </table>
           </form>

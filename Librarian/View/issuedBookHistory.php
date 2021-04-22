@@ -46,7 +46,8 @@
                     <tr>
                       <th>Serial No</th>
                       <th>ISBN</th>
-                      <th>Student ROll</th>
+                      <th>Book Title</th>
+                      <th>Student Id</th>
                       <th>Issued Date</th>
                       <th>Return Date</th>
                       <th>Return Status</th>
@@ -59,12 +60,13 @@
                  <tr>
                    <td><?php echo $allIssuedBookDetails[$i]['serialno'] ?></td>
                    <td><?php echo $allIssuedBookDetails[$i]['isbn'] ?></td>
-                   <td><?php echo $allIssuedBookDetails[$i]['studentroll'] ?></td>
+                   <td><?php echo $allIssuedBookDetails[$i]['title'] ?></td>
+                   <td><?php echo $allIssuedBookDetails[$i]['id'] ?></td>
                    <td><?php echo $allIssuedBookDetails[$i]['issuesdate'] ?></td>
                    <td><?php echo $allIssuedBookDetails[$i]['returndate'] ?></td>
                    <td><?php echo $allIssuedBookDetails[$i]['returnstatus'] ?></td>
                    <td><?php echo $allIssuedBookDetails[$i]['fine'] ?></td>
-                   <td><a href="addFine.php?studentroll=<?php echo $allIssuedBookDetails[$i]['studentroll']?> ?>">Edit</a></td>
+                   <td><a href="addFine.php?id=<?php echo $allIssuedBookDetails[$i]['id']?> ?>">Edit</a></td>
                   </tr><?php  } ?>
              </table>
           </form>

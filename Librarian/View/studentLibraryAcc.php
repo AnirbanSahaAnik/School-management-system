@@ -63,7 +63,7 @@
             <form action="../Controller/studentAccCheck.php" method="POST" onsubmit="return studentLibAcc()">
                 <table align="center" >
                      <tr>
-                        <td>Enter Student Roll No.</td>
+                        <td>Enter Student Id</td>
                         <td>: <input type="text" name="sturoll" id="sturoll" onkeypress="validation()"><div id="msg1"></div></td>
                       </tr>
                       <tr>
