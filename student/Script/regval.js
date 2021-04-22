@@ -11,7 +11,7 @@ function val() {
     var classs = document.getElementById("classs").value;
     var section = document.getElementById("section").value;
     var roll = document.getElementById("roll").value;
-    var error_messege = document.getElementById("error_messege");
+    var error_messege = document.getElementById("error_messege"); 
     var text;
 
 

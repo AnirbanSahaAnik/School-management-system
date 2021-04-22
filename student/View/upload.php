@@ -1,11 +1,11 @@
 <?php
-$title = "Request for leave";
+$title = "Upload Document";
 $javascript = "../Script/uploadval.js";
 include('header.php');
 ?>
 
 <?php include('sideBar.php'); ?>
-
+ 
 <td>
     <fieldset>
         <form class="" name="FilesUpload" action="../Controller/uploadCheck.php" onsubmit="return val()" method="post" enctype="multipart/form-data">

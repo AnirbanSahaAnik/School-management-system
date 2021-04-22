@@ -11,8 +11,8 @@
                     <td>ISBN</td>
                     <td>TITLE</td>
                     <td>AUTHOR</td>
-                    <td>EDTION</td>
-                    </tr>";
+                    <td>EDTION</td> 
+                    </tr>";  
 
     while ($row = mysqli_fetch_assoc($result)) {
         $response .=    "<tr align = 'center'>

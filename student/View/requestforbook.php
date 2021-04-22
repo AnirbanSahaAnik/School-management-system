@@ -11,7 +11,7 @@ include('header.php');
               
 
             <form class="" action="" method="post">
-               <table>
+               <table>  
                 <tr>
                     <td>Id</td>
                     <td><input type="text" name="STUDENT ID" value="<?php echo $_COOKIE['id']; ?>"> </td>

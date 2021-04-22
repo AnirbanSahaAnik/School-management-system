@@ -9,7 +9,7 @@ $_SESSION['isbn'] = $isbn;
 ?>
 
 <?php include('sideBar.php'); ?>
-<td>
+<td> 
   <fieldset>
     <legend>Request Book</legend>
     <form class="" action="../Controller/requestbookCheck.php"  method="post">

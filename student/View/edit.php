@@ -7,7 +7,7 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
 ?>
 
 <?php include('sideBar.php'); ?>
-<td>
+<td> 
   <fieldset>
     <legend>Edit Profile</legend>
     <form class="" action="../Controller/editCheck.php" onsubmit="return val()" method="post">
@@ -71,7 +71,7 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
 
       </table>
 
-      <input type="submit" name="submit" value="UPDATE">
+      <input type="submit" name="submit" value="Request For Update">
     </form>
   </fieldset>
 

@@ -6,13 +6,13 @@ function ajax(){
 	const xhttp	= new XMLHttpRequest();
 
 
-  xhttp.open('GET', '../View/bookSearch.php?name='+name, true);
+  xhttp.open('GET', '../View/bookSearch.php?name='+name, true); 
 	xhttp.send();
 
 	xhttp.onreadystatechange = function(){
 
-		if(this.readyState == 4 && this.status == 200){
+		if(this.readyState == 4 && this.status == 200){ 
 			document.getElementById('myh1').innerHTML = this.responseText;
 		}
-	}
-}
+	} 
+}   
