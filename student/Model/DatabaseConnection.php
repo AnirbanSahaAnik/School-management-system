@@ -57,7 +57,20 @@
 			return false;
 		}
 	}
+	
 
+
+
+	function getleavebyid($Id){
+
+		$conn = getConnection();
+
+		$sql = "select * from leave_request where id='{$Id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
 
 
 	function getUserById($Id){

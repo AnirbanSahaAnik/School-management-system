@@ -32,7 +32,10 @@ $viemyinfo = getUserbyid($_COOKIE['id']);
                     <td></td>
                     <td>
                         <input type="submit" name="submit" value="Submit"> 
+                        <a href="viewleaverequest.php">View Leave Request</a>
                     </td>
+
+                    
                 </tr>
 
                 <tr>
