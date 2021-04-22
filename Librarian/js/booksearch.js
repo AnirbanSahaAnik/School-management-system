@@ -4,8 +4,8 @@
 function ajax(){
 	const booktitle = document.getElementById('booktitle').value;
 	const xhttp	= new XMLHttpRequest();
-  xhttp.open('POST', '../View/booksearch.php?booktitle='+booktitle, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.open('POST', '../View/booksearch.php?booktitle='+booktitle, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send();
 
 	xhttp.onreadystatechange = function(){

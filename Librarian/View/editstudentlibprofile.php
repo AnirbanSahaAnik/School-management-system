@@ -1,7 +1,6 @@
 <?php  
 $title= "Edit Student Librarian Profile";
 include('header.php');
-session_start();
 require_once('../Model/usersmodel.php');
 $roll = $_GET['roll'];
 $editLibProfile =  viewStudentLibProfile($roll);
