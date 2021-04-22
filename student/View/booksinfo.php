@@ -3,9 +3,9 @@ $title= "Book Information";
 $javascript = "../Script/bookSearch.js";
 require_once('../Model/DatabaseConnection.php');
 $bookList=getAllbook();
-include('header.php');
+include('header.php'); 
 
-?>
+?> 
 
 <?php include('sideBar.php'); ?> 
 

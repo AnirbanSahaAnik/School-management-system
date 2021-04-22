@@ -353,6 +353,23 @@
 			return $row;
 		}
 
+
+
+
+		function getissuedbook($id){
+
+			$conn = getConnection();
+	
+			$sql = "select * from issuedbookdetails where id='{$id}'";
+			$result = mysqli_query($conn, $sql);
+			$row = mysqli_fetch_assoc($result);
+	
+			return $row;
+		}
+
+
+		
+
  
 
 ?>

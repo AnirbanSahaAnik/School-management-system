@@ -12,7 +12,7 @@
                     <td>AUTHOR</td>
                     <td>EDTION</td>
                     <td>Action</td>
-                    </tr>";
+                    </tr>"; 
 
     while ($row = mysqli_fetch_assoc($result)) {
         $response .=    "<tr align = 'center'>

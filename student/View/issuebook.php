@@ -2,7 +2,7 @@
 $title= "Issue Book History";
 include('header.php');
 include_once('../model/DatabaseConnection.php');
-$viewhistory = getUserbyid($_COOKIE['id']);
+$viewhistory = getissuedbook($_COOKIE['id']);
 ?>
 
 <?php include('sideBar.php'); ?> 
@@ -11,16 +11,23 @@ $viewhistory = getUserbyid($_COOKIE['id']);
                 <legend>Issue Book History</legend>
             <form class="" action="" method="post"> 
                <table>
+
+               <tr>
+                <td>ID</td> 
+                <td>:</td>
+                <td><?php echo $viewhistory['id']; ?></td>
+               </tr>
+
                <tr>
                 <td>Book Name</td> 
                 <td>:</td>
-                <td><?php echo $viewhistory['bookname']; ?></td>
+                <td><?php echo $viewhistory['title']; ?></td>
                </tr>
 
                <tr>
                 <td>Issue Date</td> 
                 <td>:</td>
-                <td><?php echo $viewhistory['issuedate']; ?></td>
+                <td><?php echo $viewhistory['issuesdate']; ?></td>
                </tr>
                <tr>
                 <td>Return Date</td> 

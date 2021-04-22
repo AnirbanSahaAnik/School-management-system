@@ -11,7 +11,7 @@
       color: green;
       font-weight: bold;
     }
-  </style>
+  </style> 
   <script src="../Script/regval.js"></script>
 </head>
 
@@ -19,7 +19,7 @@
   <form class="" action="../Controller/regCheck.php" onsubmit="return val()" method="post">
     <fieldset>
       <legend>REGESTRATION</legend>
-      <table align="center">
+      <table align="center"> 
 
         <tr>
           <td>Name</td>
