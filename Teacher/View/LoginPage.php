@@ -21,6 +21,7 @@
                       <a href="HomePage.php">Home</a>|
                       <a href="LoginPage.php">Login</a>|
                       <a href="Registration.php">Registration</a>
+                      <a href="../../Home/index.html">Back</a>
                   </td>
                 </tr>
             </table>
