@@ -54,10 +54,6 @@
                 <td>Subject</td> 
                 <td>:<?php echo $User['subject'];?></td>
                </tr>
-               <tr>
-                <td>Time</td> 
-                <td>:<?php echo $User['class_time'];?></td>
-               </tr>
                </table>
             </form>
             </fieldset>
