@@ -18,7 +18,7 @@
     <?php include("TeacherHeader.php") ?>
       <tr>
         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/notice.jpg" alt=""></td>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/student.jpg" alt=""></td>
             <td align="Center">
             <b>
                Student Leave Request
@@ -32,7 +32,9 @@
                     <li><a href="StudentList.php">View Student's Profile</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
+                    <li><a href="ViewSchoolNotice.php">School Notice</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
+                    <li><a href="ViewUploadedNotes(Student).php">See Student Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="LeaveRequest.php">Student Leave Request</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>

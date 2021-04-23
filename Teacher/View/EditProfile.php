@@ -24,7 +24,7 @@
     <?php include("TeacherHeader.php") ?>
       <tr>
         <tr>
-            <td align="Left"><img height="80px" weight="80px" src="../Resources/Student.jpg" alt=""></td>
+            <td align="Left"><img height="80px" weight="80px" src="../Resources/Teacher.jpg" alt=""></td>
             <td align="Center">
             <b>
               Profile Infromation Change

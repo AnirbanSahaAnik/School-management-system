@@ -62,7 +62,7 @@
 	function insertNotes($user){
 
 		$conn = getConnection();
-		$sql = "insert into notes (notes) values ( '{$user['name']}')";
+		$sql = "insert into teacher_notes (notes) values ( '{$user['name']}')";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -138,7 +138,7 @@
 
 		$conn = getConnection();
 
-		$sql = "select * from notes where id='{$Id}'";
+		$sql = "select * from teacher_notes where id='{$Id}'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 
@@ -250,8 +250,35 @@
 		return $users;
 	}
 
+	function getAllSchoolNotice(){
+		$conn = getConnection();
+		$sql = "select * from school_notice";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
 
-	function getAllNotes(){
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
+	function getAllTeacherNotes(){
+		$conn = getConnection();
+		$sql = "select * from teacher_notes";
+		$result = mysqli_query($conn, $sql);
+		$users =[];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
+	function getAllStudentNotes(){
 		$conn = getConnection();
 		$sql = "select * from notes";
 		$result = mysqli_query($conn, $sql);
@@ -327,7 +354,7 @@
 
 	function updateNotes($Id, $userinfo){
 		$conn = getConnection();
-		$sql = "update notes set notes='{$userinfo['name']}' where id='{$Id}'";
+		$sql = "update teacher_notes set notes='{$userinfo['name']}' where id='{$Id}'";
 		//print_r($sql);
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -351,9 +378,9 @@
 	
 	}
 
-	function deleteNotesById($Id){
+	function deleteTeacherNotesById($Id){
 		$conn = getConnection();
-		$sql = "delete from notes where id='$Id'";
+		$sql = "delete from teacher_notes where id='$Id'";
 		$result = mysqli_query($conn,$sql);
 		if($result){
 			header('location: ../View/ViewUploadedNotes(Teacher).php?your info is deleted');

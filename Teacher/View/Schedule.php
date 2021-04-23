@@ -31,7 +31,9 @@
                     <li><a href="StudentList.php">View Student's Profile</a></li>
                     <li><a href="Schedule.php">Class Schedule</a></li>
                     <li><a href="NoticeBoard.php">Notice Board</a></li>
+                    <li><a href="ViewSchoolNotice.php">School Notice</a></li>
                     <li><a href="UploadNotes.php">Upload Notes</a></li>
+                    <li><a href="ViewUploadedNotes(Student).php">See Student Notes</a></li>
                     <li><a href="StudentListMarks.php">Student Marks</a></li>
                     <li><a href="LeaveRequest.php">Student Leave Request</a></li>
                     <li><a href="BookHistory.php">Book History</a></li>
@@ -51,10 +53,6 @@
                <tr>
                 <td>Subject</td> 
                 <td>:<?php echo $User['subject'];?></td>
-               </tr>
-               <tr>
-                <td>Time</td> 
-                <td>:<?php echo $User['class_time'];?></td>
                </tr>
                </table>
             </form>
