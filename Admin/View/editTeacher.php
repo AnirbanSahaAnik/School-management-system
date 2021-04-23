@@ -58,6 +58,18 @@
                         <td>Date of Birth</td>
                         <td>:<input type="date" id="dob" name="dob" value="<?php echo $updatemyinfo['dob']; ?>"></td>
                       </tr>
+											<tr>
+												<td>Subject</td>
+												<td>:<select id="subject" name="subject">
+														<option <?php  if($updatemyinfo['subject']=="Bangla"){?> selected="true" <?php } ?> value="Bangla">Bangla</option>
+														<option <?php  if($updatemyinfo['subject']=="English"){?> selected="true" <?php } ?> value="English">English</option>
+														<option <?php  if($updatemyinfo['subject']=="Math"){?> selected="true" <?php } ?> value="Math">Math</option>
+														<option <?php  if($updatemyinfo['subject']=="Bangladesh and global studies"){?> selected="true" <?php } ?> value="Bangladesh and global studies">Bangladesh and global studies</option>
+														<option <?php  if($updatemyinfo['subject']=="Religion"){?> selected="true" <?php } ?> value="Religion">Religion</option>
+														<option <?php  if($updatemyinfo['subject']=="Physical education and health"){?> selected="true" <?php } ?> value="Physical education and health">Physical education and health</option>
+													</select>
+												</td>
+											</tr>
                     </table>
                     <hr>
                     <center>

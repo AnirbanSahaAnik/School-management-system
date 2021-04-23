@@ -9,12 +9,13 @@
     $mobile = $_POST['mobile'];
     $gender = $_POST['gender'];
     $dob = $_POST['dob'];
+		$subject = $_POST['subject'];
 
 		if(strlen($mobile) == 11){
 			for($i=0; $i<strlen($name); $i++){
 				if((ord($name[$i]) >= 97 && ord($name[$i]) <= 122) || (ord($name[$i]) >= 65 && ord($name[$i]) <= 90) || ord($name[$i]) == ' '){
 					if(strlen($name) > 2){
-						$userinfo = array('id' => $id,'name' => $name, 'email' => $email, 'mobile' => $mobile,'gender' => $gender,'dob' => $dob);
+						$userinfo = array('id' => $id,'name' => $name, 'email' => $email, 'mobile' => $mobile,'gender' => $gender,'dob' => $dob, 'subject' => $subject);
 						$check = updateMyInfo($id, $userinfo);
 						if($check)
 						{

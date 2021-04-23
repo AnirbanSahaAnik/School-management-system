@@ -1,6 +1,6 @@
 <?php
 	$title = "add Teacher";
-	$js = "../Script/addValidation.js";
+	$js = "../Script/addValidationTeacher.js";
 	include('header.php');
 
 ?>
@@ -60,6 +60,18 @@
                           <td>Date of Birth</td>
                           <td>:<input type="date" id="dob"  name="dob" value=""></td>
                         </tr>
+												<tr>
+                          <td>Subject</td>
+                          <td>:<select id="subject" name="subject">
+                              <option value="Bangla">Bangla</option>
+                              <option value="English">English</option>
+                              <option value="Math">Math</option>
+                              <option value="Bangladesh and global studies">Bangladesh and global studies</option>
+                              <option value="Religion">Religion</option>
+															<option value="Physical education and health">Physical education and health</option>
+                            </select>
+                          </td>
+												</tr>
                       </table>
                       <hr>
                       <center>

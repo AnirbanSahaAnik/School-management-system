@@ -13,8 +13,9 @@
 		$repass = $_POST['repass'];
     $gender = $_POST['gender'];
     $dob = $_POST['dob'];
+    $subject = $_POST['subject'];
 
-		if($id == "" || $name == "" || $email == "" || $password == "" || $repass == ""|| $mobile == ""|| $gender == ""|| $dob == ""){
+		if($id == "" || $name == "" || $email == "" || $password == "" || $repass == ""|| $subject == "" || $mobile == ""|| $gender == ""|| $dob == ""){
 			echo "null submission...";
 		}else{
 			if($password == $repass){
@@ -33,7 +34,8 @@
                             'id'=>$id,
                             'password'=>$password,
                             'gender'=>$gender,
-                            'dob'=>$dob
+                            'dob'=>$dob,
+                            'subject'=>$subject
                         ];
 
                         $result = insert($userinfo);

@@ -16,6 +16,7 @@
             <td>Mobile</td>
             <td>Gender</td>
             <td>DOB</td>
+            <td>Subject</td>
             <td>Action</td>
 					</tr>";
 
@@ -27,6 +28,7 @@
               <td>{$row['mobile']}</td>
               <td>{$row['gender']}</td>
               <td>{$row['dob']}</td>
+              <td>{$row['subject']}</td>
               <td> <a href='editTeacher.php?id={$row['id']}'> Edit </a> | <a href='deleteTeacher.php?id={$row['id']}'> Delete </a>  </td>
 						</tr>";
 	}
