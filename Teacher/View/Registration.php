@@ -77,9 +77,9 @@
                                 <td colspan="2">
                                 <fieldset>
                                 <legend>Gender</legend>
-                                <input type="radio" id= "gender" name="gender" value="Male">Male
-                                <input type="radio" id= "gender" name="gender" value="Female">Female
-                                <input type="radio" id= "gender" name="gender" value="Other">Other
+                                <input type="radio" id= "gender" name="gender" value="male">Male
+                                <input type="radio" id= "gender" name="gender" value="female">Female
+                                <input type="radio" id= "gender" name="gender" value="other">Other
                                 </fieldset>
                                 </td>
                             </tr>
