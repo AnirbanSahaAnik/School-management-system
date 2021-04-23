@@ -71,9 +71,9 @@
 					</tr>
                     <tr>
 						<td>Gender</td>
-						<td>:<input type="radio" name="gender" <?php  if($User['gender']=="Male"){?> checked="true" <?php } ?> value="Male">Male
-                          <input type="radio" id="gender" name="gender"  <?php if($User['gender']=="Female"){?> checked="true" <?php } ?>  value="Female">Female
-                          <input type="radio" id="gender" name="gender" <?php if($User['gender']=="Other"){?> checked="true" <?php } ?> value="Other">Other</td>
+						<td>:<input type="radio" name="gender" <?php  if($User['gender']=="male"){?> checked="true" <?php } ?> value="male">Male
+                          <input type="radio" id="gender" name="gender"  <?php if($User['gender']=="female"){?> checked="true" <?php } ?>  value="female">Female
+                          <input type="radio" id="gender" name="gender" <?php if($User['gender']=="other"){?> checked="true" <?php } ?> value="other">Other</td>
 					</tr>
                     <tr>
 						<td>Date of Birth</td>
