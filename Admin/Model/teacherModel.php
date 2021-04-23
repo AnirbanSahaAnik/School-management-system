@@ -2,7 +2,7 @@
 include_once('db.php');
 function insert($userinfo){
     $conn = getConnection();
-    $sql = "insert into teacher values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}', '{$userinfo['password']}')";
+    $sql = "insert into teacher values('{$userinfo['id']}', '{$userinfo['name']}','{$userinfo['email']}', '{$userinfo['mobile']}', '{$userinfo['gender']}', '{$userinfo['dob']}','{$userinfo['subject']}', '{$userinfo['password']}')";
     $row = mysqli_query($conn,$sql);
     if($row){
         return true;
@@ -41,7 +41,7 @@ function allUserList(){
 }
 function updateMyInfo($id, $userinfo){
     $conn = getConnection();
-    $sql = "update teacher set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}'  where id='{$id}'";
+    $sql = "update teacher set name='{$userinfo['name']}' , email='{$userinfo['email']}', mobile='{$userinfo['mobile']}', gender='{$userinfo['gender']}', dob='{$userinfo['dob']}', subject='{$userinfo['subject']}'  where id='{$id}'";
 
     if(mysqli_query($conn, $sql))
 		{

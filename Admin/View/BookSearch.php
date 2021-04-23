@@ -13,6 +13,8 @@
             <td>Title</td>
             <td>Author</td>
             <td>Edition</td>
+						<td>categories</td>
+						<td>Book Copy</td>
 					</tr>";
 
 	while ($row = mysqli_fetch_assoc($result)) {
@@ -21,6 +23,8 @@
 							<td>{$row['title']}</td>
               <td>{$row['author']}</td>
               <td>{$row['edition']}</td>
+							<td>{$row['categories']}</td>
+							<td>{$row['bookcopy']}</td>
 
 						</tr>";
 	}

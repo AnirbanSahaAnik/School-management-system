@@ -26,6 +26,8 @@
 											<td>Title</td>
 											<td>Author</td>
 											<td>Edition</td>
+											<td>Categories</td>
+											<td>Book Copy</td>
 									</tr>";
 									for($i = 0; $i<count($UsersList); $i++){
 											echo "<tr align = 'center'>
@@ -33,6 +35,8 @@
 											<td>{$UsersList[$i]['title']}</td>
 											<td>{$UsersList[$i]['author']}</td>
 											<td>{$UsersList[$i]['edition']}</td>
+											<td>{$UsersList[$i]['categories']}</td>
+											<td>{$UsersList[$i]['bookcopy']}</td>
 									</tr>";
 									}
 									echo "</table>";
