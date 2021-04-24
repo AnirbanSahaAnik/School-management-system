@@ -5,6 +5,7 @@
 	include_once('../model/studentModel.php');
 	$UsersList = allUserList();
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
@@ -13,6 +14,7 @@
                   <li><a href="../Controller/logout.php">Logout</a></li>
 
                 </ul>
+							</div>
               </td>
 
               <td>

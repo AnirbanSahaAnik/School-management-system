@@ -3,6 +3,7 @@
 	$js = "../Script/addStuValidation.js";
 	include('header.php');
 ?>
+								<div id="sidebar" class="">
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
@@ -10,6 +11,9 @@
                   <li><a href="dashboard.php">Dashbord</a></li>
                   <li><a href="../Controller/logout.php">Logout</a></li>
                 </ul>
+
+
+								</div>
               </td>
 
               <td>
@@ -76,7 +80,7 @@
                           </td>
                         </tr>
 
-                        <tr>
+                        <tr >
                           <td>Section</td>
                           <td>:<select id="section" name="section">
                               <option value="A">A</option>

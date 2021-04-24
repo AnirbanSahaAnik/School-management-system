@@ -7,6 +7,7 @@
   $updatemyinfo = getUserbyid($id);
   $_SESSION['id'] = $id;
 ?>
+							<div id="sidebar" class="">
                 <ul>
                   <li><a href="addStudent.php">Add Student</a></li>
                   <li><a href="viewStudent.php">View Student</a></li>
@@ -15,6 +16,7 @@
                   <li><a href="../Controller/logout.php">Logout</a></li>
 
                 </ul>
+							</div>
               </td>
               <td>
                 <form id="inform" action="../controller/updateCheckStudent.php" onsubmit="return validation()" method="post">

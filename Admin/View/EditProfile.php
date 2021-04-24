@@ -5,6 +5,7 @@
 	include_once('../model/adminModel.php');
 	$viemyinfo = getUserbyid($_COOKIE['id']);
 ?>
+								<div id="sidebar" class="">
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
                   <li><a href="viewProfile.php">View Profile</a></li>
@@ -12,6 +13,7 @@
                   <li><a href="ChangePassword.php">Change Password</a></li>
                   <li><a href="../Controller/logout.php">Logout</a></li>
                 </ul>
+							</div >
               </td>
 
               <td>

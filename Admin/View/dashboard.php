@@ -2,6 +2,7 @@
 	$title= "Dashbord";
 	include('header.php');
 ?>
+							<div id="sidebar" class="">
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
                   <li><a href="viewProfile.php">View Profile</a></li>
@@ -9,12 +10,13 @@
                   <li><a href="ChangePassword.php">Change Password</a></li>
                   <li><a href="../Controller/logout.php">Logout</a></li>
                 </ul>
+								</div>
               </td>
 
               <td>
-                <table border="1" width ="100%" cellspacing="0">
-                  <tr>
-                    <td align = "center">
+                <table id="box" border="1" width ="100%" cellspacing="0">
+                  <tr >
+                    <td  align = "center">
                       <a href="addTeacher.php"><img height="100px" weight="100px" src="../Resources/Teacher.jpg" alt=""></a>
                       <br>
                       <a href="addTeacher.php">Teacher</a>

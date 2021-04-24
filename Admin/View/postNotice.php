@@ -3,10 +3,12 @@
 	$js = "../Script/noticeVal.js";
 	include('header.php');
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="postNotice.php">Notice</a></li>
 									<li><a href="viewNotice.php">View Notice</a></li>
                 </ul>
+							</div>
               </td>
               <td>
                 <form  class="" id="inform" action="../Controller/postCheckNotice.php" onsubmit="return validation()" method="post">

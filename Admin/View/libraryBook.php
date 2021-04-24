@@ -5,9 +5,11 @@
 	include_once('../model/bookModel.php');
 	$UsersList = allUserList();
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="libraryBook.php">Library Book list</a></li>
                 </ul>
+							</div>
               </td>
               <td>
                 <center><h2  >Library Book list</h2>

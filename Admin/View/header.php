@@ -13,7 +13,7 @@
   <head>
     <meta charset="utf-8">
     <title><?=$title?></title>
-		<link rel="stylesheet" href="<?=$style?>">
+		<link rel="stylesheet" href="../Style/sidebar.css">
 		<style media="screen">
       #error_messege{
 				color: White;
@@ -34,12 +34,12 @@
       <tr>
         <td>
           <table width="100%">
-            <tr>
-              <td><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></td>
+            <tr id="header">
+              <td><a href="dashboard.php"><img height="50px" weight="50px" src="../Resources/logo.png" alt=""></a></td>
               <td align = "center"><h1>School Management System</h1></td>
               <td align = "right">
                 <a href="dashboard.php">Back</a> |
-                <a href="../Controller/logout.php">Logout</a>
+                <a href="../Controller/logout.php"><span class="tab">Logout</a>
 
               </td>
             </tr>
@@ -50,7 +50,7 @@
       <tr>
         <td>
           <table width="100%" cellspacing="0" border="1">
-            <tr>
+            <tr id="navigation">
               <td width="250px">
                 <center>
                   <h3>Login As</h3>

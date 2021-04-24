@@ -5,7 +5,7 @@
 	include_once('../model/librarianModel.php');
 	$UsersList = allUserList();
 ?>
-
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="addLibrarian.php">Add Librarian</a></li>
                   <li><a href="viewLibrarian.php">View Librarian</a></li>
@@ -13,6 +13,7 @@
                   <li><a href="../Controller/logout.php">Logout</a></li>
 
                 </ul>
+							</div>
               </td>
 
               <td>

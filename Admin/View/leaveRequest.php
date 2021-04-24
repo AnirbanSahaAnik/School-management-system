@@ -4,10 +4,12 @@
 	include_once('../model/leaveRequestModel.php');
 	$UsersList = allUserList();
 ?>
+						<div id="sidebar" class="">
                 <ul>
                   <li><a href="leaveRequest.php">Student's leave request</a></li>
 
                 </ul>
+							</div>
               </td>
 
               <td>
