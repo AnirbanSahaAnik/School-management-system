@@ -3,11 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Regester</title>
-
+    <link rel="stylesheet" href="../Style/regester.css">
     <style media="screen">
       #error_messege{
-        color: red;
+        color: White;
         font-weight: bold;
+        margin-bottom: 20px;
+        padding: 0px;
+        background: #de0404;
+        text-align: center;
+        font-size: 18px;
+        transition: all 0.5s ease;
       }
     </style>
     <script src="../Script/regester.js"></script>
@@ -68,8 +74,8 @@
                     </table>
                     <hr>
                     <center>
-                      <input type="submit" name="signup" value="SIGN UP">
-                      <input type="reset" name="reset" value="Reset">
+                      <input type="submit" id="submit" name="signup" value="SIGN UP">
+                      <input type="reset" id="reset" name="reset" value="Reset">
                       <a href="adminlogin.php">SIGN IN</a>
                   </center>
 
