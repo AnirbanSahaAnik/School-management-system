@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>LOGIN</title>
+    <link rel="stylesheet" href="../Style/adminlogin.css">
     <style media="screen">
       #error_messege{
         color: red;
         font-weight: bold;
       }
     </style>
+
     <script src="../Script/adminloginVal.js"></script>
   </head>
   <body>
@@ -28,7 +30,10 @@
       </tr>
       <tr>
         <td>
-          <table align="center" >
+          <div id="formtable" class="">
+
+
+          <table  align="center" >
             <tr>
               <td>
                 <form class="" id="inform" action="../Controller/logCheck.php" onsubmit="return validation()" method="post">
@@ -53,7 +58,7 @@
                     </table>
                     <input type="checkbox" name="" value=""> Remember Me <br>
                     <br>
-                    <input type="submit" name="submit" value="LOGIN">
+                    <input type="submit" id="submit" name="submit" value="LOGIN">
                     <a href="ForgotPassword.php">FORGOT PASSWORD?</a>
                     <br>
                     <a href="regester.php">SIGN UP</a>
@@ -63,6 +68,7 @@
 
           </tr>
           </table>
+          </div>
         </td>
       </tr>
 
