@@ -4,10 +4,12 @@
   include_once('../model/noticeModel.php');
   $UsersList = allUserList();
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="postNotice.php">Notice</a></li>
 									<li><a href="viewNotice.php">View Notice</a></li>
                 </ul>
+							</div>
               </td>
               <td>
                  <center><h3>All Notice</h3></center>

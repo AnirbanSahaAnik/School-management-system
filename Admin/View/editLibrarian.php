@@ -7,6 +7,7 @@
   $updatemyinfo = getUserbyid($id);
   $_SESSION['id'] = $id;
 ?>
+					<div id="sidebar" class="">
                 <ul>
                   <li><a href="addLibrarian.php">Add Librarian</a></li>
                   <li><a href="viewLibrarian.php">View Librarian</a></li>
@@ -14,6 +15,7 @@
                   <li><a href="../Controller/logout.php">Logout</a></li>
 
                 </ul>
+							</div>
               </td>
               <td>
                 <form id="inform" action="../controller/updateCheckLibrarian.php" onsubmit="return validation()" method="post">

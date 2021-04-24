@@ -3,11 +3,15 @@
 	$js = "../Script/addCourseVal.js";
 	include('header.php');
 ?>
-                <ul>
+								<div id="sidebar" class="">
+								<ul>
                   <li><a href="addCourse.php">Create Course</a></li>
                   <li><a href="viewCourse.php">View Course</a></li>
                 </ul>
               </td>
+
+
+							</div>
 
               <td>
                 <form id="inform" class="" action="../Controller/addCheckCourse.php" onsubmit="return validation()" method="post">
@@ -37,7 +41,7 @@
                           </td>
                         <tr>
                           <td>Description</td>
-                          <td>:<textarea name="description" id="description" rows="3" cols="20"></textarea></td>
+                          <td><textarea name="description" id="description" rows="3" cols="20"></textarea></td>
                         </tr>
                       </table>
                       <hr>

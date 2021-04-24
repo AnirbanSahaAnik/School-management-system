@@ -4,6 +4,7 @@
 	include('header.php');
 
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="Dashboard.php">Dashbord</a></li>
                   <li><a href="viewProfile.php">View Profile</a></li>
@@ -12,6 +13,9 @@
                   <li><a href="../Controller/logout.php">Logout</a></li>
                 </ul>
               </td>
+							
+
+							</div>
 
               <td>
 								<form class="" id="inform" action="../controller/chaPassCheck.php" onsubmit="return validation()" method="post">

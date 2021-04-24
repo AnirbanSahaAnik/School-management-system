@@ -3,6 +3,7 @@
 	$js = "../Script/addValidation.js";
 	include('header.php');
 ?>
+								<div id="sidebar" class="">
                 <ul>
                   <li><a href="addLibrarian.php">Add Librarian</a></li>
                   <li><a href="viewLibrarian.php">View Librarian</a></li>
@@ -10,6 +11,9 @@
                   <li><a href="../Controller/logout.php">Logout</a></li>
 
                 </ul>
+
+
+								</div>
               </td>
 
               <td>
@@ -64,8 +68,8 @@
                       </table>
                       <hr>
                       <center>
-                        <input type="submit" name="submit" value="Submit">
-                        <input type="reset" name="reset" value="Reset">
+                        <input type="submit" id="submit" name="submit" value="Submit">
+                        <input type="reset" id="reset" name="reset" value="Reset">
                     </center>
                   </fieldset>
                 </form>

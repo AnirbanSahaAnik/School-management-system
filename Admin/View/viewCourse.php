@@ -4,10 +4,12 @@
 	include_once('../model/courseModel.php');
 	$UsersList = allUserList();
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="addCourse.php">Create Course</a></li>
                   <li><a href="viewCourse.php">View Course</a></li>
                 </ul>
+							</div>
               </td>
 
               <td>

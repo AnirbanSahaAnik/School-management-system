@@ -7,10 +7,12 @@
   $updatemyinfo = getUserbyid($id);
   $_SESSION['id'] = $id;
 ?>
+<div id="sidebar" class="">
                 <ul>
                   <li><a href="postNotice.php">Notice</a></li>
                   <li><a href="viewNotice.php">View Notice</a></li>
                 </ul>
+							</div>
               </td>
               <td>
                 <form id="inform" action="../controller/updateCheckNotice.php" onsubmit="return validation()" method="post">

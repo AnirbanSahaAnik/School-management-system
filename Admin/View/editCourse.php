@@ -7,10 +7,13 @@
   $updatemyinfo = getUserbyid($id);
   $_SESSION['id'] = $id;
 ?>
+							<div id="sidebar" class="">
                 <ul>
                   <li><a href="addCourse.php">Create Course</a></li>
                   <li><a href="viewCourse.php">View Course</a></li>
                 </ul>
+
+								</div>
               </td>
               <td>
                 <form id="inform" action="../controller/updateCheckCourse.php" onsubmit="return validation()"  method="post">
@@ -45,7 +48,7 @@
                         </td>
                       <tr>
                         <td>Description</td>
-                        <td>:<textarea id="description" name="description" rows="3" cols="20"><?php echo $updatemyinfo['description']; ?></textarea></td>
+                        <td><textarea id="description" name="description" rows="3" cols="20"><?php echo $updatemyinfo['description']; ?></textarea></td>
                       </tr>
 
                       </table>
