@@ -42,6 +42,7 @@
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
           <form action="../Controller/searchBookCheck.php" method="post">
+          <div id="notice">
           <table align="center" border="1">
                     <tr>
                       <th>Serial No</th>
@@ -68,6 +69,7 @@
                    
                   </tr><?php  } ?>
              </table>
+              </div> 
           </form>
         </td>
       </tr>

@@ -46,7 +46,7 @@ $viewAllStudentsLibProfile = ViewAllStudentsLibInfo();
 	<input type="button" name="" value="Search">
     <br>
     <div id="myh1" class="">
-    
+    <div id="notice">
     <table border="1">
     <tr>
             <th>Serial No.</th>
@@ -71,6 +71,7 @@ $viewAllStudentsLibProfile = ViewAllStudentsLibInfo();
          </tr>
          <?php  } ?></div>
              </table>
+             </div>
              </div>
 
       <?php include('footer.php'); ?>   

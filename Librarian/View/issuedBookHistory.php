@@ -34,7 +34,7 @@
             <li><a href="noticeForm.php">New Book Arrival Notice</a></li>
             <li><a href="studentLibraryAcc.php">Create Student Library Account</a></li>
             <li><a href="viewAllStudentsLibProfile.php">View Student Library Account</a></li>
-            <li><a href="issueNewBook.php">Add Issue Book</a></li>
+            <!-- <li><a href="issueNewBook.php">Add Issue Book</a></li> -->
             <!-- <li><a href="issuedBookHistory.php">Issue Book History</a></li> -->
             <li><a href="searchBookInfo.php">searchBookInfo</a></li>
           </ul>
@@ -42,6 +42,7 @@
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
           <form action="../Controller/" method="post">
+          <div id="notice" >
           <table align="center" border="1">
                     <tr>
                       <th>Serial No</th>
@@ -69,6 +70,7 @@
                    <td><a href="addFine.php?id=<?php echo $allIssuedBookDetails[$i]['id']?> ?>">Edit</a></td>
                   </tr><?php  } ?>
              </table>
+              </div>
           </form>
         </td>
       </tr>
