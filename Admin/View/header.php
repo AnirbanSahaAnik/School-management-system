@@ -13,10 +13,17 @@
   <head>
     <meta charset="utf-8">
     <title><?=$title?></title>
+		<link rel="stylesheet" href="<?=$style?>">
 		<style media="screen">
       #error_messege{
-        color: red;
-        font-weight: bold;
+				color: White;
+	      font-weight: bold;
+	      margin-bottom: 20px;
+	      padding: 0px;
+	      background: #de0404;
+	      text-align: center;
+	      font-size: 18px;
+	      transition: all 0.5s ease;
       }
 			</style>
 		<script src="<?=$js?>"></script>

@@ -1,6 +1,7 @@
 <?php
 	$title = "add Teacher";
 	$js = "../Script/addValidationTeacher.js";
+	// $style = "../Style/regester.css";
 	include('header.php');
 
 ?>
@@ -75,8 +76,8 @@
                       </table>
                       <hr>
                       <center>
-                        <input type="submit" name="submit" value="Submit">
-                        <input type="reset" name="reset" value="Reset">
+                        <input type="submit" id="submit" name="submit" value="Submit">
+                        <input type="reset" id="reset" name="reset" value="Reset">
                     </center>
                   </fieldset>
                 </form>
