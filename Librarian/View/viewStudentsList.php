@@ -47,6 +47,7 @@ $studentsinfo = getAllstudentsInfo();
 	<input type="button" name="" value="Search">
     <br>
     <div id="viewstudentlist" class="">
+    <div id="notice" >
     <table border="1">
     <tr>
             <th>Name</th>
@@ -73,6 +74,7 @@ $studentsinfo = getAllstudentsInfo();
          </tr><?php  } ?></div>
              </table>
              </div>
+        </div>    
 
       <?php include('footer.php'); ?>   
  

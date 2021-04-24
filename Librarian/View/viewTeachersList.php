@@ -47,6 +47,7 @@ $teachersilist = getAllTeachersList();
 	<input type="button" name="" value="Search">
     <br>
     <div id="viewteacherlist" class="">
+    <div id="notice" >
     <table border="1">
     <tr>
             <th>ID</th>
@@ -68,6 +69,7 @@ $teachersilist = getAllTeachersList();
          <?php  } ?></div>
              </table>
              </div>
+        </div>    
 
       <?php include('footer.php'); ?>   
  
