@@ -1,10 +1,12 @@
 <?php
-
-	$name = $_REQUEST['name'];
+    require_once('../Model/DatabaseConnection.php');
+	
+    $name = $_REQUEST['name'];
 
     $con = mysqli_connect('localhost', 'root', '', 'school_management_system');
 	$sql = "select * from student where name like '%{$name}%'";
 	$result = mysqli_query($con, $sql);
+    $User = getUserById($_COOKIE['ID']);
 
 	$response = "<table border=1 width='100%' cellspacing = 0 >
 					<tr align = 'center'>
@@ -24,7 +26,7 @@
               <td>{$row['id']}</td>
 			  <td>{$row['name']}</td>
               <td>{$row['class']}</td>
-              <td>{$row['subject']}</td>
+              <td>{$User['subject']}</td>
               <td>{$row['section']}</td>
               <td>{$row['roll']}</td>
               <td>{$row['marks']}</td>
