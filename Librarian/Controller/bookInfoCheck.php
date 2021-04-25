@@ -15,7 +15,7 @@ if(isset($_POST['addnewbook'])){
         if($isbn == ""){
             echo "ISBN Field is Must Require";
         }else{
-            if(strlen($isbn) == 4){
+            if(strlen($isbn) == 10){
                 if(is_numeric($isbn)){
                     return $isbn;
                 }else{
@@ -23,7 +23,7 @@ if(isset($_POST['addnewbook'])){
                 }
 
             }else{
-                echo "ISBN Number Should be 4 digit";
+                echo "ISBN Number Should be 10 digit";
             }
         }
     }

@@ -64,7 +64,7 @@
             var Bookcopy = document.getElementById('bookcopy').value;
             var Edition = document.getElementById('edition').value;
             var Bookfile = document.getElementById('bookfile').value;
-            if(Isbn!="" && Isbn.length == 3){
+            if(Isbn!="" && Isbn.length == 9){
                 document.getElementById('msg1').innerHTML="";
                 document.getElementById('isbn').className="success";
             }
@@ -172,7 +172,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit" name="addnewbook" value="Add New Book">
+                        <td id="lol"><input type="submit" name="addnewbook" value="Add New Book">
                             <input type="reset" value="Reset">
                         </td>
                     </tr>
@@ -180,5 +180,4 @@
           </form>
         </td>
       </tr>
-
       <?php include('footer.php'); ?>   

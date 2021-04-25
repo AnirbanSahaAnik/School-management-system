@@ -41,7 +41,7 @@ $librarianinfo =  viewLibrarianProfile($librarianid);
           </div>
         </td>
         <td id="main content">
-
+        <div id="notice">
         <table border="1">
         <tr>
             <th>Librarian ID</th>
@@ -63,7 +63,7 @@ $librarianinfo =  viewLibrarianProfile($librarianid);
             <!-- <td><?php echo $librarianinfo['p_address']; ?></td> -->
             <td><a href="changeLibrarianPassword.php">Reset Password</a></td>
         </tr>
-   </table>  
+   </table></div>
     </div>
 
 <?php include('footer.php'); ?>   
