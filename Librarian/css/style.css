@@ -64,3 +64,14 @@
 #notice table tr td{
     
 }
+/* //now// */
+#commonbttnforall{
+    padding: 12px 30px;
+    background-color: grey;
+  
+  }
+#commonbttnforall:hover{
+    background-color: lightblue;
+    border-radius: 8px;
+  
+  }  

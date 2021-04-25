@@ -1,6 +1,4 @@
 <?php $title= "Reset Password";
-// session_start();
-// echo $_SESSION['librarianid'];
 include('header.php');
    ?> 
 
@@ -23,6 +21,7 @@ include('header.php');
         <td width="350px">
           <h2 align="center"><a href="viewLibrarianProfile.php">My Profile</a></h2></h2>
           <hr>
+          <div id="sidebar">
           <ul>
             <li><a href="addnewbook.php">Add New Book</a></li>
             <li><a href="allBooksInfo.php">All Book Information</a></li>
@@ -35,8 +34,10 @@ include('header.php');
             <li><a href="issuedBookHistory.php">Issue Book History</a></li>
             <li><a href="searchBookInfo.php">searchBookInfo</a></li>
           </ul>
+          </div>
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
+        <div id="chngpass">
         <form action="../Controller/changeLibrarianPassCheck.php" method="POST">
           <table align="center">
           <tr>
@@ -53,11 +54,11 @@ include('header.php');
           </tr>
           <tr>
             <td></td>
-            <td><input type="submit" name="changepassword" value="Change Password"></td>
+            <td><input type="submit" name="changepassword" value="Change Password" id="commonbttnforall"></td>
           </tr>
          </table>
          </form>
-        
+         </div>
         </td>
       </tr>
 

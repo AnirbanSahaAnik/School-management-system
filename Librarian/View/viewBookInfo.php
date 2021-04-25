@@ -42,7 +42,7 @@ $bookinfo =  viewBookInfo($serialno);
         </td>
         <td id="main content"><h2 align="center" ><?php echo $title; ?></h2><hr>
 
-    
+        <div id="notice">
     <table border="1">
     <tr>
             <th>ISBN</th>
@@ -64,6 +64,7 @@ $bookinfo =  viewBookInfo($serialno);
         </tr>
       </table>
           </div>
+        </div>  
 
       <?php include('footer.php'); ?>   
  
