@@ -27,6 +27,25 @@ function validateUser($librarianid,$password){
     }
 }
 
+function viewLibrarianProfile($librarianid){
+    $conn = getConnection();
+    $sql = "select * from librarian where id='$librarianid'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row;
+  
+ }
+
+ function updateLibrarianPassword($id, $newpassword){
+    $conn = getConnection();
+    $sql = "update librarian set password='{$newpassword}' where id='{$id}'";
+    if(mysqli_query($conn, $sql)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function insertBook($bookinfo){
     $conn = getConnection();
     $sql = "insert into book_info values('','{$bookinfo['isbn']}','{$bookinfo['title']}','{$bookinfo['author']}','{$bookinfo['edition']}','{$bookinfo['categories']}','{$bookinfo['uploadbookcopy']}','{$bookinfo['bookcopy']}')";
@@ -178,6 +197,21 @@ function insertNotice($noticeinfo){
     
 }
 
+function viewAllNotice()
+	{
+		$conn = getConnection();
+		$sql = "select * from librariannotice";
+		$result = mysqli_query($conn, $sql);
+		$notices =[];
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			array_push($notices, $row); 
+		}
+
+		return $notices;
+	}
+
 function issuedBookDetails($issuedbook){
     $conn = getConnection();
     $sql = "insert into issuedbookdetails values('','{$issuedbook['isbnno']}','{$issuedbook['title']}','{$issuedbook['id']}','{$issuedbook['issuesdate']}','{$issuedbook['returndate']}','{$issuedbook['returnstatus']}','0')";
@@ -204,7 +238,7 @@ function viewIssuedBookDetails()
 		return $issuedbookinfo;
 	}
 
-    function assignBookLateFine($studentroll, $addlatefine){
+function assignBookLateFine($studentroll, $addlatefine){
         $conn = getConnection();
         $sql = "update issuedbookdetails set returndate='{$addlatefine['returndate']}', returnstatus='{$addlatefine['returnstatus']}' , fine='{$addlatefine['addfine']}' where id='$studentroll'";
         if(mysqli_query($conn, $sql))
@@ -218,7 +252,7 @@ function viewIssuedBookDetails()
         
     } 
     
-    function viewIssuedInfo($studentroll){
+function viewIssuedInfo($studentroll){
         $conn = getConnection();
         $sql = "select * from issuedbookdetails where id='$studentroll'";
         $result = mysqli_query($conn,$sql);
@@ -227,7 +261,7 @@ function viewIssuedBookDetails()
       
      }
 
-     function ViewRequestBook()
+function ViewRequestBook()
      {
          $conn = getConnection();
          $sql = "select * from requestbook";
@@ -241,8 +275,6 @@ function viewIssuedBookDetails()
  
          return $RequestBook;
      }     
-
-
 
 function getAllBooksInfo()
 	{
@@ -261,7 +293,7 @@ function getAllBooksInfo()
 
 
 
- function searchBookInfo($isbnno){
+function searchBookInfo($isbnno){
     $conn = getConnection();
     $sql = "select * from book_info where isbn='$isbnno'";
     $result = mysqli_query($conn,$sql);
@@ -270,31 +302,7 @@ function getAllBooksInfo()
   
  }
 
-function viewAllNotice()
-	{
-		$conn = getConnection();
-		$sql = "select * from librariannotice";
-		$result = mysqli_query($conn, $sql);
-		$notices =[];
-
-		while($row = mysqli_fetch_assoc($result))
-		{
-			array_push($notices, $row); 
-		}
-
-		return $notices;
-	}
-
- function viewLibrarianProfile($librarianid){
-    $conn = getConnection();
-    $sql = "select * from librarian where id='$librarianid'";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
-    return $row;
-  
- }
-
- function getUserById($Id){
+function getUserById($Id){
 
     $conn = getConnection();
     $sql = "select * from librarian where id='{$Id}'";
@@ -320,7 +328,6 @@ function getISBN($isbnno){
     $conn = getConnection();
     $sql = "select * from book_info where isbn='{$isbnno}'";
     $result = mysqli_query($conn,$sql);
-    //print_r($result);
     $row = mysqli_fetch_assoc($result);
     if($row){
         return true;
@@ -328,16 +335,7 @@ function getISBN($isbnno){
         return false;
     }
 }
-
- function updateLibrarianPassword($id, $newpassword){
-    $conn = getConnection();
-    $sql = "update librarian set password='{$newpassword}' where id='{$id}'";
-    if(mysqli_query($conn, $sql)){
-        return true;
-    }else{
-        return false;
-    }
-} 
+ 
 
 function getAllstudentsInfo(){
     $conn = getConnection();
