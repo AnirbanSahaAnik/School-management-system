@@ -31,7 +31,7 @@ A school management software is a collection of computer instructions, specially
 <ul>Can View Student profiles.</ul>
 <ul>Can take Students attendance.</ul>
 <ul>Can see own class schedule.</ul>
-<ul>Can see the notice board.
+<ul>Can see the notice board.</ul>
 <ul>Can give notice to students</ul>
 <ul>Can update notice.</ul>
 <ul>Can delete notice.</ul>
